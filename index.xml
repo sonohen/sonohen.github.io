@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sonohen&#39;s tech log</title>
-    <link>http://sonohen.github.io/</link>
+    <link>https://sonohen.github.io/</link>
     <description>Recent content on sonohen&#39;s tech log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-JP</language>
+    <language>ja-jp</language>
     <lastBuildDate>Wed, 06 May 2020 20:36:53 +0900</lastBuildDate>
     
-	<atom:link href="http://sonohen.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sonohen.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugoをインストールする</title>
-      <link>http://sonohen.github.io/post/install-hugo/</link>
+      <link>https://sonohen.github.io/post/install-hugo/</link>
       <pubDate>Wed, 06 May 2020 20:36:53 +0900</pubDate>
       
-      <guid>http://sonohen.github.io/post/install-hugo/</guid>
+      <guid>https://sonohen.github.io/post/install-hugo/</guid>
       <description>Hugoを導入する $ hugo new site /mnt/c/Users/yusuk/OneDrive/Documents/shared/site $ cd site $ code config.toml baseURL = &amp;quot;http://sonohen.github.io/&amp;quot; languageCode = &amp;quot;ja-JP&amp;quot; title = &amp;quot;sonohen&#39;s tech log&amp;quot; $ hugo  ここの時点で，publicディレクトリーが作られていることを確認する。
 テーマの導入 Hugo Themeにすぐに使えるテーマが掲載されている。
 今回は，Hugo Theme Minosを利用する。

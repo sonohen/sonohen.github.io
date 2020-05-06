@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
 
-    <link rel="stylesheet" href='http://sonohen.github.io/css/all.min.css'>
+    <link rel="stylesheet" href='https://sonohen.github.io/css/all.min.css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="alternate" type="application/rss+xml" title="sonohen&#39;s tech log" href='http://sonohen.github.io/index.xml' />
+    <link rel="alternate" type="application/rss+xml" title="sonohen&#39;s tech log" href='https://sonohen.github.io/index.xml' />
 </head>
 <body>
 
@@ -33,18 +33,24 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
     <div class="header">
         <hgroup>
-            <h1 class="brand-title"><a href="http://sonohen.github.io/">sonohen&#39;s tech log</a></h1>
-            <h2 class="brand-tagline"></h2>
+            <h1 class="brand-title"><a href="https://sonohen.github.io/">sonohen&#39;s tech log</a></h1>
+            <h2 class="brand-tagline"> Just an another blog </h2>
         </hgroup>
 
         <nav class="nav">
             <ul class="nav-list">
                 
                 
+                <li class="nav-item">
+                    <a class="pure-button" href="https://github.com/sonohen">
+                        <i class="fa fa-github-alt"></i> Github
+                    </a>
+                </li>
+                
                 
                 
                 <li class="nav-item">
-                    <a class="pure-button" href='http://sonohen.github.io/index.xml'>
+                    <a class="pure-button" href='https://sonohen.github.io/index.xml'>
                         <i class="fa fa-rss"></i> rss
                     </a>
                 </li>
@@ -62,23 +68,13 @@
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://sonohen.github.io/post/install-hugo/" class="post-title">Hugoをインストールする</a>
+                        <a href="https://sonohen.github.io/post/install-hugo/" class="post-title">Hugoをインストールする</a>
 
                         <p class="post-meta">
                             
                             
                         </p>
                     </header>
-                    
-                    <div class="post-share">
-                        <div class="post-share-links">
-                            <h4 style="">Share</h4>
-                            
-                            
-                            
-                            
-                        </div>
-                    </div>
                     
                     <div class="post-description">
                         
@@ -154,7 +150,7 @@ or you are unsure what this means choose another name with the '--name' option.
 $ git rm &lt;消したいsubmoduleへのパス&gt;
 </code></pre>
 
-<h1 id="visual-studio-codeを設定する">Visual Studio Codeを設定する</h1>
+<h1 id="visual-studio-codeを設定して記事を書く">Visual Studio Codeを設定して記事を書く</h1>
 
 <ol>
 <li>Hugofy（akmittal.hugofy）をインストールする。</li>
@@ -171,7 +167,26 @@ $ git rm &lt;消したいsubmoduleへのパス&gt;
 </ul>
 
                     </div>
-                    
+                    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xxxx" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                 </section>
             </div>
             <div class="footer">
@@ -181,7 +196,7 @@ $ git rm &lt;消したいsubmoduleへのパス&gt;
         </ul>
     </div>
 </div>
-<script src='http://sonohen.github.io/js/all.min.js'></script>
+<script src='https://sonohen.github.io/js/all.min.js'></script>
 
         </div>
     </div>
