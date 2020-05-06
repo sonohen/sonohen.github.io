@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hugoをインストールする // sonohen&#39;s tech log</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    
+    
+
+        <meta property="og:title" content="Hugoをインストールする" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:url" content="http://sonohen.github.io/post/install-hugo/" />
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link href="http://sonohen.github.io/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="http://sonohen.github.io/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="http://sonohen.github.io/css/style.css">
+    
+
+    <meta name="generator" content="Hugo 0.54.0" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://sonohen.github.io/">sonohen&#39;s tech log</a>
+            <nav id="main-nav">
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Hugoをインストールする</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/post/install-hugo/" class="article-date">
+                <time datetime='2020-05-06T20:36:53.000&#43;09:00' itemprop="datePublished">2020-05-06</time>
+            </a>
+            
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="hugoを導入する">Hugoを導入する</h1>
+
+<pre><code>$ hugo new site /mnt/c/Users/yusuk/OneDrive/Documents/shared/site
+$ cd site
+$ code config.toml
+baseURL = &quot;http://sonohen.github.io/&quot;
+languageCode = &quot;ja-JP&quot;
+title = &quot;sonohen's tech log&quot;
+$ hugo
+</code></pre>
+
+<p>ここの時点で，publicディレクトリーが作られていることを確認する。</p>
+
+<h1 id="テーマの導入">テーマの導入</h1>
+
+<p><a href="https://themes.gohugo.io/">Hugo Theme</a>にすぐに使えるテーマが掲載されている。</p>
+
+<p>今回は，<a href="https://github.com/carsonip/hugo-theme-minos">Hugo Theme Minos</a>を利用する。</p>
+
+<pre><code>$ cd themes/
+$ git clone --depth 1 https://github.com/carsonip/hugo-theme-minos
+$ code ../../config.toml
+theme = &quot;hugo-theme-minos&quot;
+paginate = 10
+[params]
+    smartToc = true
+$ hugo
+</code></pre>
+
+<h1 id="github-pageの設定">GitHub Pageの設定</h1>
+
+<ol>
+<li>blogレポジトリを作る
+
+<ol>
+<li>これはprivateレポジトリで良い</li>
+</ol></li>
+<li>sonohen.github.ioレポジトリを作る</li>
+</ol>
+
+<h1 id="gitの設定">Gitの設定</h1>
+
+<p>public/は，サブモジュールとして管理する。レポジトリが別なため。</p>
+
+<pre><code>$ git submodule add -b master git@github.com:sonohen/sonohen.github.io.git public
+</code></pre>
+
+<p>以下のエラーではまったでござる。</p>
+
+<pre><code>$ git submodule add -b master git@github.com:sonohen/sonohen.github.io.git public
+A git directory for 'public' is found locally with remote(s):
+origin        https://github.com/sonohen/sonohen.github.io.git
+If you want to reuse this local git directory instead of cloning again from
+git@github.com:sonohen/sonohen.github.io.git
+use the '--force' option. If the local git directory is not the correct repo
+or you are unsure what this means choose another name with the '--name' option.
+</code></pre>
+
+<p>この場合，古いsubmodule情報が&rdquo;.git/&ldquo;以下に残っていることが原因なので，以下のディレクトリとファイルの中身を確認して，古いファイルを削除してやる必要がある。</p>
+
+<ol>
+<li>.git/modules/</li>
+<li>.git/config</li>
+</ol>
+
+<p>こうならないためには，以下のようにsubmoduleを削除しましょう。</p>
+
+<pre><code>$ git submodule deinit &lt;消したいsubmodueへのパス&gt;
+$ git rm &lt;消したいsubmoduleへのパス&gt;
+</code></pre>
+
+<h1 id="visual-studio-codeを設定する">Visual Studio Codeを設定する</h1>
+
+<ol>
+<li>Hugofy（akmittal.hugofy）をインストールする。</li>
+<li>Hugofy: New Postを選択する。</li>
+<li>記事を書く。</li>
+<li>Hugofy: Buildを選択する。</li>
+<li>siteとpublicをcommit&amp;pushする。</li>
+</ol>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="http://to-developer.com/blog/?p=1970">[git]git submodule addでエラー「A git directory for ‘[指定モジュール]‘ is found locally with remote(s):」</a></li>
+</ul>
+
+        </div>
+
+        
+        
+        <div class="article-toc" style="display:none;">
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#hugoを導入する">Hugoを導入する</a></li>
+<li><a href="#テーマの導入">テーマの導入</a></li>
+<li><a href="#github-pageの設定">GitHub Pageの設定</a></li>
+<li><a href="#gitの設定">Gitの設定</a></li>
+<li><a href="#visual-studio-codeを設定する">Visual Studio Codeを設定する</a></li>
+<li><a href="#参考">参考</a></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+        <script>
+            (function() {
+                var $toc = $('#TableOfContents');
+                if ($toc.length > 0) {
+                    var $window = $(window);
+
+                    function onScroll(){
+                        var currentScroll = $window.scrollTop();
+                        var h = $('.article-entry h1, .article-entry h2, .article-entry h3, .article-entry h4, .article-entry h5, .article-entry h6');
+                        var id = "";
+                        h.each(function (i, e) {
+                            e = $(e);
+                            if (e.offset().top - 10 <= currentScroll) {
+                                id = e.attr('id');
+                            }
+                        });
+                        var active = $toc.find('a.active');
+                        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+                        active.each(function (i, e) {
+                            $(e).removeClass('active').siblings('ul').hide();
+                        });
+                        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                            $(e).children('a').addClass('active').siblings('ul').show();
+                        });
+                    }
+
+                    $window.on('scroll', onScroll);
+                    $(document).ready(function() {
+                        $toc.find('a').parent('li').find('ul').hide();
+                        onScroll();
+                        document.getElementsByClassName('article-toc')[0].style.display = '';
+                    });
+                }
+            })();
+        </script>
+        
+
+
+        
+    </div>
+    
+<nav id="article-nav">
+    
+    
+</nav>
+
+
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2020 sonohen&#39;s tech log
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

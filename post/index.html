@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>sonohen&#39;s tech log</title>
+    <title>Posts // sonohen&#39;s tech log</title>
 
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -10,13 +10,13 @@
     
     
 
-        <meta property="og:title" content="sonohen&#39;s tech log" />
+        <meta property="og:title" content="Posts" />
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en" />
-    <meta property="og:url" content="http://sonohen.github.io/" />
+    <meta property="og:url" content="http://sonohen.github.io/post/" />
     
-<link href="http://sonohen.github.io/index.xml" rel="alternate" type="application/rss+xml" title="sonohen&#39;s tech log" />
+<link href="http://sonohen.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="sonohen&#39;s tech log" />
     <link rel="shortcut icon" href="/favicon.ico">
 
     <link href="http://sonohen.github.io/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
@@ -47,41 +47,23 @@
 </header>
 
     <section id="main" class="outer">
-        
-        <article class="article article-type-post" itemscope itemprop="blogPost">
-            <div class="article-inner">
-                
-                
-                <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/post/install-hugo/">Hugoをインストールする</a></h1>
-                </header>
-                
-                <div class="article-meta">
-                    <a href="/post/install-hugo/" class="article-date">
-                        <time datetime='2020-05-06T20:36:53.000&#43;09:00' itemprop="datePublished">2020-05-06</time>
-                    </a>
-                    
-                    
-                    
-                </div>
-                <div class="article-entry" itemprop="articleBody">
-                    <p>
-                        
-                    Hugoを導入する $ hugo new site /mnt/c/Users/yusuk/OneDrive/Documents/shared/site $ cd site $ code config.toml baseURL = &quot;http://sonohen.github.io/&quot; languageCode = &quot;ja-JP&quot; title = &quot;sonohen's tech log&quot; $ hugo  ここの時点で，publicディレクトリーが作られていることを確認する。
-テーマの導入 Hugo Themeにすぐに使えるテーマが掲載されている。
-今回は，Hugo Theme Minosを利用する。
-$ cd themes/ $ git clone --depth 1 https://github.com/carsonip/hugo-theme-minos $ code ../../config.toml theme = &quot;hugo-theme-minos&quot; paginate = 10 [params] smartToc = true $ hugo  GitHub Pageの設定  blogレポジトリを作る  これはprivateレポジトリで良い  sonohen.github.ioレポジトリを作る  Gitの設定 public/は，サブモジュールとして管理する。レポジトリが別なため。
-                    </p>
-                    <p class="article-more-link">
-                        <a href="/post/install-hugo/">Read More</a>
-                    </p>
-                </div>
-
-                
+        <section class="archives-wrap">
+            <div class="archive-category-wrap">
+                <span class="archive-category">Posts</span>
             </div>
-        </article>
-        
-
+            <div class="archives">
+                    <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+            <a href="/post/install-hugo/" class="archive-article-date">
+                <time datetime='2020-05-06T20:36:53.000&#43;09:00' itemprop="datePublished">2020 May 6</time>
+            </a>
+            <h1 itemprop="name">
+                <a class="archive-article-title" href="/post/install-hugo/">Hugoをインストールする</a>
+            </h1>
+        </header>
+    </div>
+</article></div></section>
         
 
 
