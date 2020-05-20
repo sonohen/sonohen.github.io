@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sonohen&#39;s tech log &middot; sonohen&#39;s tech log</title>
+    <title>Windows Subsystem for Linux (WSL) 2への変換  &middot; sonohen&#39;s tech log</title>
 
-    <meta name="description" content="Just an another blog">
+    <meta name="description" content="">
 
     <meta name="generator" content="Hugo 0.54.0" />
     <meta name="twitter:card" content="summary">
     
-    <meta name="twitter:title" content="sonohen&#39;s tech log &middot; sonohen&#39;s tech log">
-    <meta name="twitter:description" content="Just an another blog">
+    <meta name="twitter:title" content="Windows Subsystem for Linux (WSL) 2への変換  &middot; sonohen&#39;s tech log">
+    <meta name="twitter:description" content="">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="sonohen&#39;s tech log &middot; sonohen&#39;s tech log">
-    <meta property="og:description" content="Just an another blog">
+    <meta property="og:title" content="Windows Subsystem for Linux (WSL) 2への変換  &middot; sonohen&#39;s tech log">
+    <meta property="og:description" content="">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
@@ -64,7 +64,6 @@
         <div>
             
             <div class="posts">
-                
                 <h1 class="content-subhead">20 May 2020, 23:37</h1>
                 <section class="post">
                     <header class="post-header">
@@ -76,7 +75,7 @@
                             
                         </p>
                     </header>
-
+                    
                     <div class="post-description">
                         
 
@@ -141,116 +140,28 @@ PS C:\WINDOWS\system32&gt; wsl -l -v
 </code></pre>
 
                     </div>
+                    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xxxx" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                 </section>
-                
-                <h1 class="content-subhead">06 May 2020, 20:36</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://sonohen.github.io/post/install-hugo/" class="post-title">Hugoをインストールする</a>
-
-                        <p class="post-meta">
-                            
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        
-
-<h1 id="hugoを導入する">Hugoを導入する</h1>
-
-<pre><code>$ hugo new site shared/site
-$ cd site
-$ code config.toml
-baseURL = &quot;http://sonohen.github.io/&quot;
-languageCode = &quot;ja-JP&quot;
-title = &quot;sonohen's tech log&quot;
-$ hugo
-</code></pre>
-
-<p>ここの時点で，publicディレクトリーが作られていることを確認する。</p>
-
-<h1 id="テーマの導入">テーマの導入</h1>
-
-<p><a href="https://themes.gohugo.io/">Hugo Theme</a>にすぐに使えるテーマが掲載されている。</p>
-
-<p>今回は，<a href="https://github.com/carsonip/hugo-theme-minos">Hugo Theme Minos</a>を利用する。</p>
-
-<pre><code>$ cd themes/
-$ git clone --depth 1 https://github.com/carsonip/hugo-theme-minos
-$ code ../../config.toml
-theme = &quot;hugo-theme-minos&quot;
-paginate = 10
-[params]
-    smartToc = true
-$ hugo
-</code></pre>
-
-<h1 id="github-pageの設定">GitHub Pageの設定</h1>
-
-<ol>
-<li>blogレポジトリを作る
-
-<ol>
-<li>これはprivateレポジトリで良い</li>
-</ol></li>
-<li>sonohen.github.ioレポジトリを作る</li>
-</ol>
-
-<h1 id="gitの設定">Gitの設定</h1>
-
-<p>public/は，サブモジュールとして管理する。レポジトリが別なため。</p>
-
-<pre><code>$ git submodule add -b master git@github.com:sonohen/sonohen.github.io.git public
-</code></pre>
-
-<p>以下のエラーではまったでござる。</p>
-
-<pre><code>$ git submodule add -b master git@github.com:sonohen/sonohen.github.io.git public
-A git directory for 'public' is found locally with remote(s):
-origin        https://github.com/sonohen/sonohen.github.io.git
-If you want to reuse this local git directory instead of cloning again from
-git@github.com:sonohen/sonohen.github.io.git
-use the '--force' option. If the local git directory is not the correct repo
-or you are unsure what this means choose another name with the '--name' option.
-</code></pre>
-
-<p>この場合，古いsubmodule情報が&rdquo;.git/&ldquo;以下に残っていることが原因なので，以下のディレクトリとファイルの中身を確認して，古いファイルを削除してやる必要がある。</p>
-
-<ol>
-<li>.git/modules/</li>
-<li>.git/config</li>
-</ol>
-
-<p>こうならないためには，以下のようにsubmoduleを削除しましょう。</p>
-
-<pre><code>$ git submodule deinit &lt;消したいsubmodueへのパス&gt;
-$ git rm &lt;消したいsubmoduleへのパス&gt;
-</code></pre>
-
-<h1 id="visual-studio-codeを設定して記事を書く">Visual Studio Codeを設定して記事を書く</h1>
-
-<ol>
-<li>Hugofy（akmittal.hugofy）をインストールする。</li>
-<li>Hugofy: New Postを選択する。</li>
-<li>記事を書く。</li>
-<li>Hugofy: Buildを選択する。</li>
-<li>siteとpublicをcommit&amp;pushする。</li>
-</ol>
-
-<h1 id="参考">参考</h1>
-
-<ul>
-<li><a href="http://to-developer.com/blog/?p=1970">[git]git submodule addでエラー「A git directory for ‘[指定モジュール]‘ is found locally with remote(s):」</a></li>
-</ul>
-
-                    </div>
-                </section>
-                
             </div>
-            
-
             <div class="footer">
     <div class="pure-menu pure-menu-horizontal pure-menu-open">
         <ul>
