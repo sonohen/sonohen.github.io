@@ -6,10 +6,22 @@
     <description>Recent content in Posts on sonohen&#39;s tech log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 20 May 2020 23:37:27 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2020 23:58:21 +0900</lastBuildDate>
     
 	<atom:link href="https://sonohen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>放送大学大学院の通信指導課題提出結果と今後の作戦について</title>
+      <link>https://sonohen.github.io/post/ouj_midterm_exam_result/</link>
+      <pubDate>Sun, 24 May 2020 23:58:21 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/post/ouj_midterm_exam_result/</guid>
+      <description>放送大学大学院の通信指導課題提出期間が5/29（金）までということだったので，オンラインで提出した。履修している科目は以下の通り。
+ 人的資源管理（&amp;rsquo;18） 社会的協力論（&amp;rsquo;20）  結果は，どちらも満点。人的資源管理については，一部（というか半分）の回答は，テキストを見ながら実施したので当然といえば当然ではある。
+社会的協力論は引き続き真面目に受講するとして，人的資源管理については理解が不十分な箇所（特に人的資源管理の歴史や，人事等級・考課制度とモチベーションの関連）があるので，今後，復習を実施していく必要があると認識。復習だからそんなに時間はかからないと思うが，最後にまとめてやろうとすると大変なので，通常の講義の予復習や研究課題レポートの執筆と並行して計画的に進めていくことにしたい。早速，org-modeで管理しているtodo管理表に，「人的資源管理の復習計画を立てること」というタスクを追加した。
+終わり。</description>
+    </item>
     
     <item>
       <title>Windows Subsystem for Linux (WSL) 2への変換 </title>
