@@ -17,7 +17,7 @@
       <pubDate>Tue, 02 Jun 2020 01:08:36 +0900</pubDate>
       
       <guid>https://sonohen.github.io/post/tmux/</guid>
-      <description> 今のところ使っているアプリケーションは以下の通り。  GNU Emacs tmux tig: gitのクライアント  dotfilesの管理も始めた。  </description>
+      <description> 今のところ使っているアプリケーションは以下の通り。  GNU Emacs tmux tig: gitのクライアント  dotfilesの管理も始めた。 Windows Terminalは，Alt+Enterでフルスクリーンになる。  上記の環境だと，もはやWindowsなのかLinuxなのか分からないですね。   </description>
     </item>
     
     <item>
