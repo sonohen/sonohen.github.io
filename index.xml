@@ -8,7 +8,7 @@
     <language>ja-jp</language>
     <lastBuildDate>Mon, 01 Jun 2020 13:49:16 +0900</lastBuildDate>
     
-	<atom:link href="https://sonohen.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://sonohen.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,7 @@
       <pubDate>Mon, 01 Jun 2020 13:49:16 +0900</pubDate>
       
       <guid>https://sonohen.github.io/post/org-babel/</guid>
-      <description> org-babelの便利さが異常  org-babelは実に便利な機能でございます。  </description>
+      <description>org-babelの便利さが異常  org-babelは実に便利な機能でございます。  </description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       
       <guid>https://sonohen.github.io/post/ouj_midterm_exam_result/</guid>
       <description>放送大学大学院の通信指導課題提出期間が5/29（金）までということだったので，オンラインで提出した。履修している科目は以下の通り。
- 人的資源管理（&amp;rsquo;18） 社会的協力論（&amp;rsquo;20）  結果は，どちらも満点。人的資源管理については，一部（というか半分）の回答は，テキストを見ながら実施したので当然といえば当然ではある。
+ 人的資源管理（&amp;lsquo;18） 社会的協力論（&amp;lsquo;20）  結果は，どちらも満点。人的資源管理については，一部（というか半分）の回答は，テキストを見ながら実施したので当然といえば当然ではある。
 社会的協力論は引き続き真面目に受講するとして，人的資源管理については理解が不十分な箇所（特に人的資源管理の歴史や，人事等級・考課制度とモチベーションの関連）があるので，今後，復習を実施していく必要があると認識。復習だからそんなに時間はかからないと思うが，最後にまとめてやろうとすると大変なので，通常の講義の予復習や研究課題レポートの執筆と並行して計画的に進めていくことにしたい。早速，org-modeで管理しているtodo管理表に，「人的資源管理の復習計画を立てること」というタスクを追加した。
 終わり。</description>
     </item>
@@ -51,10 +51,11 @@ PS C:\WINDOWS\system32&amp;gt; dism.exe /online /enable-feature /featurename:Vir
       <pubDate>Wed, 06 May 2020 20:36:53 +0900</pubDate>
       
       <guid>https://sonohen.github.io/post/2020-05-06_install-hugo/</guid>
-      <description>Hugoを導入する $ hugo new site shared/site $ cd site $ code config.toml baseURL = &amp;quot;http://sonohen.github.io/&amp;quot; languageCode = &amp;quot;ja-JP&amp;quot; title = &amp;quot;sonohen&#39;s tech log&amp;quot; $ hugo  ここの時点で，publicディレクトリーが作られていることを確認する。
+      <description>Hugoを導入する $ hugo new site shared/site $ cd site $ code config.toml baseURL = &amp;#34;http://sonohen.github.io/&amp;#34; languageCode = &amp;#34;ja-JP&amp;#34; title = &amp;#34;sonohen&amp;#39;s tech log&amp;#34; $ hugo ここの時点で，publicディレクトリーが作られていることを確認する。
 テーマの導入 Hugo Themeにすぐに使えるテーマが掲載されている。
 今回は，Hugo Theme Minosを利用する。
-$ cd themes/ $ git clone --depth 1 https://github.com/carsonip/hugo-theme-minos $ code ../../config.toml theme = &amp;quot;hugo-theme-minos&amp;quot; paginate = 10 [params] smartToc = true $ hugo  GitHub Pageの設定  blogレポジトリを作る  これはprivateレポジトリで良い  sonohen.github.ioレポジトリを作る  Gitの設定 public/は，サブモジュールとして管理する。レポジトリが別なため。</description>
+$ cd themes/ $ git clone --depth 1 https://github.com/carsonip/hugo-theme-minos $ code ../../config.toml theme = &amp;#34;hugo-theme-minos&amp;#34; paginate = 10 [params] smartToc = true $ hugo GitHub Pageの設定  blogレポジトリを作る  これはprivateレポジトリで良い   sonohen.github.ioレポジトリを作る  Gitの設定 public/は，サブモジュールとして管理する。レポジトリが別なため。
+git submodule add -b master git@github.</description>
     </item>
     
   </channel>
