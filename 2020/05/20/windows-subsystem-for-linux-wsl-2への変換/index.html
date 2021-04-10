@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Windows Subsystem for Linux (WSL) 2への変換 </title>
+  <link href="https://sonohen.github.io//css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://sonohen.github.io//css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(https://sonohen.github.io//images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="https://sonohen.github.io/"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://sonohen.github.io//categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://sonohen.github.io//tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">sonohen&#39;s tech log</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Just another tech blog.</h5>
+        </div>
+        <div class="row center">
+        
+        
+          <a href="https://github.com/sonohen"><img src="https://sonohen.github.io//images/github2-dreamstale35.png"></a>
+        
+        
+        
+        
+        
+          <a href="https://sonohen.github.io//index.xml"><img src="https://sonohen.github.io//images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="https://sonohen.github.io//images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Windows Subsystem for Linux (WSL) 2への変換 </h4>
+          <p>
+           
+          </p>
+          <p><h1 id="バージョンの確認">バージョンの確認</h1>
+<pre><code>PS C:\Users\sonohen&gt; wsl -l -v
+  NAME      STATE           VERSION
+* Debian    Stopped         1
+</code></pre>
+<h1 id="変換を試みる">変換を試みる</h1>
+<pre><code>PS C:\Users\sonohen&gt; wsl --set-version Debian 2
+変換中です。この処理には数分かかることがあります...
+WSL 2 を実行するには、カーネル コンポーネントの更新が必要です。詳細については https://aka.ms/wsl2kernel を参照してください
+</code></pre>
+<p>以下のURLにアクセスして，wsl-update_x64.msiをダウンロードする。
+<a href="https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel">https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel</a></p>
+<p>セットアップが終わったら，再度チャレンジする。</p>
+<pre><code>PS C:\Users\sonohen&gt; wsl --set-version Debian 2
+変換中です。この処理には数分かかることがあります...
+WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
+Windows の仮想マシン プラットフォーム機能を有効にして、BIOS で仮想化が有効になっていることを確認してください。
+詳細については、https://aka.ms/wsl2-install を参照してください
+</code></pre>
+<p>そもそもの手順を実施していなかったので実施する。</p>
+<h1 id="仮想バーチャルマシンサービスのインストール">仮想バーチャルマシンサービスのインストール</h1>
+<p>管理者としてPowerShellを実行する。</p>
+<pre><code>PS C:\WINDOWS\system32&gt; dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+展開イメージのサービスと管理ツール
+バージョン: 10.0.19041.1
+
+イメージのバージョン: 10.0.19041.264
+
+機能を有効にしています
+[==========================100.0%==========================]
+操作は正常に完了しました。
+</code></pre>
+<h1 id="wsl2を既定のバージョンとして設定する">WSL2を既定のバージョンとして設定する</h1>
+<pre><code>PS C:\WINDOWS\system32&gt; wsl --set-default-version 2
+WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
+</code></pre>
+<p>これで今後インストールされるWSLはバージョン2となる。</p>
+<h1 id="変換する">変換する</h1>
+<pre><code>PS C:\WINDOWS\system32&gt; wsl --set-version Debian 2
+PS C:\WINDOWS\system32&gt; wsl -l -v
+  NAME      STATE           VERSION
+* Debian    Stopped         2
+</code></pre>
+</p>
+          <p>20 May 2020
+            
+          </p>
+          
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    var disqus_shortname = 'xxxx';
+    
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://sonohen.github.io/2020/05/06/hugo%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://sonohen.github.io/2020/05/24/%E6%94%BE%E9%80%81%E5%A4%A7%E5%AD%A6%E5%A4%A7%E5%AD%A6%E9%99%A2%E3%81%AE%E9%80%9A%E4%BF%A1%E6%8C%87%E5%B0%8E%E8%AA%B2%E9%A1%8C%E6%8F%90%E5%87%BA%E7%B5%90%E6%9E%9C%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E4%BD%9C%E6%88%A6%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2020-2021 sonohen All Rights Reserved.
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://sonohen.github.io//js/materialize.min.js"></script>
+  <script src="https://sonohen.github.io//js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  </body>
+</html>
+

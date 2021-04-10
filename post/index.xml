@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on sonohen&#39;s tech log</title>
@@ -6,26 +6,23 @@
     <description>Recent content in Posts on sonohen&#39;s tech log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 01 Jun 2020 13:49:16 +0900</lastBuildDate>
-    
-        <atom:link href="https://sonohen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>© 2020-2021 sonohen All Rights Reserved.</copyright>
+    <lastBuildDate>Mon, 01 Jun 2020 13:49:16 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Org Babel</title>
-      <link>https://sonohen.github.io/post/org-babel/</link>
+      <link>https://sonohen.github.io/2020/06/01/org-babel/</link>
       <pubDate>Mon, 01 Jun 2020 13:49:16 +0900</pubDate>
       
-      <guid>https://sonohen.github.io/post/org-babel/</guid>
+      <guid>https://sonohen.github.io/2020/06/01/org-babel/</guid>
       <description>org-babelの便利さが異常  org-babelは実に便利な機能でございます。  </description>
     </item>
     
     <item>
       <title>放送大学大学院の通信指導課題提出結果と今後の作戦について</title>
-      <link>https://sonohen.github.io/post/ouj_midterm_exam_result/</link>
+      <link>https://sonohen.github.io/2020/05/24/%E6%94%BE%E9%80%81%E5%A4%A7%E5%AD%A6%E5%A4%A7%E5%AD%A6%E9%99%A2%E3%81%AE%E9%80%9A%E4%BF%A1%E6%8C%87%E5%B0%8E%E8%AA%B2%E9%A1%8C%E6%8F%90%E5%87%BA%E7%B5%90%E6%9E%9C%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E4%BD%9C%E6%88%A6%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</link>
       <pubDate>Sun, 24 May 2020 23:58:21 +0900</pubDate>
       
-      <guid>https://sonohen.github.io/post/ouj_midterm_exam_result/</guid>
+      <guid>https://sonohen.github.io/2020/05/24/%E6%94%BE%E9%80%81%E5%A4%A7%E5%AD%A6%E5%A4%A7%E5%AD%A6%E9%99%A2%E3%81%AE%E9%80%9A%E4%BF%A1%E6%8C%87%E5%B0%8E%E8%AA%B2%E9%A1%8C%E6%8F%90%E5%87%BA%E7%B5%90%E6%9E%9C%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E4%BD%9C%E6%88%A6%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</guid>
       <description>放送大学大学院の通信指導課題提出期間が5/29（金）までということだったので，オンラインで提出した。履修している科目は以下の通り。
  人的資源管理（&amp;lsquo;18） 社会的協力論（&amp;lsquo;20）  結果は，どちらも満点。人的資源管理については，一部（というか半分）の回答は，テキストを見ながら実施したので当然といえば当然ではある。
 社会的協力論は引き続き真面目に受講するとして，人的資源管理については理解が不十分な箇所（特に人的資源管理の歴史や，人事等級・考課制度とモチベーションの関連）があるので，今後，復習を実施していく必要があると認識。復習だからそんなに時間はかからないと思うが，最後にまとめてやろうとすると大変なので，通常の講義の予復習や研究課題レポートの執筆と並行して計画的に進めていくことにしたい。早速，org-modeで管理しているtodo管理表に，「人的資源管理の復習計画を立てること」というタスクを追加した。
@@ -34,10 +31,10 @@
     
     <item>
       <title>Windows Subsystem for Linux (WSL) 2への変換 </title>
-      <link>https://sonohen.github.io/post/wsl2/</link>
+      <link>https://sonohen.github.io/2020/05/20/windows-subsystem-for-linux-wsl-2%E3%81%B8%E3%81%AE%E5%A4%89%E6%8F%9B/</link>
       <pubDate>Wed, 20 May 2020 23:37:27 +0900</pubDate>
       
-      <guid>https://sonohen.github.io/post/wsl2/</guid>
+      <guid>https://sonohen.github.io/2020/05/20/windows-subsystem-for-linux-wsl-2%E3%81%B8%E3%81%AE%E5%A4%89%E6%8F%9B/</guid>
       <description>バージョンの確認 PS C:\Users\sonohen&amp;gt; wsl -l -v NAME STATE VERSION * Debian Stopped 1  変換を試みる PS C:\Users\sonohen&amp;gt; wsl --set-version Debian 2 変換中です。この処理には数分かかることがあります... WSL 2 を実行するには、カーネル コンポーネントの更新が必要です。詳細については https://aka.ms/wsl2kernel を参照してください  以下のURLにアクセスして，wsl-update_x64.msiをダウンロードする。 https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel
 セットアップが終わったら，再度チャレンジする。
 PS C:\Users\sonohen&amp;gt; wsl --set-version Debian 2 変換中です。この処理には数分かかることがあります... WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください Windows の仮想マシン プラットフォーム機能を有効にして、BIOS で仮想化が有効になっていることを確認してください。 詳細については、https://aka.ms/wsl2-install を参照してください  そもそもの手順を実施していなかったので実施する。
@@ -47,10 +44,10 @@ PS C:\WINDOWS\system32&amp;gt; dism.exe /online /enable-feature /featurename:Vir
     
     <item>
       <title>Hugoをインストールする</title>
-      <link>https://sonohen.github.io/post/2020-05-06_install-hugo/</link>
+      <link>https://sonohen.github.io/2020/05/06/hugo%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/</link>
       <pubDate>Wed, 06 May 2020 20:36:53 +0900</pubDate>
       
-      <guid>https://sonohen.github.io/post/2020-05-06_install-hugo/</guid>
+      <guid>https://sonohen.github.io/2020/05/06/hugo%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/</guid>
       <description>Hugoを導入する $ hugo new site shared/site $ cd site $ code config.toml baseURL = &amp;#34;http://sonohen.github.io/&amp;#34; languageCode = &amp;#34;ja-JP&amp;#34; title = &amp;#34;sonohen&amp;#39;s tech log&amp;#34; $ hugo ここの時点で，publicディレクトリーが作られていることを確認する。
 テーマの導入 Hugo Themeにすぐに使えるテーマが掲載されている。
 今回は，Hugo Theme Minosを利用する。
