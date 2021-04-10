@@ -25,7 +25,6 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel="alternate" type="application/rss+xml" title="sonohen&#39;s tech log" href='https://sonohen.github.io/index.xml' />
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet" />
 </head>
 <body>
 
@@ -65,38 +64,6 @@
         <div>
             
             <div class="posts">
-                
-                <h1 class="content-subhead">02 Jun 2020, 01:08</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://sonohen.github.io/post/tmux/" class="post-title">Tmux</a>
-
-                        <p class="post-meta">
-                            
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        <ul>
-<li>今のところ使っているアプリケーションは以下の通り。
-
-<ul>
-<li>GNU Emacs</li>
-<li>tmux</li>
-<li>tig: gitのクライアント</li>
-</ul></li>
-<li>dotfilesの管理も始めた。</li>
-<li>Windows Terminalは，Alt+Enterでフルスクリーンになる。
-
-<ul>
-<li>上記の環境だと，もはやWindowsなのかLinuxなのか分からないですね。</li>
-</ul></li>
-</ul>
-
-                    </div>
-                </section>
                 
                 <h1 class="content-subhead">01 Jun 2020, 13:49</h1>
                 <section class="post">
@@ -233,10 +200,17 @@ PS C:\WINDOWS\system32&gt; wsl -l -v
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="https://sonohen.github.io/post/install-hugo/" class="post-title">Hugoをインストールする</a>
+                        <a href="https://sonohen.github.io/post/2020-05-06_install-hugo/" class="post-title">Hugoをインストールする</a>
 
                         <p class="post-meta">
                             
+                                By <strong class="post-author">sonohen</strong>
+                            
+                            
+                                under 
+                                
+                                    <a class="post-category post-category-Tech" href='https://sonohen.github.io/categories/Tech'>Tech</a>
+                                
                             
                         </p>
                     </header>
@@ -244,9 +218,9 @@ PS C:\WINDOWS\system32&gt; wsl -l -v
                     <div class="post-description">
                         
 
-<h1 id="hugoを導入する">Hugoを導入する</h1>
+<h2 id="hugoを導入する">Hugoを導入する</h2>
 
-<pre><code>$ hugo new site shared/site
+<pre><code class="language-shell">$ hugo new site shared/site
 $ cd site
 $ code config.toml
 baseURL = &quot;http://sonohen.github.io/&quot;
@@ -257,13 +231,13 @@ $ hugo
 
 <p>ここの時点で，publicディレクトリーが作られていることを確認する。</p>
 
-<h1 id="テーマの導入">テーマの導入</h1>
+<h2 id="テーマの導入">テーマの導入</h2>
 
 <p><a href="https://themes.gohugo.io/">Hugo Theme</a>にすぐに使えるテーマが掲載されている。</p>
 
 <p>今回は，<a href="https://github.com/carsonip/hugo-theme-minos">Hugo Theme Minos</a>を利用する。</p>
 
-<pre><code>$ cd themes/
+<pre><code class="language-shell">$ cd themes/
 $ git clone --depth 1 https://github.com/carsonip/hugo-theme-minos
 $ code ../../config.toml
 theme = &quot;hugo-theme-minos&quot;
@@ -273,7 +247,7 @@ paginate = 10
 $ hugo
 </code></pre>
 
-<h1 id="github-pageの設定">GitHub Pageの設定</h1>
+<h2 id="github-pageの設定">GitHub Pageの設定</h2>
 
 <ol>
 <li>blogレポジトリを作る
@@ -284,16 +258,16 @@ $ hugo
 <li>sonohen.github.ioレポジトリを作る</li>
 </ol>
 
-<h1 id="gitの設定">Gitの設定</h1>
+<h2 id="gitの設定">Gitの設定</h2>
 
 <p>public/は，サブモジュールとして管理する。レポジトリが別なため。</p>
 
-<pre><code>$ git submodule add -b master git@github.com:sonohen/sonohen.github.io.git public
+<pre><code class="language-shell">git submodule add -b master git@github.com:sonohen/sonohen.github.io.git public
 </code></pre>
 
 <p>以下のエラーではまったでござる。</p>
 
-<pre><code>$ git submodule add -b master git@github.com:sonohen/sonohen.github.io.git public
+<pre><code class="language-shell">$ git submodule add -b master git@github.com:sonohen/sonohen.github.io.git public
 A git directory for 'public' is found locally with remote(s):
 origin        https://github.com/sonohen/sonohen.github.io.git
 If you want to reuse this local git directory instead of cloning again from
@@ -311,11 +285,11 @@ or you are unsure what this means choose another name with the '--name' option.
 
 <p>こうならないためには，以下のようにsubmoduleを削除しましょう。</p>
 
-<pre><code>$ git submodule deinit &lt;消したいsubmodueへのパス&gt;
-$ git rm &lt;消したいsubmoduleへのパス&gt;
+<pre><code class="language-shell">git submodule deinit &lt;消したいsubmodueへのパス&gt;
+git rm &lt;消したいsubmoduleへのパス&gt;
 </code></pre>
 
-<h1 id="visual-studio-codeを設定して記事を書く">Visual Studio Codeを設定して記事を書く</h1>
+<h2 id="visual-studio-codeを設定して記事を書く">Visual Studio Codeを設定して記事を書く</h2>
 
 <ol>
 <li>Hugofy（akmittal.hugofy）をインストールする。</li>
@@ -325,11 +299,13 @@ $ git rm &lt;消したいsubmoduleへのパス&gt;
 <li>siteとpublicをcommit&amp;pushする。</li>
 </ol>
 
-<h1 id="参考">参考</h1>
+<h2 id="参考">参考</h2>
 
 <ul>
 <li><a href="http://to-developer.com/blog/?p=1970">[git]git submodule addでエラー「A git directory for ‘[指定モジュール]‘ is found locally with remote(s):」</a></li>
 </ul>
+
+<p>これはテストダヨーン</p>
 
                     </div>
                 </section>

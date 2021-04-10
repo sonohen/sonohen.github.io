@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sonohen&#39;s tech log &middot; sonohen&#39;s tech log</title>
+    <title>Tech &middot; sonohen&#39;s tech log</title>
 
     <meta name="description" content="Just an another blog">
 
     <meta name="generator" content="Hugo 0.54.0" />
     <meta name="twitter:card" content="summary">
     
-    <meta name="twitter:title" content="sonohen&#39;s tech log &middot; sonohen&#39;s tech log">
+    <meta name="twitter:title" content="Tech &middot; sonohen&#39;s tech log">
     <meta name="twitter:description" content="Just an another blog">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="sonohen&#39;s tech log &middot; sonohen&#39;s tech log">
+    <meta property="og:title" content="Tech &middot; sonohen&#39;s tech log">
     <meta property="og:description" content="Just an another blog">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
@@ -65,137 +65,6 @@
             
             <div class="posts">
                 
-                <h1 class="content-subhead">01 Jun 2020, 13:49</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://sonohen.github.io/post/org-babel/" class="post-title">Org Babel</a>
-
-                        <p class="post-meta">
-                            
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        
-
-<h1 id="org-babelの便利さが異常">org-babelの便利さが異常</h1>
-
-<ul>
-<li>org-babelは実に便利な機能でございます。</li>
-</ul>
-
-                    </div>
-                </section>
-                
-                <h1 class="content-subhead">24 May 2020, 23:58</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://sonohen.github.io/post/ouj_midterm_exam_result/" class="post-title">放送大学大学院の通信指導課題提出結果と今後の作戦について</a>
-
-                        <p class="post-meta">
-                            
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        <p>放送大学大学院の通信指導課題提出期間が5/29（金）までということだったので，オンラインで提出した。履修している科目は以下の通り。</p>
-
-<ol>
-<li>人的資源管理（&rsquo;18）</li>
-<li>社会的協力論（&rsquo;20）</li>
-</ol>
-
-<p>結果は，どちらも満点。人的資源管理については，一部（というか半分）の回答は，テキストを見ながら実施したので当然といえば当然ではある。</p>
-
-<p>社会的協力論は引き続き真面目に受講するとして，人的資源管理については理解が不十分な箇所（特に人的資源管理の歴史や，人事等級・考課制度とモチベーションの関連）があるので，今後，復習を実施していく必要があると認識。復習だからそんなに時間はかからないと思うが，最後にまとめてやろうとすると大変なので，通常の講義の予復習や研究課題レポートの執筆と並行して計画的に進めていくことにしたい。早速，org-modeで管理しているtodo管理表に，「人的資源管理の復習計画を立てること」というタスクを追加した。</p>
-
-<p>終わり。</p>
-
-                    </div>
-                </section>
-                
-                <h1 class="content-subhead">20 May 2020, 23:37</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://sonohen.github.io/post/wsl2/" class="post-title">Windows Subsystem for Linux (WSL) 2への変換 </a>
-
-                        <p class="post-meta">
-                            
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        
-
-<h1 id="バージョンの確認">バージョンの確認</h1>
-
-<pre><code>PS C:\Users\sonohen&gt; wsl -l -v
-  NAME      STATE           VERSION
-* Debian    Stopped         1
-</code></pre>
-
-<h1 id="変換を試みる">変換を試みる</h1>
-
-<pre><code>PS C:\Users\sonohen&gt; wsl --set-version Debian 2
-変換中です。この処理には数分かかることがあります...
-WSL 2 を実行するには、カーネル コンポーネントの更新が必要です。詳細については https://aka.ms/wsl2kernel を参照してください
-</code></pre>
-
-<p>以下のURLにアクセスして，wsl-update_x64.msiをダウンロードする。
-<a href="https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel">https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel</a></p>
-
-<p>セットアップが終わったら，再度チャレンジする。</p>
-
-<pre><code>PS C:\Users\sonohen&gt; wsl --set-version Debian 2
-変換中です。この処理には数分かかることがあります...
-WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
-Windows の仮想マシン プラットフォーム機能を有効にして、BIOS で仮想化が有効になっていることを確認してください。
-詳細については、https://aka.ms/wsl2-install を参照してください
-</code></pre>
-
-<p>そもそもの手順を実施していなかったので実施する。</p>
-
-<h1 id="仮想バーチャルマシンサービスのインストール">仮想バーチャルマシンサービスのインストール</h1>
-
-<p>管理者としてPowerShellを実行する。</p>
-
-<pre><code>PS C:\WINDOWS\system32&gt; dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-
-展開イメージのサービスと管理ツール
-バージョン: 10.0.19041.1
-
-イメージのバージョン: 10.0.19041.264
-
-機能を有効にしています
-[==========================100.0%==========================]
-操作は正常に完了しました。
-</code></pre>
-
-<h1 id="wsl2を既定のバージョンとして設定する">WSL2を既定のバージョンとして設定する</h1>
-
-<pre><code>PS C:\WINDOWS\system32&gt; wsl --set-default-version 2
-WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
-</code></pre>
-
-<p>これで今後インストールされるWSLはバージョン2となる。</p>
-
-<h1 id="変換する">変換する</h1>
-
-<pre><code>PS C:\WINDOWS\system32&gt; wsl --set-version Debian 2
-PS C:\WINDOWS\system32&gt; wsl -l -v
-  NAME      STATE           VERSION
-* Debian    Stopped         2
-</code></pre>
-
-                    </div>
-                </section>
-                
                 <h1 class="content-subhead">06 May 2020, 20:36</h1>
                 <section class="post">
                     <header class="post-header">
@@ -208,7 +77,9 @@ PS C:\WINDOWS\system32&gt; wsl -l -v
                             
                             
                                 under 
-                                <a class="post-category post-category-Tech" href='https://sonohen.github.io/categories/Tech'>Tech</a>
+                                
+                                    <a class="post-category post-category-Tech" href='https://sonohen.github.io/categories/Tech'>Tech</a>
+                                
                             
                         </p>
                     </header>
@@ -323,7 +194,6 @@ git rm &lt;消したいsubmoduleへのパス&gt;
         </div>
     </div>
 </div>
-
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
