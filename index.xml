@@ -56,10 +56,10 @@ PS C:\WINDOWS\system32&amp;gt; dism.exe /online /enable-feature /featurename:Vir
     
     <item>
       <title>Hugoをインストールする</title>
-      <link>https://sonohen.github.io/post/install-hugo/</link>
+      <link>https://sonohen.github.io/post/2020-05-06_install-hugo/</link>
       <pubDate>Wed, 06 May 2020 20:36:53 +0900</pubDate>
       
-      <guid>https://sonohen.github.io/post/install-hugo/</guid>
+      <guid>https://sonohen.github.io/post/2020-05-06_install-hugo/</guid>
       <description>Hugoを導入する $ hugo new site shared/site $ cd site $ code config.toml baseURL = &amp;quot;http://sonohen.github.io/&amp;quot; languageCode = &amp;quot;ja-JP&amp;quot; title = &amp;quot;sonohen&#39;s tech log&amp;quot; $ hugo  ここの時点で，publicディレクトリーが作られていることを確認する。
 テーマの導入 Hugo Themeにすぐに使えるテーマが掲載されている。
 今回は，Hugo Theme Minosを利用する。

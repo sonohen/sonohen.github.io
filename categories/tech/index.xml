@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on sonohen&#39;s tech log</title>
+    <link>https://sonohen.github.io/categories/tech/</link>
+    <description>Recent content in Tech on sonohen&#39;s tech log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 06 May 2020 20:36:53 +0900</lastBuildDate>
+    
+	<atom:link href="https://sonohen.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugoをインストールする</title>
+      <link>https://sonohen.github.io/post/2020-05-06_install-hugo/</link>
+      <pubDate>Wed, 06 May 2020 20:36:53 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/post/2020-05-06_install-hugo/</guid>
+      <description>Hugoを導入する $ hugo new site shared/site $ cd site $ code config.toml baseURL = &amp;quot;http://sonohen.github.io/&amp;quot; languageCode = &amp;quot;ja-JP&amp;quot; title = &amp;quot;sonohen&#39;s tech log&amp;quot; $ hugo  ここの時点で，publicディレクトリーが作られていることを確認する。
+テーマの導入 Hugo Themeにすぐに使えるテーマが掲載されている。
+今回は，Hugo Theme Minosを利用する。
+$ cd themes/ $ git clone --depth 1 https://github.com/carsonip/hugo-theme-minos $ code ../../config.toml theme = &amp;quot;hugo-theme-minos&amp;quot; paginate = 10 [params] smartToc = true $ hugo  GitHub Pageの設定  blogレポジトリを作る  これはprivateレポジトリで良い  sonohen.github.ioレポジトリを作る  Gitの設定 public/は，サブモジュールとして管理する。レポジトリが別なため。</description>
+    </item>
+    
+  </channel>
+</rss>

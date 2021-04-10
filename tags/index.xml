@@ -6,9 +6,28 @@
     <description>Recent content in Tags on sonohen&#39;s tech log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
+    <lastBuildDate>Wed, 06 May 2020 20:36:53 +0900</lastBuildDate>
     
 	<atom:link href="https://sonohen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://sonohen.github.io/tags/hugo/</link>
+      <pubDate>Wed, 06 May 2020 20:36:53 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Installlog</title>
+      <link>https://sonohen.github.io/tags/installlog/</link>
+      <pubDate>Wed, 06 May 2020 20:36:53 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/tags/installlog/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
