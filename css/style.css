@@ -46,19 +46,3 @@ p {
 footer.page-footer {
   margin: 0;
 }
-
-h2 {
-  font-size: 24px;
-}
-
-html {
-  font-family: 'Noto Sans JP', sans-serif;
-}
-
-li {
-  padding-bottom: 5px;
-}
-
-pre {
-  padding: 10px 15px;
-}
