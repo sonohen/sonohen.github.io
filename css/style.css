@@ -6,6 +6,7 @@ nav .brand-logo {
 }
 p {
   line-height: 2rem;
+  font-size: 1em;
 }
 
 .button-collapse {
@@ -45,4 +46,32 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+
+html {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+li {
+  padding-bottom: 5px;
+}
+
+code, pre {
+  font-family: 'Fira Code', monospace;
+}
+
+p {
+  font-size: 1em;
+}
+
+td, th {
+  padding:0;
+}
+
+td.lntd {
+  background-color: #f0f0f0;
 }
