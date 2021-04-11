@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>放送大学 on sonohen&#39;s tech log</title>
+    <link>https://sonohen.github.io/categories/%E6%94%BE%E9%80%81%E5%A4%A7%E5%AD%A6/</link>
+    <description>Recent content in 放送大学 on sonohen&#39;s tech log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© 2020-2021 sonohen All Rights Reserved.</copyright>
+    <lastBuildDate>Sun, 24 May 2020 23:58:21 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/categories/%E6%94%BE%E9%80%81%E5%A4%A7%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>放送大学大学院の通信指導課題提出結果と今後の作戦について</title>
+      <link>https://sonohen.github.io/2020/05/24/2020-05-24_ouj_midterm_exam_result/</link>
+      <pubDate>Sun, 24 May 2020 23:58:21 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/2020/05/24/2020-05-24_ouj_midterm_exam_result/</guid>
+      <description>放送大学大学院の通信指導課題提出期間が5/29（金）までということだったので，オンラインで提出した。履修している科目は以下の通り。
+ 人的資源管理（&amp;lsquo;18） 社会的協力論（&amp;lsquo;20）  結果は，どちらも満点。人的資源管理については，一部（というか半分）の回答は，テキストを見ながら実施したので当然といえば当然ではある。
+社会的協力論は引き続き真面目に受講するとして，人的資源管理については理解が不十分な箇所（特に人的資源管理の歴史や，人事等級・考課制度とモチベーションの関連）があるので，今後，復習を実施していく必要があると認識。復習だからそんなに時間はかからないと思うが，最後にまとめてやろうとすると大変なので，通常の講義の予復習や研究課題レポートの執筆と並行して計画的に進めていくことにしたい。早速，org-modeで管理しているtodo管理表に，「人的資源管理の復習計画を立てること」というタスクを追加した。
+終わり。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>org-babel on sonohen&#39;s tech log</title>
+    <link>https://sonohen.github.io/tags/org-babel/</link>
+    <description>Recent content in org-babel on sonohen&#39;s tech log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© 2020-2021 sonohen All Rights Reserved.</copyright>
+    <lastBuildDate>Mon, 01 Jun 2020 13:49:16 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/tags/org-babel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Org Babel</title>
+      <link>https://sonohen.github.io/2020/06/01/2020-06-01_org-babel/</link>
+      <pubDate>Mon, 01 Jun 2020 13:49:16 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/2020/06/01/2020-06-01_org-babel/</guid>
+      <description>org-babelの便利さが異常  org-babelは実に便利な機能でございます。  </description>
+    </item>
+    
+  </channel>
+</rss>

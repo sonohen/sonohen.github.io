@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on sonohen&#39;s tech log</title>
+    <link>https://sonohen.github.io/tags/emacs/</link>
+    <description>Recent content in Emacs on sonohen&#39;s tech log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© 2020-2021 sonohen All Rights Reserved.</copyright>
+    <lastBuildDate>Tue, 02 Jun 2020 01:08:36 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL2で使っているソフトウェア</title>
+      <link>https://sonohen.github.io/2020/06/02/2020-06-02_tmux_on_windows/</link>
+      <pubDate>Tue, 02 Jun 2020 01:08:36 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/2020/06/02/2020-06-02_tmux_on_windows/</guid>
+      <description> 今のところ使っているアプリケーションは以下の通り。  GNU Emacs tmux tig: gitのクライアント   dotfilesの管理も始めた。 Windows Terminalは，Alt+Enterでフルスクリーンになる。  上記の環境だと，もはやWindowsなのかLinuxなのか分からないですね。    </description>
+    </item>
+    
+    <item>
+      <title>Org Babel</title>
+      <link>https://sonohen.github.io/2020/06/01/2020-06-01_org-babel/</link>
+      <pubDate>Mon, 01 Jun 2020 13:49:16 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/2020/06/01/2020-06-01_org-babel/</guid>
+      <description>org-babelの便利さが異常  org-babelは実に便利な機能でございます。  </description>
+    </item>
+    
+  </channel>
+</rss>
