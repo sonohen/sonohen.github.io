@@ -7,7 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© 2020-2021 sonohen All Rights Reserved.</copyright>
-    <lastBuildDate>Wed, 06 May 2020 20:36:53 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Jun 2020 01:08:36 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL2で使っているソフトウェア</title>
+      <link>https://sonohen.github.io/2020/06/02/2020-06-02_tmux_on_windows/</link>
+      <pubDate>Tue, 02 Jun 2020 01:08:36 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/2020/06/02/2020-06-02_tmux_on_windows/</guid>
+      <description> 今のところ使っているアプリケーションは以下の通り。  GNU Emacs tmux tig: gitのクライアント   dotfilesの管理も始めた。 Windows Terminalは，Alt+Enterでフルスクリーンになる。  上記の環境だと，もはやWindowsなのかLinuxなのか分からないですね。    </description>
+    </item>
+    
+    <item>
+      <title>Org Babel</title>
+      <link>https://sonohen.github.io/2020/06/01/2020-06-01_org-babel/</link>
+      <pubDate>Mon, 01 Jun 2020 13:49:16 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/2020/06/01/2020-06-01_org-babel/</guid>
+      <description>org-babelの便利さが異常  org-babelは実に便利な機能でございます。  </description>
+    </item>
+    
+    <item>
+      <title>Windows Subsystem for Linux (WSL) 2への変換</title>
+      <link>https://sonohen.github.io/2020/05/20/wsl2/</link>
+      <pubDate>Wed, 20 May 2020 23:37:27 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/2020/05/20/wsl2/</guid>
+      <description>バージョンの確認 1 2 3  PS C:\Users\sonohen&amp;gt; wsl -l -v NAME STATE VERSION * Debian Stopped 1   変換を試みる 1 2 3  PS C:\Users\sonohen&amp;gt; wsl --set-version Debian 2 変換中です。この処理には数分かかることがあります... WSL 2 を実行するには、カーネル コンポーネントの更新が必要です。詳細については https://aka.ms/wsl2kernel を参照してください   以下のURLにアクセスして，wsl-update_x64.msiをダウンロードする。
+手順 4 - Linux カーネル更新プログラム パッケージをダウンロードする
+セットアップが終わったら，再度チャレンジする。
+1 2 3 4 5  PS C:\Users\sonohen&amp;gt; wsl --set-version Debian 2 変換中です。この処理には数分かかることがあります... WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください Windows の仮想マシン プラットフォーム機能を有効にして、BIOS で仮想化が有効になっていることを確認してください。 詳細については、https://aka.ms/wsl2-install を参照してください   そもそもの手順を実施していなかったので実施する。</description>
+    </item>
+    
     <item>
       <title>Hugoをインストールする</title>
       <link>https://sonohen.github.io/2020/05/06/2020-05-06_install-hugo/</link>

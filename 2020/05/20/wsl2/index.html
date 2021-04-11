@@ -2,11 +2,11 @@
 <html lang="ja-jp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <meta name="keywords" content="" />
+  <meta name="description" content="WSL2が利用できるようになりました。WSL1からWSL2に移行したので、その時の手順を記録しておきます。" />
+  <meta name="author" content="sonohen" />
+  <meta name="keywords" content="WSL2, WSL1" />
   <meta name="robots" content="index" />
-  <title>Windows Subsystem for Linux (WSL) 2への変換 </title>
+  <title>Windows Subsystem for Linux (WSL) 2への変換</title>
   <link href="https://sonohen.github.io//css/materialize.min.css" type="text/css" rel="stylesheet" media="screen"/>
   <link href="https://sonohen.github.io//css/style.css" type="text/css" rel="stylesheet" media="screen"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
@@ -61,56 +61,123 @@
     <div class="row">
       <div class="col s12">
         <div class="card-panel">
-          <h2>Windows Subsystem for Linux (WSL) 2への変換 </h2>
+          <h2>Windows Subsystem for Linux (WSL) 2への変換</h2>
           <p>
+          
+            
+              <a href="https://sonohen.github.io//categories/tech/">Tech</a>
+            
            
           </p>
-          <h1 id="バージョンの確認">バージョンの確認</h1>
-<pre><code>PS C:\Users\sonohen&gt; wsl -l -v
+          <h3 id="バージョンの確認">バージョンの確認</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\Users\sonohen&gt; wsl -l -v
   NAME      STATE           VERSION
 * Debian    Stopped         1
-</code></pre>
-<h1 id="変換を試みる">変換を試みる</h1>
-<pre><code>PS C:\Users\sonohen&gt; wsl --set-version Debian 2
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="変換を試みる">変換を試みる</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\Users\sonohen&gt; wsl --set-version Debian 2
 変換中です。この処理には数分かかることがあります...
 WSL 2 を実行するには、カーネル コンポーネントの更新が必要です。詳細については https://aka.ms/wsl2kernel を参照してください
-</code></pre>
-<p>以下のURLにアクセスして，wsl-update_x64.msiをダウンロードする。
-<a href="https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel">https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel</a></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>以下のURLにアクセスして，wsl-update_x64.msiをダウンロードする。</p>
+<p><a href="https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel">手順 4 - Linux カーネル更新プログラム パッケージをダウンロードする</a></p>
 <p>セットアップが終わったら，再度チャレンジする。</p>
-<pre><code>PS C:\Users\sonohen&gt; wsl --set-version Debian 2
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\Users\sonohen&gt; wsl --set-version Debian 2
 変換中です。この処理には数分かかることがあります...
 WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
 Windows の仮想マシン プラットフォーム機能を有効にして、BIOS で仮想化が有効になっていることを確認してください。
 詳細については、https://aka.ms/wsl2-install を参照してください
-</code></pre>
-<p>そもそもの手順を実施していなかったので実施する。</p>
-<h1 id="仮想バーチャルマシンサービスのインストール">仮想バーチャルマシンサービスのインストール</h1>
+</code></pre></td></tr></table>
+</div>
+</div><p>そもそもの手順を実施していなかったので実施する。</p>
+<h3 id="仮想バーチャルマシンサービスのインストール">仮想バーチャルマシンサービスのインストール</h3>
 <p>管理者としてPowerShellを実行する。</p>
-<pre><code>PS C:\WINDOWS\system32&gt; dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span> <span class="n">dism</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="err">:</span><span class="n">VirtualMachinePlatform</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span>
 
-展開イメージのサービスと管理ツール
-バージョン: 10.0.19041.1
+<span class="n">展開イメージのサービスと管理ツール</span>
+<span class="n">バージョン</span><span class="err">:</span> <span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">19041</span><span class="p">.</span><span class="n">1</span>
 
-イメージのバージョン: 10.0.19041.264
+<span class="n">イメージのバージョン</span><span class="err">:</span> <span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">19041</span><span class="p">.</span><span class="n">264</span>
 
-機能を有効にしています
-[==========================100.0%==========================]
-操作は正常に完了しました。
-</code></pre>
-<h1 id="wsl2を既定のバージョンとして設定する">WSL2を既定のバージョンとして設定する</h1>
-<pre><code>PS C:\WINDOWS\system32&gt; wsl --set-default-version 2
+<span class="n">機能を有効にしています</span>
+<span class="p">[==========================</span><span class="n">100</span><span class="p">.</span><span class="n">0</span><span class="p">%==========================]</span>
+<span class="n">操作は正常に完了しました</span><span class="err">。</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="wsl2を既定のバージョンとして設定する">WSL2を既定のバージョンとして設定する</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\WINDOWS\system32&gt; wsl --set-default-version 2
 WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
-</code></pre>
-<p>これで今後インストールされるWSLはバージョン2となる。</p>
-<h1 id="変換する">変換する</h1>
-<pre><code>PS C:\WINDOWS\system32&gt; wsl --set-version Debian 2
+</code></pre></td></tr></table>
+</div>
+</div><p>これで今後インストールされるWSLはバージョン2となる。</p>
+<h3 id="変換する">変換する</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\WINDOWS\system32&gt; wsl --set-version Debian 2
 PS C:\WINDOWS\system32&gt; wsl -l -v
-  NAME      STATE           VERSION
+	NAME      STATE           VERSION
 * Debian    Stopped         2
-</code></pre>
-
+</code></pre></td></tr></table>
+</div>
+</div>
           <p>20 May 2020
+            
+              
+                <a href="https://sonohen.github.io//tags/wsl2/">#WSL2</a>
+              
+                <a href="https://sonohen.github.io//tags/wsl1/">#WSL1</a>
+              
             
           </p>
           
@@ -141,7 +208,7 @@ PS C:\WINDOWS\system32&gt; wsl -l -v
       <div class="col s6 m10 center">&nbsp;</div>
       <div class="col s3 m1">
       
-        <a class="btn-floating btn-large waves-effect waves-light" href="https://sonohen.github.io/2020/05/24/ouj_midterm_exam_result/"><i class="mdi-navigation-arrow-forward"></i></a>
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://sonohen.github.io/2020/05/24/2020-05-24_ouj_midterm_exam_result/"><i class="mdi-navigation-arrow-forward"></i></a>
       
       </div>
     </div>
