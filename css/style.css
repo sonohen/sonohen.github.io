@@ -52,8 +52,24 @@ html {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 28px;
+}
+
 h2 {
   font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4, h5, h6 {
+  font-size: 18px;
 }
 
 li {
