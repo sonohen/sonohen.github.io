@@ -2,11 +2,11 @@
 <html lang="ja-jp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="description" content="Hugoをインストールした際の記録をまとめました。" />
+  <meta name="description" content="WSL2が利用できるようになりました。WSL1からWSL2に移行したので、その時の手順を記録しておきます。" />
   <meta name="author" content="sonohen" />
-  <meta name="keywords" content="Install, Hugo" />
+  <meta name="keywords" content="WSL2, WSL1" />
   <meta name="robots" content="index" />
-  <title>Hugoをインストールする</title>
+  <title>Windows Subsystem for Linux (WSL) 2への変換</title>
   <link href="https://sonohen.github.io//css/materialize.min.css" type="text/css" rel="stylesheet" media="screen"/>
   <link href="https://sonohen.github.io//css/style.css" type="text/css" rel="stylesheet" media="screen"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
@@ -61,7 +61,7 @@
     <div class="row">
       <div class="col s12">
         <div class="card-panel">
-          <h2>Hugoをインストールする</h2>
+          <h2>Windows Subsystem for Linux (WSL) 2への変換</h2>
           <p>
           
             
@@ -69,7 +69,35 @@
             
            
           </p>
-          <h3 id="hugoを導入する">Hugoを導入する</h3>
+          <h3 id="バージョンの確認">バージョンの確認</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\Users\sonohen&gt; wsl -l -v
+  NAME      STATE           VERSION
+* Debian    Stopped         1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="変換を試みる">変換を試みる</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\Users\sonohen&gt; wsl --set-version Debian 2
+変換中です。この処理には数分かかることがあります...
+WSL 2 を実行するには、カーネル コンポーネントの更新が必要です。詳細については https://aka.ms/wsl2kernel を参照してください
+</code></pre></td></tr></table>
+</div>
+</div><p>以下のURLにアクセスして，wsl-update_x64.msiをダウンロードする。</p>
+<p><a href="https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel">手順 4 - Linux カーネル更新プログラム パッケージをダウンロードする</a></p>
+<p>セットアップが終わったら，再度チャレンジする。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -77,120 +105,78 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ hugo new site shared/site
-$ <span class="nb">cd</span> site
-$ code config.toml
-<span class="nv">baseURL</span> <span class="o">=</span> <span class="s2">&#34;http://sonohen.github.io/&#34;</span>
-<span class="nv">languageCode</span> <span class="o">=</span> <span class="s2">&#34;ja-JP&#34;</span>
-<span class="nv">title</span> <span class="o">=</span> <span class="s2">&#34;sonohen&#39;s tech log&#34;</span>
-$ hugo</code></pre></td></tr></table>
-</div>
-</div>
-<p>ここの時点で，publicディレクトリーが作られていることを確認する。</p>
-<h3 id="テーマの導入">テーマの導入</h3>
-<p><a href="https://themes.gohugo.io/">Hugo Theme</a>にすぐに使えるテーマが掲載されている。</p>
-<p>今回は，<a href="https://github.com/carsonip/hugo-theme-minos">Hugo Theme Minos</a>を利用する。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">cd</span> themes/
-$ git clone --depth <span class="m">1</span> https://github.com/carsonip/hugo-theme-minos
-$ code ../../config.toml
-<span class="nv">theme</span> <span class="o">=</span> <span class="s2">&#34;hugo-theme-minos&#34;</span>
-<span class="nv">paginate</span> <span class="o">=</span> <span class="m">10</span>
-<span class="o">[</span>params<span class="o">]</span>
-    <span class="nv">smartToc</span> <span class="o">=</span> <span class="nb">true</span>
-$ hugo
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\Users\sonohen&gt; wsl --set-version Debian 2
+変換中です。この処理には数分かかることがあります...
+WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
+Windows の仮想マシン プラットフォーム機能を有効にして、BIOS で仮想化が有効になっていることを確認してください。
+詳細については、https://aka.ms/wsl2-install を参照してください
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="github-pageの設定">GitHub Pageの設定</h3>
-<ol>
-<li>blogレポジトリを作る
-<ol>
-<li>これはprivateレポジトリで良い</li>
-</ol>
-</li>
-<li>sonohen.github.ioレポジトリを作る</li>
-</ol>
-<h3 id="gitの設定">Gitの設定</h3>
-<p>public/は，サブモジュールとして管理する。レポジトリが別なため。</p>
+</div><p>そもそもの手順を実施していなかったので実施する。</p>
+<h3 id="仮想バーチャルマシンサービスのインストール">仮想バーチャルマシンサービスのインストール</h3>
+<p>管理者としてPowerShellを実行する。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">git submodule add -b master git@github.com:sonohen/sonohen.github.io.git public
-</code></pre></td></tr></table>
-</div>
-</div><p>以下のエラーではまったでござる。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git submodule add -b master git@github.com:sonohen/sonohen.github.io.git public
-A git directory <span class="k">for</span> <span class="s1">&#39;public&#39;</span> is found locally with remote<span class="o">(</span>s<span class="o">)</span>:
-origin        https://github.com/sonohen/sonohen.github.io.git
-If you want to reuse this <span class="nb">local</span> git directory instead of cloning again from
-git@github.com:sonohen/sonohen.github.io.git
-use the <span class="s1">&#39;--force&#39;</span> option. If the <span class="nb">local</span> git directory is not the correct repo
-or you are unsure what this means choose another name with the <span class="s1">&#39;--name&#39;</span> option.
-</code></pre></td></tr></table>
-</div>
-</div><p>この場合，古いsubmodule情報が&quot;.git/&ldquo;以下に残っていることが原因なので，以下のディレクトリとファイルの中身を確認して，古いファイルを削除してやる必要がある。</p>
-<ol>
-<li>.git/modules/</li>
-<li>.git/config</li>
-</ol>
-<p>こうならないためには，以下のようにsubmoduleを削除しましょう。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">git submodule deinit &lt;消したいsubmodueへのパス&gt;
-git rm &lt;消したいsubmoduleへのパス&gt;
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="visual-studio-codeを設定して記事を書く">Visual Studio Codeを設定して記事を書く</h3>
-<ol>
-<li>Hugofy（akmittal.hugofy）をインストールする。</li>
-<li>Hugofy: New Postを選択する。</li>
-<li>記事を書く。</li>
-<li>Hugofy: Buildを選択する。</li>
-<li>siteとpublicをcommit&amp;pushする。</li>
-</ol>
-<h3 id="参考">参考</h3>
-<ul>
-<li><a href="http://to-developer.com/blog/?p=1970">[git]git submodule addでエラー「A git directory for ‘[指定モジュール]‘ is found locally with remote(s):」</a></li>
-</ul>
+<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span> <span class="n">dism</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="err">:</span><span class="n">VirtualMachinePlatform</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span>
 
-          <p>6 May 2020
+<span class="n">展開イメージのサービスと管理ツール</span>
+<span class="n">バージョン</span><span class="err">:</span> <span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">19041</span><span class="p">.</span><span class="n">1</span>
+
+<span class="n">イメージのバージョン</span><span class="err">:</span> <span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">19041</span><span class="p">.</span><span class="n">264</span>
+
+<span class="n">機能を有効にしています</span>
+<span class="p">[==========================</span><span class="n">100</span><span class="p">.</span><span class="n">0</span><span class="p">%==========================]</span>
+<span class="n">操作は正常に完了しました</span><span class="err">。</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="wsl2を既定のバージョンとして設定する">WSL2を既定のバージョンとして設定する</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\WINDOWS\system32&gt; wsl --set-default-version 2
+WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
+</code></pre></td></tr></table>
+</div>
+</div><p>これで今後インストールされるWSLはバージョン2となる。</p>
+<h3 id="変換する">変換する</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\WINDOWS\system32&gt; wsl --set-version Debian 2
+PS C:\WINDOWS\system32&gt; wsl -l -v
+	NAME      STATE           VERSION
+* Debian    Stopped         2
+</code></pre></td></tr></table>
+</div>
+</div>
+          <p>20 May 2020
             
               
-                <a href="https://sonohen.github.io//tags/hugo/">#Hugo</a>
+                <a href="https://sonohen.github.io//tags/wsl2/">#WSL2</a>
               
-                <a href="https://sonohen.github.io//tags/installlog/">#InstallLog</a>
+                <a href="https://sonohen.github.io//tags/wsl1/">#WSL1</a>
               
             
           </p>
@@ -216,13 +202,13 @@ git rm &lt;消したいsubmoduleへのパス&gt;
     <div class="row">
       <div class="col s3 m1">
       
-        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://sonohen.github.io/2020/05/06/2020-05-06_install-hugo/"><i class="mdi-navigation-arrow-back"></i></a>
       
       </div>
       <div class="col s6 m10 center">&nbsp;</div>
       <div class="col s3 m1">
       
-        <a class="btn-floating btn-large waves-effect waves-light" href="https://sonohen.github.io/2020/05/20/2020-05-20_wsl2/"><i class="mdi-navigation-arrow-forward"></i></a>
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://sonohen.github.io/2020/05/24/2020-05-24_ouj_midterm_exam_result/"><i class="mdi-navigation-arrow-forward"></i></a>
       
       </div>
     </div>
