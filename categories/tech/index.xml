@@ -10,10 +10,10 @@
     <lastBuildDate>Wed, 06 May 2020 20:36:53 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugoをインストールする</title>
-      <link>https://sonohen.github.io/2020/05/06/hugo%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/</link>
+      <link>https://sonohen.github.io/2020/05/06/2020-05-06_install-hugo/</link>
       <pubDate>Wed, 06 May 2020 20:36:53 +0900</pubDate>
       
-      <guid>https://sonohen.github.io/2020/05/06/hugo%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/</guid>
+      <guid>https://sonohen.github.io/2020/05/06/2020-05-06_install-hugo/</guid>
       <description>Hugoを導入する 1 2 3 4 5 6 7  $ hugo new site shared/site $ cd site $ code config.toml baseURL = &amp;#34;http://sonohen.github.io/&amp;#34; languageCode = &amp;#34;ja-JP&amp;#34; title = &amp;#34;sonohen&amp;#39;s tech log&amp;#34; $ hugo   ここの時点で，publicディレクトリーが作られていることを確認する。
 テーマの導入 Hugo Themeにすぐに使えるテーマが掲載されている。
 今回は，Hugo Theme Minosを利用する。
