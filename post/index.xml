@@ -6,8 +6,19 @@
     <description>Recent content in Posts on sonohen&#39;s tech log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <copyright>© 2020-2021 sonohen All Rights Reserved. </copyright>
-    <lastBuildDate>Tue, 02 Jun 2020 01:08:36 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2020-2021 sonohen All Rights Reserved.</copyright>
+    <lastBuildDate>Mon, 12 Apr 2021 19:29:25 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VS CodeからDebian on WSL2.0にアクセスできずに焦った話</title>
+      <link>https://sonohen.github.io/2021/04/12/2021-04-12_wsl_cannot_be_started/</link>
+      <pubDate>Mon, 12 Apr 2021 19:29:25 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/2021/04/12/2021-04-12_wsl_cannot_be_started/</guid>
+      <description>本日、VS Codeを立ち上げると、いつもならすぐ繋がるDebian on WSL2.0に接続できなくなりました。原因は不明ですが、WSL2.0をShutdownした後、VS Codeを再度立ち上げ直したところ、無事、接続できました。
+発生した問題 VS Codeが出力したエラーメッセージは次の通りでした。VS Code Server for WSL closed unexpectedly.と表記されている通り、WSL向けのVS Code Serverへの接続が予期しない理由により切断された、ということです。
+[2021-04-12 10:24:41.224] Resolving wsl+debian, resolveAttempt: 1 [2021-04-12 10:24:41.302] Starting VS Code Server inside WSL (Debian) [2021-04-12 10:24:41.302] Extension version: 0.54.6, Windows build: 19042. Multi distro support: available. WSL path support: enabled [2021-04-12 10:24:41.302] No shell environment set or found for current distro. [2021-04-12 10:24:41.510] Probing if server is already installed: C:\Windows\System32\wsl.exe -d Debian -e sh -c &amp;quot;[ -d ~/.</description>
+    </item>
+    
     <item>
       <title>WSL2で使っているソフトウェア</title>
       <link>https://sonohen.github.io/2020/06/02/2020-06-02_tmux_on_windows/</link>

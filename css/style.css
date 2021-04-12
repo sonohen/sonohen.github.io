@@ -82,10 +82,16 @@ li {
 
 code, pre {
   font-family: 'Fira Code', monospace;
+  border-radius: 7px;
 }
 
 p {
   font-size: 1em;
+}
+
+p > code {
+  padding: 2px 5px;
+  background-color: #eeeeff;
 }
 
 td, th {
