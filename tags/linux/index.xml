@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Emacs on sonohen&#39;s tech log</title>
-    <link>https://sonohen.github.io/tags/emacs/</link>
-    <description>Recent content in Emacs on sonohen&#39;s tech log</description>
+    <title>linux on sonohen&#39;s tech log</title>
+    <link>https://sonohen.github.io/tags/linux/</link>
+    <description>Recent content in linux on sonohen&#39;s tech log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© 2020-2021 sonohen All Rights Reserved.</copyright>
-    <lastBuildDate>Wed, 05 May 2021 20:27:56 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 May 2021 20:27:56 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2021年のGWを振り返る</title>
       <link>https://sonohen.github.io/2021/05/05/2021-05-05_reviewgoldenweek2021/</link>
@@ -19,24 +19,6 @@
  自宅のレッツノートのFedora 33からFedora 34へのアップグレード1 レッツノート2のスクロールをまともに動かすようにする OneDriveからの脱却のため、NAS（LANDISK）にファイルを移管する Emacsでeasy-hugo, wanderlust, org-agenda, org-capture, org-roamの設定 GnuCashで使っているMySQLのバックアップ自動化 「TCP/IPの絵本」の読了 「ネットワークはなぜつながるのか」の読了 「マスタリングTCP/IP」の読了  実績  アップデート完了。不具合として認識しているのは、(1)Virt Managerを使った場合のUSB Redirectionの動作不良（詳細）、(2) Pipewireがレッツノート上で機能しない（音が出ない）、の2点。 systemdを使用し、サスペンドからレジュームした際にi2c_hidをmodproveするようにした。これが実に快適。 Personal Valutのほかは、LANDISKに移行完了。同時に、自宅のネットワークに接続している場合、自動でmountするように自動化した。 いずれも設定完了。 今週末対応予定。 読了。 途中まで読んだ（10%程度）。 未着手。  今後実施したいこと  1passwordに月会費を支払っているので、bitwarden等に移行したい。 低レベルプログラミングへの着手。    毎年支払っているOffice 365の年間サブスクリプション（年額約1万3千円程度）を節約するため、徐々にMicrosoftから離れつつあります。&amp;#160;&amp;#x21a9;&amp;#xfe0e;
  CF-SV9を使用中。サスペンドからレジュームした際に、タッチパッドの動作が非常に遅くなり、操作不能になります。&amp;#160;&amp;#x21a9;&amp;#xfe0e;
    </description>
-    </item>
-    
-    <item>
-      <title>WSL2で使っているソフトウェア</title>
-      <link>https://sonohen.github.io/2020/06/02/2020-06-02_tmux_on_windows/</link>
-      <pubDate>Tue, 02 Jun 2020 01:08:36 +0900</pubDate>
-      
-      <guid>https://sonohen.github.io/2020/06/02/2020-06-02_tmux_on_windows/</guid>
-      <description> 今のところ使っているアプリケーションは以下の通り。  GNU Emacs tmux tig: gitのクライアント   dotfilesの管理も始めた。 Windows Terminalは，Alt+Enterでフルスクリーンになる。  上記の環境だと，もはやWindowsなのかLinuxなのか分からないですね。    </description>
-    </item>
-    
-    <item>
-      <title>Org Babel</title>
-      <link>https://sonohen.github.io/2020/06/01/2020-06-01_org-babel/</link>
-      <pubDate>Mon, 01 Jun 2020 13:49:16 +0900</pubDate>
-      
-      <guid>https://sonohen.github.io/2020/06/01/2020-06-01_org-babel/</guid>
-      <description>org-babelの便利さが異常  org-babelは実に便利な機能でございます。  </description>
     </item>
     
   </channel>
