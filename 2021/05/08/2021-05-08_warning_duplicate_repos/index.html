@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="description" content="dnf updateを実行した際に、Repository 1password is listed more than once in the configurationという警告メッセージが表示されたので調査しました。 結論としては、/etc/yum.repos.d/の配下に別名で、中身が（ほぼ同じ）ファイルが2つ存在したための警告メッセージであったため、重複しているものを無効にすることでメッセージの出力を抑制しました。" />
+  <meta name="author" content="sonohen" />
+  <meta name="keywords" content="fedora, linux, dnf, repository" />
+  <meta name="robots" content="index" />
+  <title>dnfでRepository is listed more than once in the configurationが表示された場合の対応</title>
+  <link href="https://sonohen.github.io//css/materialize.min.css" type="text/css" rel="stylesheet" media="screen"/>
+  <link href="https://sonohen.github.io//css/style.css" type="text/css" rel="stylesheet" media="screen"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style>
+  
+    footer.page-footer{background-image: url(https://sonohen.github.io//images/default.png);}
+  
+  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Sans+JP:wght@400;700&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="https://sonohen.github.io/"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://sonohen.github.io//categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://sonohen.github.io//tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2"><a href="https://sonohen.github.io/">sonohen&#39;s tech log</a></h1>
+        <div class="row center">
+          <p class="header col s12 light">Just another tech blog.</p>
+        </div>
+        <div class="row center">
+        
+        
+          <a href="https://github.com/sonohen"><img src="https://sonohen.github.io/images/github2-dreamstale35.png" alt="Click here to access to my GitHub page."></a>
+        
+        
+        
+        
+        
+          <a href="https://sonohen.github.io/index.xml"><img src="https://sonohen.github.io/images/feed-dreamstale27.png" alt="Click here to move to top page."></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="https://sonohen.github.io/images/default.png" alt="Header Cover">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h2>dnfでRepository is listed more than once in the configurationが表示された場合の対応</h2>
+          <p>
+          
+            
+              <a href="https://sonohen.github.io//categories/tech/">Tech</a>
+            
+           
+          </p>
+          <p><code>dnf update</code>を実行した際に、<code>Repository 1password is listed more than once in the configuration</code>という警告メッセージが表示されたので調査した。</p>
+<p>結論としては、<code>/etc/yum.repos.d/</code>の配下に別名で、中身が（ほぼ同じ）ファイルが2つ存在したための警告メッセージであったため、重複しているものを無効にすることでメッセージの出力を抑制した。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ ls -alh /etc/yum.repos.d/
+合計 60K
+drwxr-xr-x. <span class="m">1</span> root root <span class="m">664</span> 5月 <span class="m">8</span> 19:48 .
+drwxr-xr-x. <span class="m">1</span> root root 5.3K 5月 <span class="m">8</span> 19:51 ..
+-rw-r--r--. <span class="m">1</span> root root <span class="m">190</span> 4月 <span class="m">28</span> 21:29 1password-beta.repo
+-rw-r--r--. <span class="m">1</span> root root <span class="m">210</span> 5月 <span class="m">7</span> 01:01 1password.repo
+-rw-r--r--. <span class="m">1</span> root root <span class="m">311</span> 1月 <span class="m">26</span> 14:48 _copr_phracek-PyCharm.repo
+-rw-r--r--. <span class="m">1</span> root root <span class="m">728</span> 4月 <span class="m">29</span> 02:31 fedora-cisco-openh264.repo
+-rw-r--r--. <span class="m">1</span> root root 1.3K 4月 <span class="m">29</span> 02:31 fedora-modular.repo
+-rw-r--r--. <span class="m">1</span> root root 1.4K 4月 <span class="m">29</span> 02:31 fedora-updates-modular.repo
+-rw-r--r--. <span class="m">1</span> root root 1.4K 4月 <span class="m">29</span> 02:31 fedora-updates-testing-modular.repo
+-rw-r--r--. <span class="m">1</span> root root 1.4K 4月 <span class="m">29</span> 02:31 fedora-updates-testing.repo
+-rw-r--r--. <span class="m">1</span> root root 1.3K 4月 <span class="m">29</span> 02:31 fedora-updates.repo
+-rw-r--r--. <span class="m">1</span> root root 1.3K 4月 <span class="m">29</span> 02:31 fedora.repo
+-rw-r--r--. <span class="m">1</span> root root <span class="m">173</span> 5月 <span class="m">8</span> 19:48 google-chrome.repo
+-rw-r--r--. <span class="m">1</span> root root 1.5K 1月 <span class="m">26</span> 14:48 rpmfusion-nonfree-nvidia-driver.repo
+-rw-r--r--. <span class="m">1</span> root root 1.4K 1月 <span class="m">26</span> 14:48 rpmfusion-nonfree-steam.repo
+-rw-r--r--. <span class="m">1</span> root root <span class="m">148</span> 5月 <span class="m">1</span> 21:00 skype-stable.repo
+-rw-r--r--. <span class="m">1</span> root root <span class="m">154</span> 5月 <span class="m">1</span> 21:02 teams.
+</code></pre></td></tr></table>
+</div>
+</div><p>なぜか1passwordのrepoが2つ存在している。ので、これのうち一つをどこかに移してしまえば良さそう。というわけで、どちらを残すのか中身を確認してみる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ diff 1password.repo 1password-beta.repo
+2,3c2,3
+&lt; <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;1Password Beta Channel&#34;</span>
+&lt; <span class="nv">baseurl</span><span class="o">=</span>https://downloads.1password.com/linux/rpm/beta/<span class="nv">$basearch</span>
+---
+&gt; <span class="nv">name</span><span class="o">=</span>1Password
+&gt; <span class="nv">baseurl</span><span class="o">=</span>https://downloads.1password.com/linux/rpm/beta/x86_64
+7c7
+&lt; <span class="nv">gpgkey</span><span class="o">=</span><span class="s2">&#34;https://downloads.1password.com/linux/keys/1password.asc&#34;</span>
+---
+&gt; <span class="nv">gpgkey</span><span class="o">=</span>https://downloads.1password.com/linux/keys/1password.asc
+</code></pre></td></tr></table>
+</div>
+</div><p>細かい差分はさておき、注目すべき差分は <code>1password.repo</code> の <code>$basearch</code> である。 ここで、 <code>$basearch</code> には <code>x86_64</code> が入る（see <a href="https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/6/html/deployment_guide/sec-using_yum_variables">6.3.3 Yum 変数の使用</a>) ということなので、つまり2つのファイルに差分は見受けられない。</p>
+<p>ゆえに、<code>1password for Linux</code> はbeta版であるので、<code>/etc/yum.repos.d/1password-beta.repo</code>を残す方針とする。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo mv 1password.repo 1password.repo.old
+$ sudo dnf update
+メタデータの期限切れの最終確認: 1:56:41 時間前の 2021年05月08日 18時22分17秒 に実施しました。
+依存関係が解決しました。
+行うべきことはありません。
+完了しました!
+</code></pre></td></tr></table>
+</div>
+</div><p>ついでに、<code>/etc/yum.repos.d/google-chrome.repo</code>も削除しておいた（Firefoxに移行したため）。</p>
+
+          <p>8 May 2021
+            
+              
+                <a href="https://sonohen.github.io//tags/fedora/">#fedora</a>
+              
+                <a href="https://sonohen.github.io//tags/linux/">#linux</a>
+              
+            
+          </p>
+          
+            <div id="disqus_thread"></div>
+<script>
+     
+    var disqus_shortname = 'xxxx';
+    
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://sonohen.github.io/2021/05/05/2021-05-08_rclone-usage/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp;</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2020-2021 sonohen All Rights Reserved.
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://sonohen.github.io//js/materialize.min.js"></script>
+  <script src="https://sonohen.github.io//js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  </body>
+</html>
+

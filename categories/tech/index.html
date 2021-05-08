@@ -63,6 +63,31 @@
   
   <div class="col m4 s12">
     <div class="card-panel">
+      <h2><a href="https://sonohen.github.io/2021/05/08/2021-05-08_warning_duplicate_repos/">dnfでRepository is listed more than once in the configurationが表示された場合の対応</a></h2>
+      <p>
+      
+        
+          <a href="https://sonohen.github.io//categories/tech/">Tech</a>
+        
+       
+      </p>
+      <p>dnf updateを実行した際に、Repository 1password is listed more than once in the configurationという警告メッセージが表示されたので調査しました。 結論としては、/etc/yum.repos.d/の配下に別名で、中身が（ほぼ同じ）ファイルが2つ存在したための警告メッセージであったため、重複しているものを無効にすることでメッセージの出力を抑制しました。</p>
+      <p>
+      8 May 2021
+      
+        
+          <a href="https://sonohen.github.io//tags/fedora/">#fedora</a>
+        
+          <a href="https://sonohen.github.io//tags/linux/">#linux</a>
+        
+       
+      </p>
+    </div>
+  </div>
+
+  
+  <div class="col m4 s12">
+    <div class="card-panel">
       <h2><a href="https://sonohen.github.io/2021/04/12/2021-04-12_wsl_cannot_be_started/">VS CodeからDebian on WSL2.0にアクセスできずに焦った話</a></h2>
       <p>
       
@@ -123,6 +148,9 @@
   </div>
 
   
+</div>
+<div class="row">
+  
   <div class="col m4 s12">
     <div class="card-panel">
       <h2><a href="https://sonohen.github.io/2020/06/01/2020-06-01_org-babel/">Org Babel</a></h2>
@@ -147,9 +175,6 @@
     </div>
   </div>
 
-  
-</div>
-<div class="row">
   
   <div class="col m4 s12">
     <div class="card-panel">

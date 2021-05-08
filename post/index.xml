@@ -7,7 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© 2020-2021 sonohen All Rights Reserved.</copyright>
-    <lastBuildDate>Wed, 05 May 2021 20:27:56 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 May 2021 20:45:53 +0900</lastBuildDate><atom:link href="https://sonohen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dnfでRepository is listed more than once in the configurationが表示された場合の対応</title>
+      <link>https://sonohen.github.io/2021/05/08/2021-05-08_warning_duplicate_repos/</link>
+      <pubDate>Sat, 08 May 2021 20:45:53 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/2021/05/08/2021-05-08_warning_duplicate_repos/</guid>
+      <description>dnf updateを実行した際に、Repository 1password is listed more than once in the configurationという警告メッセージが表示されたので調査した。
+結論としては、/etc/yum.repos.d/の配下に別名で、中身が（ほぼ同じ）ファイルが2つ存在したための警告メッセージであったため、重複しているものを無効にすることでメッセージの出力を抑制した。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  $ ls -alh /etc/yum.repos.d/ 合計 60K drwxr-xr-x. 1 root root 664 5月 8 19:48 . drwxr-xr-x. 1 root root 5.3K 5月 8 19:51 .. -rw-r--r--. 1 root root 190 4月 28 21:29 1password-beta.repo -rw-r--r--. 1 root root 210 5月 7 01:01 1password.</description>
+    </item>
+    
+    <item>
+      <title>Rcloneの使い方</title>
+      <link>https://sonohen.github.io/2021/05/05/2021-05-08_rclone-usage/</link>
+      <pubDate>Wed, 05 May 2021 21:56:43 +0900</pubDate>
+      
+      <guid>https://sonohen.github.io/2021/05/05/2021-05-08_rclone-usage/</guid>
+      <description>Rcloneとは  Rclone is a command line program to manage files on cloud storage. It is a feature rich alternative to cloud vendors&#39; web storage interfaces. Over 40 cloud storage products support rclone including S3 object stores, business &amp;amp; consumer file storage services, as well as standard transfer protocols.
+ つまるところ、Rcloneはクラウドストレージを操作するためのコマンドライン・インタフェースであり、40を超えるクラウドサービスに加え、標準的な転送プロトコル（SFTP等）もサポートしているというものです。
+使い方 使用する前に、設定を行う必要があります。ここでは、onedriveを例に記載します。
+**に囲まれている箇所が入力する箇所です。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185  $ **rclone config** 2021/05/05 21:34:53 NOTICE: Config file &amp;#34;/home/sonohen/.</description>
+    </item>
+    
     <item>
       <title>2021年のGWを振り返る</title>
       <link>https://sonohen.github.io/2021/05/05/2021-05-05_reviewgoldenweek2021/</link>
