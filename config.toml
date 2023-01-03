@@ -1,0 +1,4 @@
+baseURL = "https://sonohen.github.io/"
+languageCode = "ja-jp"
+title = "とあるエンジニアの備忘録"
+theme = "simpleness"
