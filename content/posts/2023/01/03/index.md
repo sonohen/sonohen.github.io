@@ -9,11 +9,11 @@ authors:
   - sonohen
 ---
 
-![表紙イメージ](/images/2023/2023-01-03/top_image.png)
-
 2023年最初の「やってみた」は、Amazon WorkSpacesの検証でした。
 
 <!--more-->
+
+![表紙イメージ](images/top_image.png)
 
 {{< toc >}}
 
@@ -48,7 +48,7 @@ Amazon WorkSpacesを試してみようと思ったときに、以下の前提条
 
 Amazon WorkSpacesの[Connection Health Check](https://clients.amazonworkspaces.com/Health.html)を見ると、日本国内からアクセスしたときの米国東部までのラウンドトリップ時間（以下RTT）は380msと表示されており、上記の記載に照らし合わせるとWorkSpaceにアクセスできないことになります。しかし、実際にはアクセスし、操作できます。ここで確認できるRTTと、実際にWorkSpacesのクライアント（Android版）から確認できるRTTは大きく乖離している場合があるためで、クライアントから確認できるRTTは186msでした。よって、RTTを確認する際には、実機にクライアントを入れて確認するのが一番良いと思います。
 
-![Connection Health Checkの結果](/images/2023/2023-01-03/connection_health_check.png)
+![Connection Health Checkの結果](images/connection_health_check.png)
 
 ## 目的
 
@@ -63,7 +63,7 @@ Amazon WorkSpacesの[Connection Health Check](https://clients.amazonworkspaces.c
 
 見て分かる通り、private-subnet-(1a|1b)は不要です。なぜ作ったかというと、もともとSimple ADとAmazon WorkSpacesはprivate-subnet-(1a|1b)に配置する計画でしたが、その場合、public-subnetにNATゲートウェイを設置する必要があり、そのコストが勿体ないと気がついたのが、public-subnetの作成後だったからです。
 
-![全体像](/images/2023/2023-01-03/WorkSpaces_overall_design.drawio.png)
+![全体像](images/WorkSpaces_overall_design.drawio.png)
 
 ## 結果
 
