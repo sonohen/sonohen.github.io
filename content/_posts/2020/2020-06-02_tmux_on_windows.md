@@ -1,16 +1,15 @@
 ---
 title: "WSL2で使っているソフトウェア"
-date: 2020/6/2 01:08:36
-description: "WSL2で使っているLinuxのソフトウェアを紹介します。Windows上でLinuxが動作するのはなかなか面白いものです。"
+date: 2020-06-02T01:08:36Z
 categories: 
-- Tech
+- 技術のこと
 tags: 
-- WSL
-- Emacs
-- tmux
-- tig
-- WindowsTerminal
+- 技術のこと
 ---
+
+WSL2で使っているLinuxのソフトウェアを紹介します。Windows上でLinuxが動作するのはなかなか面白いものです。
+
+<!--more-->
 
 - 今のところ使っているアプリケーションは以下の通り。
   - GNU Emacs

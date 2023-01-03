@@ -1,21 +1,22 @@
 ---
 title: "Rcloneの使い方"
-date: 2021/5/5 21:56:43
+date: 2021-05-05T21:56:43Z
 description: "Rcloneという複数のクラウドドライブに対応したCLIベースのプログラムがあります。それを使ってonedriveにアクセスしましたので、その方法やユースケースを紹介します。"
 categories:
-- Tech
+  - "技術のこと"
 tags:
-- rclone
-- onedrive
+  - "技術のこと"
 ---
+
+Rcloneという複数のクラウドドライブに対応したCLIベースのプログラムがあります。それを使ってonedriveにアクセスしましたので、その方法やユースケースを紹介します。
+
+<!--more-->
 
 ### Rcloneとは
 
 > Rclone is a command line program to manage files on cloud storage. It is a feature rich alternative to cloud vendors' web storage interfaces. Over 40 cloud storage products support rclone including S3 object stores, business & consumer file storage services, as well as standard transfer protocols.
 
 つまるところ、Rcloneはクラウドストレージを操作するためのコマンドライン・インタフェースであり、40を超えるクラウドサービスに加え、標準的な転送プロトコル（SFTP等）もサポートしているというものです。
-
-<!-- more -->
 
 ### 使い方
 

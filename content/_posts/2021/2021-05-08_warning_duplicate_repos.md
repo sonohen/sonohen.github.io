@@ -1,21 +1,31 @@
 ---
 title: "dnfでRepository is listed more than once in the configurationが表示された場合の対応"
-date: 2021/5/8 20:45:53
-description: "dnf updateを実行した際に、Repository 1password is listed more than once in the configurationという警告メッセージが表示されたので調査しました。 結論としては、/etc/yum.repos.d/の配下に別名で、中身が（ほぼ同じ）ファイルが2つ存在したための警告メッセージであったため、重複しているものを無効にすることでメッセージの出力を抑制しました。"
+date: 2021-05-08T20:45:53Z
 categories: 
-- Tech
+- "技術のこと"
 tags:
-- fedora
-- linux
+- "技術のこと"
 ---
 
 `dnf update`を実行した際に、`Repository 1password is listed more than once in the configuration`という警告メッセージが表示されたので調査した。
 
 結論としては、`/etc/yum.repos.d/`の配下に別名で、中身が（ほぼ同じ）ファイルが2つ存在したための警告メッセージであったため、重複しているものを無効にすることでメッセージの出力を抑制した。
 
-<!-- more -->
+<!--more-->
 
-```bash
+```c {linenos=table,hl_lines=[6]}
+#include <stdio.h>
+
+int
+main() {
+    printf("Hello World!\n");
+    return 0;
+}
+```
+
+aaa
+
+```shell
 $ ls -alh /etc/yum.repos.d/
 合計 60K
 drwxr-xr-x. 1 root root 664 5月 8 19:48 .

@@ -1,11 +1,10 @@
 ---
 title: "Hugoをインストールする"
-date: 2020/5/6 20:36:53
-categories:
-- Tech
-tags:
-- Hugo
-- InstallLog
+date: 2020-05-06T11:36:53+0900
+categories: [ "技術のこと" ]
+tags: [ "技術のこと" ]
+summary: "Hugoをインストールした時の記録です。"
+authors: [ "sonohen" ]
 ---
 
 ### Hugoを導入する
@@ -21,8 +20,6 @@ $ hugo
 ```
 
 ここの時点で，publicディレクトリーが作られていることを確認する。
-
-<!-- more -->
 
 ### テーマの導入
 
