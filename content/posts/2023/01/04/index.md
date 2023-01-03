@@ -30,15 +30,15 @@ GitHub上で、プライベートなリポジトリ（ここでは「hugo-blog�
 
 「hugo-blog」リポジトリ、「draft」ブランチを選択してCodespacesを起動する。
 
-![ブランチからCodespaceを起動](/images/2023/2023-01-04/launch_codespace_from_repository.png)
+![ブランチからCodespaceを起動](images/launch_codespace_from_repository.png)
 
 メニューバーの「Codespaces」を選択して起動する方法もある。[Codespaces] > [New codespace]の順に操作し、起動パラメータを以下の通り設定してもよい。
 
-![CodespaceからCodespaceを起動](/images/2023/2023-01-04/launch_codespace_from_codespace.png)
+![CodespaceからCodespaceを起動](images/launch_codespace_from_codespace.png)
 
 起動後の画面はWeb版VS Codeなり。
 
-![起動したCodespaceの画面](/images/2023/2023-01-04/codespace_launched.png)
+![起動したCodespaceの画面](images/codespace_launched.png)
 
 ### hugoの最低限の設定
 
@@ -53,11 +53,11 @@ GitHub上で、プライベートなリポジトリ（ここでは「hugo-blog�
 
 そうすると、Codespaceの中で動作しているhugoのポートと、外部からアクセスできるアドレス（ローカルアドレス）のバインドが行われ、「ポート」タブに表示される。ローカルアドレスにアクセスすれば、Codespaceの中で動作しているhugoのサーバにアクセスできる。
 
-![hugo server起動中のポートタブの状態](/images/2023/2023-01-04/codespace_launched.png)
+![hugo server起動中のポートタブの状態](images/codespace_launched.png)
 
 アクセスすると、以下の通りhugoで作成したサイトが表示される。
 
-![Hugoで作成したサイトの初期表示](/images/2023/2023-01-04/my_first_blog_in_hugo.png)
+![Hugoで作成したサイトの初期表示](images/my_first_blog_in_hugo.png)
 
 一旦、ここまでの変更をコミットしておく。
 
@@ -119,7 +119,7 @@ theme = 'simpleness'
 
 もう少し良いやり方があると思うが、とりあえずはこれで動いたのでヨシ。
 
-![simplenessで表示したサイト](/images/2023/2023-01-04/blog_in_simpleness.png)
+![simplenessで表示したサイト](images/blog_in_simpleness.png)
 
 ここで一旦、コミットしておく。
 
@@ -150,7 +150,7 @@ Hi sonohen! You\'ve successfully authenticated, but GitHub does not provide shel
 
 ここで以下のように表示されればうまく移行できたと思われる。
 
-![simplenessで表示したサイト](/images/2023/2023-01-04/blog_after_migrated.png)
+![simplenessで表示したサイト](images/blog_after_migrated.png)
 
 ## GitHub Actionsを利用した自動デプロイ
 
