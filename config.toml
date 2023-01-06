@@ -38,7 +38,7 @@ pluralizeListTitles = true
         title = true
     [markup.goldmark.renderer]
       hardWraps = false
-      unsafe = false
+      unsafe = true
       xhtml = false
   [markup.highlight]
     anchorLineNos = false
