@@ -7,6 +7,7 @@ tags:
   - 技術のこと
 authors:
   - sonohen
+draft: true
 ---
 
 数年振りにRuby on Railsを使ってみた。ただし、使う環境は大きく変わった。
