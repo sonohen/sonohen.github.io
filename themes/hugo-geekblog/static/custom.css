@@ -12,6 +12,7 @@ pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
   font-family: 'Source Code Pro', monospace;
+  font-size: 0.9em !important;
 }
 p {
   text-indent: 1em;
