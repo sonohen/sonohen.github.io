@@ -2,9 +2,9 @@
 title: "Elastic Beanstalkを試してみる"
 date: 2023-01-22T03:26:59Z
 categories:
-  - 技術のこと
+  - AWSのこと
 tags:
-  - 技術のこと
+  - AWSのこと
 authors:
   - sonohen
 ---

@@ -2,9 +2,9 @@
 title: "ブログ環境をGitHubからAWSに移行しました"
 date: 2022-12-06T11:24:12Z
 categories:
-  - 技術のこと
+  - AWSのこと
 tags:
-  - 技術のこと
+  - AWSのこと
 authors:
   - sonohen
 ---
