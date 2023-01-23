@@ -1,0 +1,137 @@
+Configuring SAM deploy
+======================
+
+        Looking for config file [samconfig.toml] :  Not found
+
+        Setting default arguments for 'sam deploy'
+        =========================================
+        Stack Name [sam-app]: 
+        AWS Region [ap-northeast-1]: 
+        #Shows you resources changes to be deployed and require a 'Y' to initiate deploy
+        Confirm changes before deploy [y/N]: y
+        #SAM needs permission to be able to create roles to connect to the resources in your template
+        Allow SAM CLI IAM role creation [Y/n]: 
+        #Preserves the state of previously provisioned resources when an operation fails
+        Disable rollback [y/N]: y
+        getAllItemsFunction may not have authorization defined, Is this okay? [y/N]: y
+        getByIdFunction may not have authorization defined, Is this okay? [y/N]: y
+        putItemFunction may not have authorization defined, Is this okay? [y/N]: y
+        Save arguments to configuration file [Y/n]: Y
+        SAM configuration file [samconfig.toml]: 
+        SAM configuration environment [default]: 
+
+        Looking for resources needed for deployment:
+        Creating the required resources...
+        Successfully created!
+         Managed S3 bucket: aws-sam-cli-managed-default-samclisourcebucket-1ae5e5y3ql961
+         A different default S3 bucket can be set in samconfig.toml
+
+        Saved arguments to config file
+        Running 'sam deploy' for future deployments will use the parameters saved above.
+        The above parameters can be changed by modifying samconfig.toml
+        Learn more about samconfig.toml syntax at 
+        https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html
+
+Uploading to sam-app/11e6ad52d95b7ff61f7c5edee5989cc5  11187626 / 11187626  (100.00%)
+File with same data already exists at sam-app/11e6ad52d95b7ff61f7c5edee5989cc5, skipping upload
+File with same data already exists at sam-app/11e6ad52d95b7ff61f7c5edee5989cc5, skipping upload
+
+        Deploying with following values
+        ===============================
+        Stack name                   : sam-app
+        Region                       : ap-northeast-1
+        Confirm changeset            : True
+        Disable rollback             : True
+        Deployment s3 bucket         : aws-sam-cli-managed-default-samclisourcebucket-1ae5e5y3ql961
+        Capabilities                 : ["CAPABILITY_IAM"]
+        Parameter overrides          : {}
+        Signing Profiles             : {}
+
+Initiating deployment
+=====================
+Uploading to sam-app/a4776539efacb8d6b52ef4f5bcf5a08e.template  3003 / 3003  (100.00%)
+
+Waiting for changeset to be created..
+CloudFormation stack changeset
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Operation                                            LogicalResourceId                                    ResourceType                                         Replacement                                        
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
++ Add                                                SampleTable                                          AWS::DynamoDB::Table                                 N/A                                                
++ Add                                                ServerlessRestApiDeploymenta4d359a69a                AWS::ApiGateway::Deployment                          N/A                                                
++ Add                                                ServerlessRestApiProdStage                           AWS::ApiGateway::Stage                               N/A                                                
++ Add                                                ServerlessRestApi                                    AWS::ApiGateway::RestApi                             N/A                                                
++ Add                                                getAllItemsFunctionApiPermissionProd                 AWS::Lambda::Permission                              N/A                                                
++ Add                                                getAllItemsFunctionRole                              AWS::IAM::Role                                       N/A                                                
++ Add                                                getAllItemsFunction                                  AWS::Lambda::Function                                N/A                                                
++ Add                                                getByIdFunctionApiPermissionProd                     AWS::Lambda::Permission                              N/A                                                
++ Add                                                getByIdFunctionRole                                  AWS::IAM::Role                                       N/A                                                
++ Add                                                getByIdFunction                                      AWS::Lambda::Function                                N/A                                                
++ Add                                                putItemFunctionApiPermissionProd                     AWS::Lambda::Permission                              N/A                                                
++ Add                                                putItemFunctionRole                                  AWS::IAM::Role                                       N/A                                                
++ Add                                                putItemFunction                                      AWS::Lambda::Function                                N/A                                                
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Changeset created successfully. arn:aws:cloudformation:ap-northeast-1:436589084651:changeSet/samcli-deploy1674476468/f37ad420-0735-4983-b0c8-147ddd8f7974
+
+
+Previewing CloudFormation changeset before deployment
+======================================================
+Deploy this changeset? [y/N]: y
+
+2023-01-23 12:21:21 - Waiting for stack create/update to complete
+
+CloudFormation events from stack operations (refresh every 0.5 seconds)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ResourceStatus                                       ResourceType                                         LogicalResourceId                                    ResourceStatusReason                               
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE_IN_PROGRESS                                   AWS::DynamoDB::Table                                 SampleTable                                          -                                                  
+CREATE_IN_PROGRESS                                   AWS::DynamoDB::Table                                 SampleTable                                          Resource creation Initiated                        
+CREATE_COMPLETE                                      AWS::DynamoDB::Table                                 SampleTable                                          -                                                  
+CREATE_IN_PROGRESS                                   AWS::IAM::Role                                       putItemFunctionRole                                  -                                                  
+CREATE_IN_PROGRESS                                   AWS::IAM::Role                                       getByIdFunctionRole                                  -                                                  
+CREATE_IN_PROGRESS                                   AWS::IAM::Role                                       getAllItemsFunctionRole                              -                                                  
+CREATE_IN_PROGRESS                                   AWS::IAM::Role                                       putItemFunctionRole                                  Resource creation Initiated                        
+CREATE_IN_PROGRESS                                   AWS::IAM::Role                                       getByIdFunctionRole                                  Resource creation Initiated                        
+CREATE_IN_PROGRESS                                   AWS::IAM::Role                                       getAllItemsFunctionRole                              Resource creation Initiated                        
+CREATE_COMPLETE                                      AWS::IAM::Role                                       putItemFunctionRole                                  -                                                  
+CREATE_COMPLETE                                      AWS::IAM::Role                                       getByIdFunctionRole                                  -                                                  
+CREATE_COMPLETE                                      AWS::IAM::Role                                       getAllItemsFunctionRole                              -                                                  
+CREATE_IN_PROGRESS                                   AWS::Lambda::Function                                putItemFunction                                      -                                                  
+CREATE_IN_PROGRESS                                   AWS::Lambda::Function                                getByIdFunction                                      -                                                  
+CREATE_IN_PROGRESS                                   AWS::Lambda::Function                                getAllItemsFunction                                  -                                                  
+CREATE_IN_PROGRESS                                   AWS::Lambda::Function                                getByIdFunction                                      Resource creation Initiated                        
+CREATE_IN_PROGRESS                                   AWS::Lambda::Function                                putItemFunction                                      Resource creation Initiated                        
+CREATE_IN_PROGRESS                                   AWS::Lambda::Function                                getAllItemsFunction                                  Resource creation Initiated                        
+CREATE_COMPLETE                                      AWS::Lambda::Function                                putItemFunction                                      -                                                  
+CREATE_COMPLETE                                      AWS::Lambda::Function                                getByIdFunction                                      -                                                  
+CREATE_COMPLETE                                      AWS::Lambda::Function                                getAllItemsFunction                                  -                                                  
+CREATE_IN_PROGRESS                                   AWS::ApiGateway::RestApi                             ServerlessRestApi                                    -                                                  
+CREATE_IN_PROGRESS                                   AWS::ApiGateway::RestApi                             ServerlessRestApi                                    Resource creation Initiated                        
+CREATE_COMPLETE                                      AWS::ApiGateway::RestApi                             ServerlessRestApi                                    -                                                  
+CREATE_IN_PROGRESS                                   AWS::Lambda::Permission                              getAllItemsFunctionApiPermissionProd                 -                                                  
+CREATE_IN_PROGRESS                                   AWS::Lambda::Permission                              putItemFunctionApiPermissionProd                     -                                                  
+CREATE_IN_PROGRESS                                   AWS::ApiGateway::Deployment                          ServerlessRestApiDeploymenta4d359a69a                -                                                  
+CREATE_IN_PROGRESS                                   AWS::Lambda::Permission                              getByIdFunctionApiPermissionProd                     -                                                  
+CREATE_IN_PROGRESS                                   AWS::Lambda::Permission                              getAllItemsFunctionApiPermissionProd                 Resource creation Initiated                        
+CREATE_IN_PROGRESS                                   AWS::Lambda::Permission                              putItemFunctionApiPermissionProd                     Resource creation Initiated                        
+CREATE_IN_PROGRESS                                   AWS::Lambda::Permission                              getByIdFunctionApiPermissionProd                     Resource creation Initiated                        
+CREATE_IN_PROGRESS                                   AWS::ApiGateway::Deployment                          ServerlessRestApiDeploymenta4d359a69a                Resource creation Initiated                        
+CREATE_COMPLETE                                      AWS::ApiGateway::Deployment                          ServerlessRestApiDeploymenta4d359a69a                -                                                  
+CREATE_IN_PROGRESS                                   AWS::ApiGateway::Stage                               ServerlessRestApiProdStage                           -                                                  
+CREATE_IN_PROGRESS                                   AWS::ApiGateway::Stage                               ServerlessRestApiProdStage                           Resource creation Initiated                        
+CREATE_COMPLETE                                      AWS::ApiGateway::Stage                               ServerlessRestApiProdStage                           -                                                  
+CREATE_COMPLETE                                      AWS::Lambda::Permission                              getAllItemsFunctionApiPermissionProd                 -                                                  
+CREATE_COMPLETE                                      AWS::Lambda::Permission                              putItemFunctionApiPermissionProd                     -                                                  
+CREATE_COMPLETE                                      AWS::Lambda::Permission                              getByIdFunctionApiPermissionProd                     -                                                  
+CREATE_COMPLETE                                      AWS::CloudFormation::Stack                           sam-app                                              -                                                  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CloudFormation outputs from deployed stack
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Outputs                                                                                                                                                                                                            
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Key                 WebEndpoint                                                                                                                                                                                    
+Description         API Gateway endpoint URL for Prod stage                                                                                                                                                        
+Value               https://su7cqge7o3.execute-api.ap-northeast-1.amazonaws.com/Prod/                                                                                                                              
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Successfully created/updated stack - sam-app in ap-northeast-1
