@@ -2,9 +2,9 @@
 title: "Amazon WorkSpacesの検証をやってみた"
 date: 2023-01-03T09:37:30Z
 categories:
-  - 技術のこと
+  - AWSのこと
 tags:
-  - 技術のこと
+  - AWSのこと
 authors:
   - sonohen
 ---

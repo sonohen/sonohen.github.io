@@ -2,9 +2,9 @@
 title: AWS Certified Cloud Practitioner合格記
 date: 2021-12-16T0:24:12Z
 tags:
-  - 技術のこと
+  - AWSのこと
 category:
-  - 技術のこと
+  - AWSのこと
 ---
 
 AWS認定資格の登竜門である「AWS Cloud Practitioner」を受験し、合格したので記録として残します。
