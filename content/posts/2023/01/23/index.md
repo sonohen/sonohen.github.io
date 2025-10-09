@@ -11,10 +11,6 @@ authors:
 
 SAMのハンズオンをやってみた。
 
-<!--more-->
-
-{{< toc >}}
-
 SAMとは、Serverless Application Modelの接頭辞で、サーバレスアプリケーションを素早く開発するためのツールセットです。CloudFormationにより、必要なリソースのデプロイが行われます。今回は、Cloud9環境を用いてハンズオンを行いました。
 
 ## SAMの使い方
@@ -47,7 +43,7 @@ sam init
 
 以下のとおり選択していきます。
 
-```plain {linenos=table, hl_lines=[7, 19, 27, 37]}
+```plain
 You can preselect a particular runtime or package type when using the `sam init` experience.
 Call `sam init --help` to learn more.
 
@@ -192,7 +188,7 @@ sam local start-api
 
 `template.yaml`で定義された3つのハンドラーに対し、それぞれエンドポイントが提供されていることが分かります。
 
-```plain {linenos=table, hl_lines=["1-3"]}
+```plain
 Mounting getAllItemsFunction at http://127.0.0.1:3000/ [GET]
 Mounting getByIdFunction at http://127.0.0.1:3000/{id} [GET]
 Mounting putItemFunction at http://127.0.0.1:3000/ [POST]
@@ -208,7 +204,7 @@ curl http://localhost:3000/
 
 当然ですが、DynamoDBが適切にセットアップされていないのでエラーが返ってきます。また、一番最初に`getAllItemsFunction`を呼び出すときには、Dockerコンテナイメージのダウンロードが行われるため、ややレスポンスが悪いです。
 
-```plain {linenos=table, hl_lines=["1-5", 10]}
+```plain
 Invoking src/handlers/get-all-items.getAllItemsHandler (nodejs16.x)
 Image was not found.
 Removing rapid images for repo public.ecr.aws/sam/emulation-nodejs16.x

@@ -10,8 +10,6 @@ PowerShellを使用して、WSL(Windows Subsystem for Linux)のバージョン�
 
 <!--more-->
 
-{{< toc >}}
-
 ### バージョンの確認
 
 ```powershell

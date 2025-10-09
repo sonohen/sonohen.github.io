@@ -13,8 +13,6 @@ GitHubが提供する、Web版VSCodeを使った開発環境「GitHub Codespaces
 
 <!--more-->
 
-{{< toc >}}
-
 ## 試す上での縛り
 
 - Chromebookで全ての作業（このブログの執筆も含む）を完結させる

@@ -15,8 +15,6 @@ authors:
 
 ![表紙イメージ](images/top_image.png)
 
-{{< toc >}}
-
 ## Amazon WorkSpacesとは
 
 VDI（Virtual Desktop Infrastructure：仮想デスクトップ基盤）の1つで、シンクライアントとも言われます。皆さんがお勤めの企業でも導入されているかもしれません。Windows等のOSがAWSのデータセンター上で動いており、そこにアクセスして作業します。

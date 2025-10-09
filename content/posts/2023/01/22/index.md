@@ -13,8 +13,6 @@ DVA試験（AWS Certified Developper - Associate）対策のため、Beanstalk�
 
 <!--more-->
 
-{{< toc >}}
-
 ## 目標
 
 1. Elastic Beanstalkを使って"Congratulations"してみる。

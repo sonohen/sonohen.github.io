@@ -13,8 +13,6 @@ AWS Certified Developer - Associate (DVA-C01)に合格しましたので、そ�
 
 <!--more-->
 
-{{< toc >}}
-
 ## 好きなサービス
 
 とりあえず書いておきます。好きなサービスはAmazon S3です。

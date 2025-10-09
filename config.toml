@@ -1,105 +1,36 @@
-baseURL = "https://sonohen.github.io/"
+baseurl = "https://sonohen.github.io/"
 languageCode = "ja-jp"
-title = "とあるエンジニアの備忘録"
-theme = "hugo-geekblog"
+title = "sonohen's tech log"
+theme = "roadster"
+pagination.pagerSize = 9
+disqusShortname = "xxxx"
+MetaDataFormat = "toml"
+pygmentsUseClasses = true
+pygmentsCodefences = true
 
-pluralizeListTitles = true
+copyright = "© 2020-2025 sonohen All Rights Reserved."
 
-[markup]
-  defaultMarkdownHandler = 'goldmark'
-  [markup.asciidocExt]
-    backend = 'html5'
-    extensions = []
-    failureLevel = 'fatal'
-    noHeaderOrFooter = true
-    preserveTOC = false
-    safeMode = 'unsafe'
-    sectionNumbers = true
-    trace = false
-    verbose = false
-    workingFolderCurrent = false
-    [markup.asciidocExt.attributes]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      definitionList = true
-      footnote = true
-      linkify = true
-      linkifyProtocol = 'https'
-      strikethrough = true
-      table = true
-      taskList = true
-      typographer = true
-    [markup.goldmark.parser]
-      autoHeadingID = true
-      autoHeadingIDType = 'github'
-      wrapStandAloneImageWithinParagraph = true
-      [markup.goldmark.parser.attribute]
-        block = false
-        title = true
-    [markup.goldmark.renderer]
-      hardWraps = false
-      unsafe = true
-      xhtml = false
-  [markup.highlight]
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ''
-    hl_inline = false
-    lineAnchors = ''
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = false
-    noHl = false
-    tabWidth = 4
-    style = "monokai"
-  [markup.tableOfContents]
-    endLevel = 3
-    ordered = false
-    startLevel = 2
+[Params]
+  subtitle = "Just another tech blog." # optional
+  github = "sonohen" # optional
+  customCSS = ["css/syntax.css"]
+  googleFontsLink = "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap"
+  post_meta = ["author", "date", "categories", "translations"]
+  authorbox = true
+  [params.author]
+    name = "sonohen"
+    bio = "Debian GNU/Linux | Emacs | ThinkPad | MacBook M3 | Swift | Lisp"
+  [Params.sidebar]
+    home = "right"
+    list = "right"
+    single = "right"
+    widgets = ["social", "search", "recent", "categories", "taglist"]
+  [Params.widgets.social]
+    x = "nya18nn"
+    github = "sonohen"
+  [Params.style.vars]
+    fontFamilyPrimary = "'Zen Kurenaido', sans-serif"
 
-[taxonomies]
-  author = "authors"
-  tag = "tags"
-
-[mediaTypes]
-  [mediaTypes."application/atom+xml"]
-    suffixes = ["xml"]
-
-[outputFormats]
-  [outputFormats.Atom]
-    name = "Atom"
-    mediaType = "application/atom+xml"
-    baseName = "feed"
-    isPlainText = false
-    rel = "alternate"
-    isHTML = false
-    noUgly = true
-    permalinkable = false
-
-[outputs]
-  home = ["HTML", "ATOM"]
-  page = ["HTML"]
-  section = ["HTML"]
-  taxonomy = ["HTML"]
-  term = ["HTML", "ATOM"]
-
-[params]
-  subtitle = "日々実施した作業を記録しているブログです"
-  description = "日々実施した作業を記録しているブログです"
-  logo = "/logo/logo.png"
-  geekblogAuthor = "sonohen"
-  geekblogAnchor = 'ture'
-  geekblogSeoIgnore = [ "taxonomy", "section" ]
-
-  [params.geekblogContentLicense]
-    name = "CC BY-SA 4.0"
-    link = "https://creativecommons.org/licenses/by-sa/4.0/"
-  
-  [params.geekblogHostedOn]
-    name = "GitHub Pages"
-    link = "https://pages.github.com/"
-
-[[params.customCSS]]
-    href = "css/custom.css"
+[permalinks]
+  post = "/:year/:month/:day/:contentbasename/" # optional
+    
