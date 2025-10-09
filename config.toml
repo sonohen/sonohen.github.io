@@ -1,5 +1,5 @@
 baseurl = "https://sonohen.github.io/"
-languageCode = "ja-jp"
+defaultContentLanguage = "ja"
 title = "sonohen's tech log"
 theme = "roadster"
 pagination.pagerSize = 9
@@ -10,6 +10,13 @@ pygmentsCodefences = true
 
 copyright = "© 2020-2025 sonohen All Rights Reserved."
 
+[languages]
+  [languages.ja]
+    languageCode = "ja-JP"
+    languageDirection = "ltr"
+    languageName = "Japanese"
+    weight = 1
+    
 [Params]
   subtitle = "Just another tech blog." # optional
   github = "sonohen" # optional
