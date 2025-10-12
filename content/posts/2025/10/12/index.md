@@ -2,6 +2,8 @@
 title = "Debian GNU/Linux 13 (trixie)でSwiftを動かす"
 author = ["sonohen"]
 date = 2025-10-12
+tags = ["EmacsLisp"]
+categories = ["Linux"]
 draft = false
 toc = true
 lead = "Debian GNU/LinuxでSwiftを動かしてみようという試みをしました。"
