@@ -91,6 +91,20 @@ Hello, world!
 `M-x package-install` から `ob-swift` と `swift-mode` をインストールしておきます。前者は `org-babel` でSwiftを実行するために必要、後者はシンタックスハイライトをするために必要となります。
 
 
+### `org-babel` でSwiftを有効化する {#org-babel-でswiftを有効化する}
+
+以下のような設定を `~/.emacs` に入れることにより `org-babel` でSwiftが実行できるようになる。
+
+```emacs-lisp
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((swift . t)
+   (emacs-lisp . t)))
+```
+
+この例では、SwiftとEmacs Lispを有効化しています。Emacs Lispについては、あえて記述しなくとも最初から有効になっているため、書く必要はありません。
+
+
 ### `org-babel` でSwiftを実行する {#org-babel-でswiftを実行する}
 
 ここまでの設定を終えていれば、以下のように書くことで `org-babel` でSwiftを実行できます。
