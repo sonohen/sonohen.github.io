@@ -21,7 +21,7 @@ copyright = "© 2020-2025 sonohen All Rights Reserved."
   subtitle = "Just another tech blog." # optional
   github = "sonohen" # optional
   customCSS = ["css/syntax.css"]
-  googleFontsLink = "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap"
+  googleFontsLink = "https://fonts.googleapis.com/css2?family=M+PLUS+2&display=swap"
   post_meta = ["author", "date", "categories", "translations"]
   authorbox = true
   [params.author]
@@ -33,10 +33,10 @@ copyright = "© 2020-2025 sonohen All Rights Reserved."
     single = "right"
     widgets = ["social", "search", "recent", "categories", "taglist"]
   [Params.widgets.social]
-    x = "nya18nn"
+    x = "sonohenv0"
     github = "sonohen"
   [Params.style.vars]
-    fontFamilyPrimary = "'Zen Kurenaido', sans-serif"
+    fontFamilyPrimary = "'M PLUS 2', sans-serif"
 
 [permalinks]
   post = "/:year/:month/:day/:contentbasename/" # optional
