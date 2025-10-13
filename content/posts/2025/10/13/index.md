@@ -81,24 +81,8 @@ EndSection
 `sudo systemctl restart display-manager` によりWaylandを再起動し、正常に画面出力されることを確認します。また、HDMIケーブルを何回か抜き差ししても、毎回、安定して画面出力されるかを確認します。
 
 
-## WaylandネイティブでEDIDを固定する {#waylandネイティブでedidを固定する}
-
-WaylandでもEDIDを固定します。
-
-
-### `/etc/modprobe.d/edid.conf` を作成する {#etc-modprobe-dot-d-edid-dot-conf-を作成する}
-
-```text
-options drm_kms_helper edid_firmware=HDMI-A-1:JAPANNEXT_JN-280IPS4KR.bin
-```
-
-その上で、先程作成した `JAPANNEXT_JN-280IPS4KR.bin` を `/lib/firmware/` にコピーしておきます。
-
-その後、initramfsを更新( `sudo update-initramfs -u` )し、再起動します。
-
-
 ## 制約 {#制約}
 
 -   この方法を使うと、HDMI接続時に毎回、JapanNextのEDIDを参照することになるので、他のモニターによっては出力できなくなる可能性があります。環境がある程度固定的であればこの方法は有効ですが、そうでない場合(持ち歩き用途など)では使えない可能性もあります。
 -   画面が全く表示されない場合にはEDIDが取得できないため、この方法は使えません。
--   サスペンドからの復旧時には、HDMIケーブルを抜線後にログインし、HDMIケーブルを差し込んだあとXを再起動する必要があります。 `sudo systemctl restart display-manager`
+-   サスペンドからの復旧時には、HDMIケーブルを抜線後にログインし、HDMIケーブルを差し込んだあと `display-manager` を再起動する必要があります。 `sudo systemctl restart display-manager`
