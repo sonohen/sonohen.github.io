@@ -78,7 +78,7 @@ EndSection
 
 ### Waylandを再起動 {#waylandを再起動}
 
-`sudo systemctl restart display-manager` によりXを再起動し、正常に画面出力されることを確認します。また、HDMIケーブルを何回か抜き差ししても、毎回、安定して画面出力されるかを確認します。
+`sudo systemctl restart display-manager` によりWaylandを再起動し、正常に画面出力されることを確認します。また、HDMIケーブルを何回か抜き差ししても、毎回、安定して画面出力されるかを確認します。
 
 
 ## WaylandネイティブでEDIDを固定する {#waylandネイティブでedidを固定する}
