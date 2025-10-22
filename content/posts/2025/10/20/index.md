@@ -4,7 +4,7 @@ author = ["sonohen"]
 date = 2025-10-20
 tags = ["Slackware", "digiKam"]
 categories = ["Linux"]
-draft = true
+draft = false
 toc = true
 lead = "写真管理のソフトウェアを、macOSの写真アプリから、KDEのdigiKamに移行しました。その際に、HEIC画像を扱うことができなかったので対処をした際のログです。"
 +++
