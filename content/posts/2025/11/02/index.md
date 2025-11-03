@@ -4,7 +4,7 @@ author = ["sonohen"]
 date = 2025-11-02
 tags = ["Slackware", "ThinkPad"]
 categories = ["Linux"]
-draft = true
+draft = false
 toc = true
 lead = "Slackware + i3 + ThinkPadな環境において、液晶の明るさを変更するための仕組みを考えました。"
 +++
