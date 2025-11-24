@@ -4,5 +4,5 @@ all:
 	git push
 
 check:
-	open "http://127.0.0.1:1313"
+	qutebrowser "http://127.0.0.1:1313"
 	hugo server -D
