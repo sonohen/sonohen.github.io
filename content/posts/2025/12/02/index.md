@@ -21,7 +21,7 @@ lead = "tmuxでemacs -nwを実行し、その上でddskkによって日本語入
 
 以下のように入力すると、不正な文字列が入力される。
 
-Ki Gasuru -&gt; 気gがする
+KiGasuru -&gt; 気gがする
 
 
 ## 解消方法 {#解消方法}
