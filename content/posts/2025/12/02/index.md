@@ -57,6 +57,8 @@ exec emacs -nw "$@"
 
 結局、上記は効果がなかったとは言えないが、もっとも効果がありそうなのは以下の対策であった。
 
+`~/.config/kitty/kitty.conf`
+
 ```cfg
 programs.kitty.keybindings = {
   "ctrl+j" = "discard_event";
