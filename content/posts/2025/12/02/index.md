@@ -62,3 +62,8 @@ programs.kitty.keybindings = {
   "ctrl+j" = "discard_event";
 }
 ```
+
+
+## その後の検証の結果(2) {#その後の検証の結果--2}
+
+結局、劇的な効果が見込まれず `emacs -nw` をtmuxの中で動かすことは止めにした。
