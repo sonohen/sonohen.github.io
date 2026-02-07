@@ -6,7 +6,7 @@ tags = ["Slackware", "ThinkPad"]
 categories = ["Linux"]
 draft = false
 toc = true
-lead = "Slackware + i3 + ThinkPadな環境において、液晶の明るさを変更するための仕組みを考えました。"
+description = "Slackware + i3 + ThinkPadな環境において、液晶の明るさを変更するための仕組みを考えました。"
 +++
 
 [X.com](https://x.com/sonohenv0/)でもいくつかポストしていますが、先日からSlackwareでi3を使用しています。環境構築作業のなかで最も優先度が低かったのが液晶の明るさを変更するための仕組みであったのですが、今日、ようやく実装しました。
@@ -28,6 +28,7 @@ CURRENT_BRIGHTNESS=`cat $FILE`
 TARGET_BRIGHTNESS=$(( $CURRENT_BRIGHTNESS + $1 ))
 echo $TARGET_BRIGHTNESS > $FILE
 ```
+
 <div class="src-block-caption">
   <span class="src-block-number">Code Snippet 1:</span>
   <code>~/.local/bin/brightness.sh</code>
@@ -39,6 +40,7 @@ echo $TARGET_BRIGHTNESS > $FILE
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo ~/.local/bin/brightness.sh 4000
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo ~/.local/bin/brightness.sh -4000
 ```
+
 <div class="src-block-caption">
   <span class="src-block-number">Code Snippet 2:</span>
   <code>~/.config/i3/config</code>

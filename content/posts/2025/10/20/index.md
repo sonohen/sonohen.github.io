@@ -6,13 +6,12 @@ tags = ["Slackware", "digiKam"]
 categories = ["Linux"]
 draft = false
 toc = true
-lead = "写真管理のソフトウェアを、macOSの写真アプリから、KDEのdigiKamに移行しました。その際に、HEIC画像を扱うことができなかったので対処をした際のログです。"
+description = "写真管理のソフトウェアを、macOSの写真アプリから、KDEのdigiKamに移行しました。その際に、HEIC画像を扱うことができなかったので対処をした際のログです。"
 +++
 
 ## TL;DR {#tl-dr}
 
 Slackware -currentのImageMagick (7.1.2-7)は `--with-heic=yes` でコンパイルされていないため、それを使っているdigiKamでもHEIC/HEIFフォーマットの画像を扱うことができない。同じ理由で、Gwenviewでも扱うことができない。
-
 
 ## そもそもの発端 {#そもそもの発端}
 
@@ -20,13 +19,11 @@ Slackware -currentのImageMagick (7.1.2-7)は `--with-heic=yes` でコンパイ�
 
 これといった理由は特に無いのですが、趣味の写真をさっさと再開できるようにということで、まずは写真のデータをSlackwareに移行することにしました。
 
-
 ## HEICフォーマットの画像がdigiKamに表示されない {#heicフォーマットの画像がdigikamに表示されない}
 
 HEICフォーマットはiPhone等で使われる形式で、同程度の視覚品質を得るためにはJPEGの50-60%程度のファイルサイズで済むといわれています。つまり、容量に制約のあるスマートフォンや、クラウドサービスの容量を節約したい場合にHEICを使うことが良いのではないかと思われます。私も、iPhoneでHEICが使われるようになってからというもの、iPhoneで撮る写真はすべてHEIC形式になりました。
 
 それらの写真をdigiKamに取り込もうとした時に、サムネイルもプレビューも表示されないので「どうなってんだ？」と思い調査したところ、まず判ったのは `libheif` がシステムにインストールされていないことでした。
-
 
 ## `libheif` をインストールする {#libheif-をインストールする}
 
@@ -41,20 +38,17 @@ $ magick -list format | grep HEIC    # 結果は何も表示されなかった =
 $ magick -list format | grep HEIF    # 結果は何も表示されなかった => 無効
 ```
 
-
 ## ImageMagickを `--with-heic=yes` つきでインストールする {#imagemagickを-with-heic-yes-つきでインストールする}
 
 ImageMagicは、[currentのソースコード](https://mirrors.slackware.com/slackware/slackware-current/source/l/imagemagick/)をもとにコンパイルする。 `imagemagic.SlackBuild` の中に記載されている `./configure` に対し `--with-heic=yes` を指定したうえでパッケージを作成し、インストールする。
 
 ここまで実施した上でdigiKamを開くと、HEICフォーマットの画像が表示されるようになっているはずである。
 
-
 ## DolphinとGwenviewでもHEICを扱いたい場合は、KImageFormatsをHEICサポートつきでコンパイルし、インストールする必要がある {#dolphinとgwenviewでもheicを扱いたい場合は-kimageformatsをheicサポートつきでコンパイルし-インストールする必要がある}
 
 ここまで実施しても、まだDolphinやGwenviewでHEICを表示することはできない。それらでHEICを扱うためには、KImageFormatsをHEICサポートつきでコンパイルし、インストールする必要がある。 `cmake` の引数に `-DKIMAGEFORMATS_HEIF=on` を指定してコンパイルし、パッケージを作成、インストールする。
 
 こうして無事、私の写真ライブラリはSlackwareマシンに移行されたのでした。
-
 
 ## まとめ {#まとめ}
 

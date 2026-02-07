@@ -2,17 +2,16 @@
 title = "Debian GNU/Linux 13 (trixie)でSwiftを動かす"
 author = ["sonohen"]
 date = 2025-10-12
-tags = ["EmacsLisp"]
+tags = ["Emacs Lisp"]
 categories = ["Linux"]
 draft = false
 toc = true
-lead = "Debian GNU/LinuxでSwiftを動かしてみようという試みをしました。"
+description = "Debian GNU/LinuxでSwiftを動かしてみようという試みをしました。"
 +++
 
 `Swift` は、Apple社が開発をしているプログラミング言語で、主にApple製品で動作させるソフトウェアを開発するために使用されるものですが、オープンソース化されてからというもの、Linuxなどサーバサイドで動作するソフトウェアの開発にも使われているようです。
 
 今回は、たまたま目新しいということで、インストールしてみました。
-
 
 ## Swiftをインストールする {#swiftをインストールする}
 
@@ -33,12 +32,12 @@ $ hash -r
 `~/.bashrc` にも、以下を追記しておきます。
 
 <a id="code-snippet--=~-.bashrc= への追記内容"></a>
+
 ```shell
 # Swift
 . "${SWIFTLY_HOME_DIR:-$HOME/.local/share/swiftly}/env.sh"
 hash -r
 ```
-
 
 ## `Hello World` してみる {#hello-world-してみる}
 
@@ -70,11 +69,9 @@ Build of product 'HelloWorld' complete! (0.20s)
 Hello, world!
 ```
 
-
 ## EmacsでSwiftを使ってみる {#emacsでswiftを使ってみる}
 
 当然、EmacsでもSwiftを使うことができます。私の場合、現時点でSwiftで本格的にプログラムを書く予定はなく、 `org-babel` で少し勉強したいと思っている程度なので、 `ob-swift` と `swift-mode` を導入することにしました。
-
 
 ### PATHを通す {#pathを通す}
 
@@ -85,11 +82,9 @@ Hello, world!
   (exec-path-from-shell-initialize))
 ```
 
-
 ### `ob-swift` と `swift-mode` をインストールする {#ob-swift-と-swift-mode-をインストールする}
 
 `M-x package-install` から `ob-swift` と `swift-mode` をインストールしておきます。前者は `org-babel` でSwiftを実行するために必要、後者はシンタックスハイライトをするために必要となります。
-
 
 ### `org-babel` でSwiftを有効化する {#org-babel-でswiftを有効化する}
 
@@ -104,7 +99,6 @@ Hello, world!
 
 この例では、SwiftとEmacs Lispを有効化しています。Emacs Lispについては、あえて記述しなくとも最初から有効になっているため、書く必要はありません。
 
-
 ### `org-babel` でSwiftを実行する {#org-babel-でswiftを実行する}
 
 ここまでの設定を終えていれば、以下のように書くことで `org-babel` でSwiftを実行できます。
@@ -118,7 +112,6 @@ print(a)
 #+RESULTS:
 : 1
 ```
-
 
 ## まとめ {#まとめ}
 

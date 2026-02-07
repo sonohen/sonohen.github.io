@@ -2,16 +2,15 @@
 title: "GitHub Codespacesを試しつつ、Hugoへ移行する"
 date: 2023-01-04T09:07:32Z
 categories:
-  - 技術のこと
+  - Blog
 tags:
-  - 技術のこと
+  - GitHub
+  - Hugo
+  - Chromebook
 authors:
   - sonohen
+description: GitHubが提供する、Web版VSCodeを使った開発環境「GitHub Codespaces」を使うことができるようになっていたので、それを使いがてら、静的サイトジェネレータをhexoからhugoに変更し、GitHub Actionsを使ってGitHub Pagesで公開出来るようにしようと思う。
 ---
-
-GitHubが提供する、Web版VSCodeを使った開発環境「GitHub Codespaces」を使うことができるようになっていたので、それを使いがてら、静的サイトジェネレータをhexoからhugoに変更し、GitHub Actionsを使ってGitHub Pagesで公開出来るようにしようと思う。
-
-<!--more-->
 
 ## 試す上での縛り
 

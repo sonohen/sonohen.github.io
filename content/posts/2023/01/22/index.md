@@ -2,16 +2,14 @@
 title: "Elastic Beanstalkを試してみる"
 date: 2023-01-22T03:26:59Z
 categories:
-  - AWSのこと
+  - Cloud
 tags:
-  - AWSのこと
+  - AWS
+  - やってみた
 authors:
   - sonohen
+description: DVA試験（AWS Certified Developper - Associate）対策のため、Beanstalkをハンズオンしてみたので記録しておきました。
 ---
-
-DVA試験（AWS Certified Developper - Associate）対策のため、Beanstalkをハンズオンしてみたので記録しておきました。
-
-<!--more-->
 
 ## 目標
 
@@ -55,7 +53,7 @@ Elastic Beanstalkは初めて使うため（AWS研修では使った経験あり
 
 > The following resource(s) failed to create: [AWSEBV2LoadBalancer, AWSEBAutoScalingGroup].
 >
-> You must use a valid fully-formed launch template. *No default subnet for availability zone: 'ap-northeast-1c'*. (Service: AmazonAutoScaling; Status Code: 400; Error Code: ValidationError; Request ID: 7d99081a-1554-487c-b265-38b01661aa2e; Proxy: null)
+> You must use a valid fully-formed launch template. _No default subnet for availability zone: 'ap-northeast-1c'_. (Service: AmazonAutoScaling; Status Code: 400; Error Code: ValidationError; Request ID: 7d99081a-1554-487c-b265-38b01661aa2e; Proxy: null)
 
 このエラーの原因は、デフォルトサブネットが存在しないことです。過去にデフォルトVPCを削除した時に、一緒に削除されたのだと思います。そして、現在はデフォルトVPCのみ作成されている状況です。本来、デフォルトVPCは以下のような構成になっているのが正しいようです。
 
@@ -144,23 +142,11 @@ aws ec2 describe-subnets \
 
 出力例は以下です。
 
-```json {linenos=table, hl_lines=["4-5", "9-10", "14-15"]}
+```json
 [
-    [
-        "subnet-090132d78642c5909",
-        "ap-northeast-1d",
-        "172.31.32.0/20"
-    ],
-    [
-        "subnet-0a941d6e7b4ae578c",
-        "ap-northeast-1c",
-        "172.31.0.0/20"
-    ],
-    [
-        "subnet-0374fa703f83f7ae1",
-        "ap-northeast-1a",
-        "172.31.16.0/20"
-    ]
+  ["subnet-090132d78642c5909", "ap-northeast-1d", "172.31.32.0/20"],
+  ["subnet-0a941d6e7b4ae578c", "ap-northeast-1c", "172.31.0.0/20"],
+  ["subnet-0374fa703f83f7ae1", "ap-northeast-1a", "172.31.16.0/20"]
 ]
 ```
 
@@ -198,35 +184,35 @@ aws ec2 describe-route-tables \
 
 ```json {linenos=table,hl_lines=["15-18", 27]}
 {
-    "RouteTables": [
+  "RouteTables": [
+    {
+      "Associations": [],
+      "PropagatingVgws": [],
+      "RouteTableId": "rtb-0ef8c99720a501497",
+      "Routes": [
         {
-            "Associations": [],
-            "PropagatingVgws": [],
-            "RouteTableId": "rtb-0ef8c99720a501497",
-            "Routes": [
-                {
-                    "DestinationCidrBlock": "172.31.0.0/16",
-                    "GatewayId": "local",
-                    "Origin": "CreateRouteTable",
-                    "State": "active"
-                },
-                {
-                    "DestinationCidrBlock": "0.0.0.0/0",
-                    "GatewayId": "igw-0adc27eae43d8714d",
-                    "Origin": "CreateRoute",
-                    "State": "active"
-                }
-            ],
-            "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "default-public-rtb"
-                }
-            ],
-            "VpcId": "vpc-0f48a5ddd72f1781f",
-            "OwnerId": "436589084651"
+          "DestinationCidrBlock": "172.31.0.0/16",
+          "GatewayId": "local",
+          "Origin": "CreateRouteTable",
+          "State": "active"
+        },
+        {
+          "DestinationCidrBlock": "0.0.0.0/0",
+          "GatewayId": "igw-0adc27eae43d8714d",
+          "Origin": "CreateRoute",
+          "State": "active"
         }
-    ]
+      ],
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "default-public-rtb"
+        }
+      ],
+      "VpcId": "vpc-0f48a5ddd72f1781f",
+      "OwnerId": "436589084651"
+    }
+  ]
 }
 ```
 
@@ -272,7 +258,9 @@ unzip corretto.zip -d sample/
   </head>
   <body>
     <h1>Hello World</h1>
-    <p>This is a end of the Web as there are no links in this page. Hello World.</p>
+    <p>
+      This is a end of the Web as there are no links in this page. Hello World.
+    </p>
   </body>
 </html>
 ```

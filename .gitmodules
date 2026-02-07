@@ -4,3 +4,6 @@
 [submodule "themes/simpleness"]
 	path = themes/simpleness
 	url = https://github.com/RainerChiang/simpleness.git
+[submodule "themes/stack"]
+	path = themes/stack
+	url = https://github.com/CaiJimmy/hugo-theme-stack.git

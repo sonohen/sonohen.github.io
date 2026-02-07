@@ -2,11 +2,12 @@
 title: "ブログ環境をGitHubからAWSに移行しました"
 date: 2022-12-06T11:24:12Z
 categories:
-  - AWSのこと
+  - Blog
 tags:
-  - AWSのこと
+  - AWS
 authors:
   - sonohen
+description: Hexoで構築していたブログを、AWS Codeシリーズ + S3の構成に見直しました。理由は2つあり、研究のためと、将来的に作業空間をクラウドに移行させたいと考えていたためです。実際には、メンテナンスが面倒くさく、この構成は取りやめとなりました。
 ---
 
 ## 今までの構成
@@ -19,8 +20,6 @@ authors:
 - GitHub Pagesは、リポジトリに`git push`さえすればページが公開され、かつ無料で気軽に使うことができるため
 
 しかし思うところがあり、今回、この構成をAWSに移行することにしました。
-
-<!--more-->
 
 ## 新たに構築した構成
 
@@ -54,16 +53,10 @@ authors:
 
 ```yml
 {
-    "Effect": "Allow",
-    "Action": [
-        "s3:ListBuckets",
-        "s3:PutObject",
-        "s3:GetObject",
-        "s3:DeleteObject"
-    ],
-    "Resource": [
-        "arn:aws:s3:::.../*"
-    ]
+  "Effect": "Allow",
+  "Action":
+    ["s3:ListBuckets", "s3:PutObject", "s3:GetObject", "s3:DeleteObject"],
+  "Resource": ["arn:aws:s3:::.../*"],
 }
 ```
 

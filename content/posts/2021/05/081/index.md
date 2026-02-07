@@ -1,24 +1,22 @@
 ---
-title: "Rcloneの使い方"
+title: Rcloneの使い方
 date: 2021-05-05T21:56:43Z
-description: "Rcloneという複数のクラウドドライブに対応したCLIベースのプログラムがあります。それを使ってonedriveにアクセスしましたので、その方法やユースケースを紹介します。"
+description: Rcloneという複数のクラウドドライブに対応したCLIベースのプログラムがあります。それを使ってOneDriveにアクセスしましたので、その方法やユースケースを紹介します。
 categories:
-  - "技術のこと"
+  - Linux
 tags:
-  - "技術のこと"
+  - Rclone
 ---
 
-Rcloneという複数のクラウドドライブに対応したCLIベースのプログラムがあります。それを使ってonedriveにアクセスしましたので、その方法やユースケースを紹介します。
+## Rcloneとは
 
-<!--more-->
-
-### Rcloneとは
-
-> Rclone is a command line program to manage files on cloud storage. It is a feature rich alternative to cloud vendors' web storage interfaces. Over 40 cloud storage products support rclone including S3 object stores, business & consumer file storage services, as well as standard transfer protocols.
+{{< quote author="Rclone" source="Rclone" url="https://rclone.org/">}}
+Rclone is a command line program to manage files on cloud storage. It is a feature rich alternative to cloud vendors' web storage interfaces. Over 40 cloud storage products support rclone including S3 object stores, business & consumer file storage services, as well as standard transfer protocols.
+{{< /quote >}}
 
 つまるところ、Rcloneはクラウドストレージを操作するためのコマンドライン・インタフェースであり、40を超えるクラウドサービスに加え、標準的な転送プロトコル（SFTP等）もサポートしているというものです。
 
-### 使い方
+## 使い方
 
 使用する前に、設定を行う必要があります。ここでは、`onedrive`を例に記載します。
 
@@ -189,13 +187,13 @@ y/n> **y**
 type = onedrive
 region = global
 token = {"access_token":"","token_type":"Bearer","refresh_token":"","expiry":"2021-05-05T22:36:16.565429024+09:00"}
-drive_id = xxx 
+drive_id = xxx
 drive_type = personal
 --------------------
 y) Yes this is OK (default)
 e) Edit this remote
 d) Delete this remote
-y/e/d> **y** 
+y/e/d> **y**
 Current remotes:
 
 Name                 Type
@@ -209,18 +207,18 @@ r) Rename remote
 c) Copy remote
 s) Set configuration password
 q) Quit config
-e/n/d/r/c/s/q> **q** 
+e/n/d/r/c/s/q> **q**
 ```
 
-### 使い方
+## 使い方
 
-#### リモート側のファイルを確認する
+### リモート側のファイルを確認する
 
 ```shell
 $ rclone ls onedrive:
 ```
 
-#### リモートからファイルをダウンロードする
+### リモートからファイルをダウンロードする
 
 ```shell
 $ rclone copy -P onedrive: /path/to/download

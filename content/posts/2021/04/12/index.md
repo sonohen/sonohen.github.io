@@ -1,17 +1,16 @@
 ---
 title: "VS CodeからDebian on WSL2.0にアクセスできずに焦った話"
 date: 2021-04-12T19:29:25Z
-categories: 
-- 技術のこと
-tags: 
-- 技術のこと
+categories:
+  - Windows
+tags:
+  - Debian
+  - Visual Studio Code
+  - WSL
+description: 本日、VS Codeを立ち上げると、いつもならすぐ繋がるDebian on WSL2.0に接続できなくなりました。原因は不明ですが、WSL2.0をShutdownした後、VS Codeを再度立ち上げ直したところ、無事、接続できました。
 ---
 
-本日、VS Codeを立ち上げると、いつもならすぐ繋がるDebian on WSL2.0に接続できなくなりました。原因は不明ですが、WSL2.0をShutdownした後、VS Codeを再度立ち上げ直したところ、無事、接続できました。
-
-<!--more-->
-
-### 発生した問題
+## 発生した問題
 
 VS Codeが出力したエラーメッセージは次の通りでした。`VS Code Server for WSL closed unexpectedly.`と表記されている通り、WSL向けのVS Code Serverへの接続が予期しない理由により切断された、ということです。
 
@@ -31,7 +30,7 @@ VS Codeが出力したエラーメッセージは次の通りでした。`VS Cod
 [2021-04-12 10:24:41.981] WSL Daemon exited with code 0
 ```
 
-### 原因
+## 原因
 
 不明。この事象が発生している時に、Windows TerminalからDebian on WSL2.0にアクセスし、以下のコマンドを発行したところ、エラーが発生した。`cd`の後に`ls`が発行されているのは環境によるものである。[^1]
 
@@ -42,7 +41,7 @@ ls: 'c' にアクセスできません: 入力/出力エラーです
 
 [^1]: ~/.zshrcに、`chpwd() { ls -ltr --color=auto }`を登録しているため、cd直後にlsコマンドが発行されている。
 
-### 解決方法
+## 解決方法
 
 VS Codeを閉じた後、コマンドプロンプトで以下のコマンドを実行し、その後、再度VS Codeを起動する。
 
@@ -50,6 +49,6 @@ VS Codeを閉じた後、コマンドプロンプトで以下のコマンドを�
 wsl --shutdown
 ```
 
-### 参考にしたサイト
+## 参考にしたサイト
 
 - [WSL2 cannot access 'c': Input/output error](https://github.com/microsoft/WSL/issues/6174)

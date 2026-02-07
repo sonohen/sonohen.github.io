@@ -1,13 +1,12 @@
 ---
 title: "WSL2で使っているソフトウェア"
 date: 2020-06-02T01:08:36Z
-categories: 
-- 技術のこと
-tags: 
-- 技術のこと
+categories:
+  - Windows
+tags:
+  - WSL
+description: WSL2で使っているLinuxのソフトウェアを紹介します。Windows上でLinuxが動作するのはなかなか面白いものです。
 ---
-
-WSL2で使っているLinuxのソフトウェアを紹介します。Windows上でLinuxが動作するのはなかなか面白いものです。
 
 <!--more-->
 

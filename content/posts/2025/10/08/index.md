@@ -3,10 +3,10 @@ title: "Git Submoduleを使っている環境で、 upload-pack: not our refエ�
 date: 2025-10-08T13:39:47+09:00
 draft: false
 author: "sonohen"
-categories: ["Debian"]
-tags: ["Linux", "git"]
+categories: ["Linux"]
+tags: ["Debian", "git"]
 keywords: []
-lead: "Git Submoduleを使っている環境で、Submoduleのcommitを忘れてしまったのでその対処方法を調べました。"
+description: "Git Submoduleを使っている環境で、Submoduleのcommitを忘れてしまったのでその対処方法を調べました。"
 ---
 
 Debian GNU/Linux 13が公開されたのを機に、このブログのメンテナンスを進めようと思い、GitHubのリポジトリをローカルにクローンさせ、サブモジュールの中身を引っ張ってこようとしたところ、以下の様なエラーに遭遇してしまった。
@@ -25,7 +25,7 @@ fatal: Fetched in submodule path './', but it did not contain 35b4c8b0165369c2f9
 
 これは前回、 `public` というサブモジュールを `git commit` しなかったことが原因であり、既に当時のマシンは手元にない。サブモジュールの `commit hash` をGitHub側と合わせる必要があるので、以下のような手当をした。
 
-``` shell
+```shell
 $ cd public
 $ git fetch
 $ git checkout <valid_commit_hash>

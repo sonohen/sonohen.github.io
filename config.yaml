@@ -1,0 +1,55 @@
+baseURL: https://sonohen.github.io/
+languageCode: ja-JP
+title: sonohen's tech blog
+theme: stack
+defaultContentLanguage: ja
+hasCJKLanguage: true
+pagination.pagerSize: 3
+
+params:
+  mainSections:
+    - posts
+  description: いろいろな試行錯誤のあれこれ
+  footer:
+    since: 2020
+  article:
+    toc: true
+    license:
+      enabled: true
+      default: Licensed under CC BY-NC-SA 4.0
+  sidebar:
+    sticky: true
+    subtitle: いろいろな試行錯誤のあれこれ
+    avatar: img/avatar.png
+  search:
+    enabled: true
+  widgets:
+    homepage:
+      - type: search
+      - type: archives
+      - type: categories
+      - type: tag-cloud
+    page:
+      - type: toc
+  comments:
+    enabled: false
+  social:
+    - identifier: github
+      name: GitHub
+      url: https://github.com/sonohen/
+      params:
+        icon: brand-github
+    - identifier: twitter
+      name: Twitter
+      url: https://twitter.com/sonohenv0/
+      params:
+        icon: brand-twitter
+  related:
+    threshold: 80
+    indices:
+      - name: tags
+        weight: 100
+      - name: categories
+        weight: 50
+      - name: date
+        weight: 10

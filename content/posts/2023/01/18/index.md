@@ -2,15 +2,15 @@
 title: "Ruby on Railsを久しぶりに試してみる"
 date: 2023-01-17T15:01:46Z
 categories:
-  - 技術のこと
+  - Programming
 tags:
-  - 技術のこと
+  - Ruby on Rails
+  - Ruby
 authors:
   - sonohen
 draft: true
+description: 数年振りにRuby on Railsを使ってみた。ただし、使う環境は大きく変わった。
 ---
-
-数年振りにRuby on Railsを使ってみた。ただし、使う環境は大きく変わった。
 
 <dl>
 <dt>昔の環境</dt>

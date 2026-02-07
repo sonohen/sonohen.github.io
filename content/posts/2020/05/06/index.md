@@ -1,13 +1,13 @@
 ---
 title: "Hugoをインストールする"
 date: 2020-05-06T11:36:53+0900
-categories: [ "技術のこと" ]
-tags: [ "技術のこと" ]
-summary: "Hugoをインストールした時の記録です。"
-authors: [ "sonohen" ]
+categories: ["Blog"]
+tags: ["Hugo", "Git"]
+description: "HugoはGo言語で開発されており、Markdown記法と親和性が高く、高速に動作するサイトジェネレーターツールです。GitHub Actionsと組み合わせることで、リポジトリへのプッシュをトリガーにサイトを生成することができるので、検証がてらブログを作ってみました。"
+authors: ["sonohen"]
 ---
 
-### Hugoを導入する
+## Hugoを導入する
 
 ```bash
 $ hugo new site shared/site
@@ -21,7 +21,7 @@ $ hugo
 
 ここの時点で，publicディレクトリーが作られていることを確認する。
 
-### テーマの導入
+## テーマの導入
 
 [Hugo Theme](https://themes.gohugo.io/)にすぐに使えるテーマが掲載されている。
 
@@ -38,13 +38,13 @@ paginate = 10
 $ hugo
 ```
 
-### GitHub Pageの設定
+## GitHub Pageの設定
 
 1. blogレポジトリを作る
    1. これはprivateレポジトリで良い
 2. sonohen.github.ioレポジトリを作る
 
-### Gitの設定
+## Gitの設定
 
 public/は，サブモジュールとして管理する。レポジトリが別なため。
 
@@ -76,7 +76,7 @@ git submodule deinit <消したいsubmodueへのパス>
 git rm <消したいsubmoduleへのパス>
 ```
 
-### Visual Studio Codeを設定して記事を書く
+## Visual Studio Codeを設定して記事を書く
 
 1. Hugofy（akmittal.hugofy）をインストールする。
 2. Hugofy: New Postを選択する。
@@ -84,6 +84,6 @@ git rm <消したいsubmoduleへのパス>
 4. Hugofy: Buildを選択する。
 5. siteとpublicをcommit&pushする。
 
-### 参考
+## 参考
 
 - [[git]git submodule addでエラー「A git directory for ‘[指定モジュール]‘ is found locally with remote(s):」](http://to-developer.com/blog/?p=1970)

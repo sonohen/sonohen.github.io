@@ -6,42 +6,38 @@ tags = ["ArchLinux"]
 categories = ["Linux"]
 draft = false
 toc = true
-lead = "Arch Linuxにインストールしたqutebrowserがウェブサイトを描画せず困り果てていたところ、Xorgのドライバをきちんとインストールしていなかったことが原因でした...。"
+description = "Arch Linuxにインストールしたqutebrowserがウェブサイトを描画せず困り果てていたところ、Xorgのドライバをきちんとインストールしていなかったことが原因でした...。"
 +++
 
 かつてよりLinux環境ではFirefoxを愛用していたのですが、最近ではもっぱら[qutebrowser](https://www.qutebrowser.org)を愛用しています。vimの操作方法を使えるのが便利で、マウスを使わずともほとんどの操作をキーボード主体でできることから、i3-wmとも非常に相性が良いです。
 
 しかし、そのqutebrowserをArchLinuxにインストールしたところ、どうにもまともに動かない状況で、2-3日ハマりました。結論は、Xorgのドライバーをきちんとインストールしていなかったことでした。解決に至るまでの状況と教訓をまとめておきます。
 
-
 ## 起こっていたこと {#起こっていたこと}
 
--   スタートアップに指定しているDuckDuckGoのページが表示されない。ロードが終わっていることはステータスバーから分かるものの、画面は真っ白の状態。まれに画面がちらつき、アヒルのロゴが表示される状況。
--   操作がまともに出来ない。コマンドを受け付けない。
-
+- スタートアップに指定しているDuckDuckGoのページが表示されない。ロードが終わっていることはステータスバーから分かるものの、画面は真っ白の状態。まれに画面がちらつき、アヒルのロゴが表示される状況。
+- 操作がまともに出来ない。コマンドを受け付けない。
 
 ## 調査(1) qutebrowser/qtwebkitのバージョンによる不具合の有無 {#調査--1--qutebrowser-qtwebkitのバージョンによる不具合の有無}
 
 まず最初に疑ったのが、ArchLinuxにインストールされている `qutebrowser` と、それが利用している `QtWebEngine` のバージョンによる不具合の有無です。私の環境では、2025年11月21日現在で以下のバージョンがインストールされていました。
 
--   **qutebrowser** v3.6.1
--   **PyQt** 6.10.0
--   **PyQt6.QtWebEngineCore** 6.10.0
+- **qutebrowser** v3.6.1
+- **PyQt** 6.10.0
+- **PyQt6.QtWebEngineCore** 6.10.0
 
 これらのバージョンは、正常に動作しているSlackware -current on ThinkPadと同じであったので、インストールされているバージョンに不具合があるというわけではなさそうだ、という結論に到達しました。(一応、ChatGPTにも調査させ、不具合がでていないことは調べました。)
-
 
 ## 調査(2) ドライバの問題 {#調査--2--ドライバの問題}
 
 次に疑ったのがグラフィックドライバの問題です。疑った根拠は以下の2つです。
 
--   Xorgの設定をまともにしていなかったと思い出したこと
--   `qutebrowser --version` の出力結果を眺めていたところ、qutebrowserの内部ではChromiumをベースとしたQtWebEngineが動作していることに気が付いたこと
+- Xorgの設定をまともにしていなかったと思い出したこと
+- `qutebrowser --version` の出力結果を眺めていたところ、qutebrowserの内部ではChromiumをベースとしたQtWebEngineが動作していることに気が付いたこと
 
 利用している端末はHP EliteBook 630 (G9)で、これには12世代のIntel CPU(12th Gen Intel(R) Core(TM) i5-1235U)が搭載されています。使用しているグラフィックボードはオンボード(統合チップセット)で、Intel Iris Xe Graphicsです。[Xorg - ArchWiki](https://wiki.archlinux.jp/index.php/Xorg)によると、この世代のチップには `xf86-video-intel` を使うのではなく、代わりに `mesa` を使うように記載があります。
 
 なるほどと思い `/var/log/pacman.log` を調べると、 `extra/mesa` がインストールされていないことが判明しました。 `extra/x86-video-intel` を削除したのち、 `extra/mesa` をインストールして端末を再起動したころ、qutebrowserが正常に動作するようになりました。
-
 
 ## 教訓 {#教訓}
 

@@ -2,16 +2,14 @@
 title: "SAMを使ってみる"
 date: 2023-01-23T10:50:30Z
 categories:
-  - AWSのこと
+  - Cloud
 tags:
-  - AWSのこと
+  - AWS
+  - やってみた
 authors:
   - sonohen
+description: SAMとは、Serverless Application Modelの接頭辞で、サーバレスアプリケーションを素早く開発するためのツールセットです。CloudFormationにより、必要なリソースのデプロイが行われます。今回は、Cloud9環境を用いてハンズオンを行いました。
 ---
-
-SAMのハンズオンをやってみた。
-
-SAMとは、Serverless Application Modelの接頭辞で、サーバレスアプリケーションを素早く開発するためのツールセットです。CloudFormationにより、必要なリソースのデプロイが行われます。今回は、Cloud9環境を用いてハンズオンを行いました。
 
 ## SAMの使い方
 
@@ -31,11 +29,11 @@ sam init
 
 今回は、以下のような構成を取りました。
 
-* **テンプレートの種類**: AWS Quick Start Templates
-* **使用するテンプレート**: Serverless API
-* **ランタイム**: Node.js 16.x
-* **X-Rayの使用有無**: No X-Ray
-* **アプリケーション名**: sam-app
+- **テンプレートの種類**: AWS Quick Start Templates
+- **使用するテンプレート**: Serverless API
+- **ランタイム**: Node.js 16.x
+- **X-Rayの使用有無**: No X-Ray
+- **アプリケーション名**: sam-app
 
 ```bash
 sam init
@@ -93,16 +91,16 @@ Cloning from https://github.com/aws/aws-sam-cli-app-templates (process may take 
     Dependency Manager: npm
     Application Template: quick-start-web
     Output Directory: .
-    
+
     Next steps can be found in the README file at ./sam-app/README.md
-        
+
 
     Commands you can use next
     =========================
     [*] Create pipeline: cd sam-app && sam pipeline init --bootstrap
     [*] Validate SAM template: sam validate
     [*] Test Function in the Cloud: sam sync --stack-name {stack-name} --watch
-    
+
 
 SAM CLI update available (1.70.0); (1.57.0 installed)
 To download: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
@@ -136,11 +134,11 @@ To download: https://docs.aws.amazon.com/serverless-application-model/latest/dev
             └── put-item.test.js
 ```
 
-* **`buildspec.yml`**: CodeBuildの動作を決めるための定義ファイルです。アーティファクトはS3にZIP形式で置かれるようです。
-* **`src/handlers/*.js`**: ソースコードの実体です。CFnの`template.yaml`から参照されているとおり、このソースコードがLambda関数の実体になります。
-* **`__tests__/unit/handlers/*.js`**: テストコードです。`buildspec.yml`で、`pre_build`フェーズで実行されるようになっています。
-* **`events/*.json`**: Lambda関数を起動するときに使う起動イベントの定義です。*Invocation events that you can use to invoke the function.*
-* **`env.json`**: `sam local invoke --env-vars env.json`とすることで、`template.yaml`に記載されている内容をオーバーライドできる仕組みのためのもののようです（[ローカルでの Lambda 関数の呼び出し](https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/serverless-sam-cli-using-invoke.html)）。
+- **`buildspec.yml`**: CodeBuildの動作を決めるための定義ファイルです。アーティファクトはS3にZIP形式で置かれるようです。
+- **`src/handlers/*.js`**: ソースコードの実体です。CFnの`template.yaml`から参照されているとおり、このソースコードがLambda関数の実体になります。
+- **`__tests__/unit/handlers/*.js`**: テストコードです。`buildspec.yml`で、`pre_build`フェーズで実行されるようになっています。
+- **`events/*.json`**: Lambda関数を起動するときに使う起動イベントの定義です。_Invocation events that you can use to invoke the function._
+- **`env.json`**: `sam local invoke --env-vars env.json`とすることで、`template.yaml`に記載されている内容をオーバーライドできる仕組みのためのもののようです（[ローカルでの Lambda 関数の呼び出し](https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/serverless-sam-cli-using-invoke.html)）。
 
 ### ビルド
 
@@ -153,8 +151,8 @@ sam build
 
 以下のように出力されます。
 
-* **アーティファクト**: `.aws-sam/build`
-* **ビルドに使用したテンプレート**: `.aws-sam/build/template.yaml`
+- **アーティファクト**: `.aws-sam/build`
+- **ビルドに使用したテンプレート**: `.aws-sam/build/template.yaml`
 
 ```plain
 Building codeuri: /home/ec2-user/environment/sam-app runtime: nodejs16.x metadata: {} architecture: x86_64 functions: getAllItemsFunction, getByIdFunction, putItemFunction
@@ -277,7 +275,10 @@ curl https://su7cqge7o3.execute-api.ap-northeast-1.amazonaws.com/Prod/
 戻り値
 
 ```json
-[{"id":"2","name":"sonohen2"},{"id":"1","name":"sonohen"}]
+[
+  { "id": "2", "name": "sonohen2" },
+  { "id": "1", "name": "sonohen" }
+]
 ```
 
 ### Get (By-Id)
@@ -291,7 +292,7 @@ curl https://su7cqge7o3.execute-api.ap-northeast-1.amazonaws.com/Prod/1   # {"id
 戻り値
 
 ```json
-{"id":"1","name":"sonohen"}
+{ "id": "1", "name": "sonohen" }
 ```
 
 ## 環境の削除
