@@ -38,7 +38,7 @@ Aレコード4つはApexドメイン（`sonohen.net`）をGitHub PagesのIPア�
 ### 確認方法
 
 ```shell
-dig www.sonohen.net
+% dig www.sonohen.net
 ```
 
 ```text
@@ -108,7 +108,7 @@ Hugoで`stack`テーマを使っている場合は、`themes/stack/static/CNAME`
 #### 確認方法
 
 ```shell
-dig _github-pages-challenge-sonohen.sonohen.net +nostats +nocomments +nocmd TXT
+% dig _github-pages-challenge-sonohen.sonohen.net +nostats +nocomments +nocmd TXT
 ```
 
 ```text
