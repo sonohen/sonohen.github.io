@@ -1,0 +1,20 @@
+[[social]]
+    identifier = "github"
+    name       = "GitHub"
+    url        = "https://github.com/sonohen/"
+    [social.params]
+        icon = "brand-github"
+
+[[social]]
+    identifier = "twitter"
+    name       = "Twitter"
+    url        = "https://x.com/sonohenv0/"
+    [social.params]
+        icon = "brand-twitter"
+
+[[social]]
+    identifier = "RSS"
+    name       = "RSS"
+    url        = "/index.xml"
+    [social.params]
+        icon = "rss"
