@@ -23,9 +23,9 @@ sonohen
 ## このブログのアーキテクチャ
 
 - Hugo
-- Github
-- Github Actions
-- Github Pages
+- GitHub
+- GitHub Actions
+- GitHub Pages
 - 独自ドメイン（ムームードメイン + ムームーDNS）
 
 ## 興味がある分野
