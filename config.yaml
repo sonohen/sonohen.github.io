@@ -54,3 +54,7 @@ params:
         weight: 50
       - name: date
         weight: 10
+  opengraph:
+    enabled: true
+    src: /img/avatar.png
+    local: true
