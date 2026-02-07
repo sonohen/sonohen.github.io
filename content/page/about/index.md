@@ -26,6 +26,7 @@ sonohen
 - Github
 - Github Actions
 - Github Pages
+- 独自ドメイン（ムームードメイン + ムームーDNS）
 
 ## 興味がある分野
 
