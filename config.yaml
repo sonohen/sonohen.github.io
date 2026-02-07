@@ -33,6 +33,7 @@ params:
       - type: toc
   comments:
     enabled: false
+  favicon: /favicon.ico
   social:
     - identifier: github
       name: GitHub
