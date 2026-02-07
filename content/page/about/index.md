@@ -34,7 +34,7 @@ sonohen
 
 - Linux (Slackware/ArchLinux)
 - 生成AI（Claude Code - 特にエージェント機能）
-- 自動化（Vagrant → Chef → CDK）
+- 自動化（Vagrant → CDK, Chef）
 - クラウド技術（AWS等。OpenShiftは挫折した）
 - Emacs, SKK
 - 知的生産（Obsidian, Zettelkasten）
