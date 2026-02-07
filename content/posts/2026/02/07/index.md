@@ -35,6 +35,36 @@ GitHub Pagesでブログを公開していると、`sonohen.github.io`のよう�
 
 Aレコード4つはApexドメイン（`sonohen.net`）をGitHub PagesのIPアドレスに向けるためのもので、CNAMEレコードは`www`サブドメインをGitHub Pagesに向けるためのものである。
 
+### 確認方法
+
+```shell
+dig www.sonohen.net
+```
+
+```text
+; <<>> DiG 9.10.6 <<>> sonohen.net
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 46977
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;sonohen.net. IN A
+
+;; ANSWER SECTION:
+sonohen.net. 3367 IN A 185.199.109.153
+sonohen.net. 3367 IN A 185.199.111.153
+sonohen.net. 3367 IN A 185.199.108.153
+sonohen.net. 3367 IN A 185.199.110.153
+
+;; Query time: 19 msec
+;; SERVER: 2400:4051:4682:c200:32be:3bff:fe4d:9964#53(2400:4051:4682:c200:32be:3bff:fe4d:9964)
+;; WHEN: Sat Feb 07 22:47:33 JST 2026
+;; MSG SIZE  rcvd: 104
+```
+
 ## GitHub側でのドメイン認証
 
 `GitHub > Profile > Code, planning and automation > Pages > Add a domain`から、ドメインの認証を行う。指定されたTXTレコードをムームーDNSに登録し、認証を通す。
@@ -74,6 +104,19 @@ Hugoで`stack`テーマを使っている場合は、`themes/stack/static/CNAME`
 ムームーDNSでTXTレコードを作成する際、ホスト名に`_github-pages-challenge-sonohen.sonohen.net`と入力していた。しかし、ムームーDNSでは`.sonohen.net`が自動的に付与されるため、実際に作成されたホスト名は`_github-pages-challenge-sonohen.sonohen.net.sonohen.net`になっていた。
 
 ホスト名を`_github-pages-challenge-sonohen`に修正することで解決した。
+
+#### 確認方法
+
+```shell
+dig _github-pages-challenge-sonohen.sonohen.net +nostats +nocomments +nocmd TXT
+```
+
+```text
+; <<>> DiG 9.10.6 <<>> _github-pages-challenge-sonohen.sonohen.net +nostats +nocomments +nocmd TXT
+;; global options: +cmd
+;_github-pages-challenge-sonohen.sonohen.net. IN TXT
+_github-pages-challenge-sonohen.sonohen.net. 3541 IN TXT "ひみつ（でもないが）"
+```
 
 ### DNSチェックが通らない
 
