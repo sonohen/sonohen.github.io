@@ -42,7 +42,7 @@ sonohen
 
 こんなことに触れてきた人です。
 
-- **初めてのLinux**: Debian GNU/Linux Potato（2020年頃）。Redhat/TurboLinuxは高嶺の花。Solarisを使いたくてSun Microsystemsの入社試験を受けようとしていた。
+- **初めてのLinux**: Debian GNU/Linux Potato（2001年頃）。Redhat/TurboLinuxは高嶺の花。Solarisを使いたくてSun Microsystemsの入社試験を受けようとしていた。
 - **初めてのログ解析**: XFree86 + Frame Buffer（ノートにログを書きながら、デュアルブートしていたWindowsに戻りネットを探す。ダイアルアップのため時間も限られており、かなり苦戦したが、LaVieでPotatoのGNOMEが表示された時はマジで感動した）
 - **初めて使った言語**: Active Basic。その後、C MagazineでC言語に触る。
 - **初めて購入したソフトウェア**: Visual Basic 6.0 Academic License（近所のソフマップで買った）
