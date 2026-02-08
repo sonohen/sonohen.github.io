@@ -59,6 +59,15 @@ sonohen
 - 麻雀、将棋
 - 野球観戦（西武ライオンズファン） with デジイチ
 
+## 主な資格
+
+- AWS Certified DevOps Engineer - Professional
+- AWS Certified Solutions Architect - Professional
+- AWS Certified Solutions Architect - Associate
+- AWS Certified SysOps Administrator - Associate
+- AWS Certified Developer - Associate
+- AWS Certified Cloud Practitioner
+
 ## 注意書き
 
 - このブログではアフィリエイトは利用していません。今後も利用しません。
