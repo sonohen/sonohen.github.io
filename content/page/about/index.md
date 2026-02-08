@@ -62,11 +62,11 @@ sonohen
 ## 主な資格
 
 - AWS Certified DevOps Engineer - Professional
-- AWS Certified Solutions Architect - Professional
+- AWS Certified Solutions Architect - Professional ... [合格記](/posts/2025/01/26/)
 - AWS Certified Solutions Architect - Associate
-- AWS Certified SysOps Administrator - Associate
-- AWS Certified Developer - Associate
-- AWS Certified Cloud Practitioner
+- AWS Certified SysOps Administrator - Associate ... [合格記](/posts/2025/02/16/)
+- AWS Certified Developer - Associate ... [合格記](/posts/2023/02/13/)
+- AWS Certified Cloud Practitioner ... [合格記](/posts/2021/12/16/)
 
 ## 注意書き
 
