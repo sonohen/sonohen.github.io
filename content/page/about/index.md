@@ -68,6 +68,15 @@ sonohen
 - AWS Certified Developer - Associate ... [合格記](/posts/2023/02/13/)
 - AWS Certified Cloud Practitioner ... [合格記](/posts/2021/12/16/)
 
+## お仕事募集中です。
+
+もしお仕事いただけるという方がいらっしゃいましたら以下のチャネルでお問い合わせください。
+
+- [メールアドレス](sonohen55 あっと gmail.com)
+- [X.com](https://x.com/sonohenv0/)
+
+追って、職務経歴書などをお送りいたします。
+
 ## 注意書き
 
 - このブログではアフィリエイトは利用していません。今後も利用しません。
