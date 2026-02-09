@@ -72,7 +72,7 @@ sonohen
 
 もしお仕事いただけるという方がいらっしゃいましたら以下のチャネルでお問い合わせください。
 
-- [メールアドレス](sonohen55 あっと gmail.com)
+- [メールアドレス](sonohen55_at_gmail.com)
 - [X.com](https://x.com/sonohenv0/)
 
 追って、職務経歴書などをお送りいたします。
