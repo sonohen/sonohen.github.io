@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-description: このサイトは、サイトのアクセス分析のためにGoogle Analyticsを利用しています。
+description: このサイトはアクセス分析のためにGoogle Analyticsを利用しています。
 date: 2026-01-26
 lastmod: 2026-01-26
 menu:
