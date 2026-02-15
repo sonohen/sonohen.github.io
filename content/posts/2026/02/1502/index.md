@@ -4,12 +4,12 @@ date: 2026-02-15T00:00:00+0900
 author: "sonohen"
 categories: ["Cloud"]
 tags: ["やってみた", "Generative AI"]
-description: Red Hat OpenShiftのDeveloper Sandboxを実際に触ってみた。Platform as a Serviceとしてのサービスの集合体であるAWSと、Platform as a Productとしての統合されたプロダクトであるOpenShiftを比較しながら、その設計思想の違いと開発者体験について整理する。
+description: Red Hat OpenShiftのDeveloper Sandboxを実際に触ってみた。サービスの集合体であるAWSと、Platform as a Productとしての統合されたプロダクトであるOpenShiftを比較しながら、その設計思想の違いと開発者体験について整理する。
 ---
 
 ## TL;DR
 
-- AWS は多数のサービスを組み合わせて使う _Platform as a Service_ の集合体であり、自由度が高い反面、設計・統合の責任は利用者側にある。
+- AWS は多数のサービスを組み合わせて使う _Service_ の集合体であり、自由度が高い反面、設計・統合の責任は利用者側にある。
 - Red Hat OpenShift は業界標準（Git / OCI / Kubernetes）を **強制** する _Platform as a Product_ として設計されており、最初から統合された開発・運用体験を提供することを目的としている。
 - Developer Sandboxでは以下の点から、迷わず進める体験が強く印象に残った。
   - Gitリポジトリ指定だけでビルド〜デプロイまで完結する。
