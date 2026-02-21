@@ -2,6 +2,7 @@
     identifier = "github"
     name       = "GitHub"
     url        = "https://github.com/sonohen/"
+    weight     = 1
     [social.params]
         icon = "brand-github"
 
@@ -9,6 +10,7 @@
     identifier = "twitter"
     name       = "Twitter"
     url        = "https://x.com/sonohenv0/"
+    weight     = 4
     [social.params]
         icon = "brand-twitter"
 
@@ -16,5 +18,14 @@
     identifier = "RSS"
     name       = "RSS"
     url        = "/index.xml"
+    weight     = 3
     [social.params]
         icon = "rss"
+
+[[social]]
+    identifier = "Bluesky"
+    name       = "Bluesky"
+    url        = "https://bsky.app/profile/social.sonohen.net"
+    weight     = 2
+    [social.params]
+        icon = "brand-bluesky"
