@@ -1,0 +1,12 @@
+{
+  "name": "Hugo Extended",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "postCreateCommand": "wget -q https://github.com/gohugoio/hugo/releases/download/v0.160.1/hugo_extended_0.160.1_linux-amd64.deb && sudo dpkg -i hugo_extended_0.160.1_linux-amd64.deb && rm hugo_extended_0.160.1_linux-amd64.deb",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "budparr.language-hugo-vscode"
+      ]
+    }
+  }
+}
