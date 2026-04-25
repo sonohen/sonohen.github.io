@@ -29,10 +29,15 @@ sonohen
 - GitHub Actions
 - GitHub Pages
 - 独自ドメイン（ムームードメイン + ムームーDNS）
+- Discord
+- Cloudflare Workers
+
+※ Discordでスラッシュコマンド（`/publish`）を実行すると、タイトルや本文を入力するモーダルが開き、そこに入力されたものがGitHubにプッシュされ、ブログ記事が更新される仕組みになっています。どういう仕組みになっているかはWORKSからリンクを辿ってください。
 
 ## WORKS
 
 - [Nostr/o (Yet Another Nostor Read-Only Client)](https://sonohen.net/yaronc/) - [Repository](https://github.com/sonohen/yaronc/)
+- [Publish from Discord Slash Command(GitHub Repository)](https://github.com/sonohen/pdsc/)
 
 ## 興味がある分野
 
