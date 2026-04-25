@@ -30,6 +30,10 @@ sonohen
 - GitHub Pages
 - 独自ドメイン（ムームードメイン + ムームーDNS）
 
+## WORKS
+
+- [Nostr/o (Yet Another Nostor Read-Only Client)](https://sonohen.net/yaronc/) - [Repository](https://github.com/sonohen/yaronc/)
+
 ## 興味がある分野
 
 - Linux (Slackware/ArchLinux)
