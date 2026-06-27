@@ -1,7 +1,7 @@
 +++
 title = "Apple Fitness+はジム、オンラインレッスンのデメリットを動画配信で潰してきた"
 date = "2026-06-27T21:32:50+09:00"
-tags = [""Apple", "Watch"", ""Apple", "Fitness+"", ""Apple""]
+tags = ["Apple Watch", "Apple Fitness+", "Apple"]
 description = "運動不足が続いていたところ、Apple Fitness+を2週間ほど試してみた。ハードルの低さと動画配信形式のメリットが光り、比較検討の末しばらく継続することにした。"
 draft = false
 +++
