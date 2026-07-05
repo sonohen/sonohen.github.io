@@ -4,4 +4,4 @@ all:
 	git push
 
 check:
-	/usr/local/bin/hugo server -D
+	hugo server -D
