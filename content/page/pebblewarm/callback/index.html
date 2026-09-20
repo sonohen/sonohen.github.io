@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Returning to Pebble</title>
+<p>Returning to the Pebble app…</p>
+<script>
+(function() {
+  var parameters = new URLSearchParams(location.search);
+  var response = parameters.get('code') ? { oauth_code: parameters.get('code') } : { error: parameters.get('error') || 'authorization_denied' };
+  location.href = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(response));
+}());
+</script>
+</html>
+
