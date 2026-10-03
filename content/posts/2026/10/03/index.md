@@ -4,7 +4,7 @@ author: ["sonohen"]
 date: 2026-10-03
 tags: ["Pebble", "Walking"]
 categories: ["Pebble"]
-draft: true
+draft: false
 toc: true
 description: "「今日の目標まで、あと何歩だろう」「そろそろ折り返したほうがいいかな」。歩数目標に足りない分を散歩で補いたいとき、腕時計で確認できるように、Pebble向けのアプリ「Let's Walking」を開発しました。"
 ---
