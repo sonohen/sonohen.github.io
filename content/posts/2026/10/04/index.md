@@ -143,6 +143,7 @@ Link 3 (wlp3s0)
 ということで、以下のコマンドを実行してDNS設定を変更しました。
 
 ```shell
+% sudo nmcli connection modify "<SSID>" ipv4.ignore-auto-dns yes ipv6.ignore-auto-dns yes
 % sudo resolvectl dns wlp3s0 127.0.0.1
 % sudo resolvectl domain wlp3s0 '~.'
 ```
