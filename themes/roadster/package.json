@@ -11,8 +11,8 @@
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-node": "^11.1.0",
     "postcss-cli": "^10.1.0",
-    "stylelint": "^15.11.0",
-    "stylelint-order": "^6.0.3"
+    "stylelint": "^17.16.0",
+    "stylelint-order": "^6.0.4"
   },
   "scripts": {
     "lint:editorconfig": "editorconfig-checker",
