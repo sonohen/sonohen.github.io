@@ -1,0 +1,11 @@
+#!/bin/sh
+# NetworkManager dispatcher: coalesce connection activation events.
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+export PATH
+case "${2:-}" in
+    up|vpn-up) ;;
+    *) exit 0 ;;
+esac
+# Do not undo an intentional stop of NextDNS.
+systemctl is-active --quiet nextdns.service || exit 0
+exec systemctl --no-block restart nextdns-reconnect.timer

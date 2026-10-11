@@ -1,0 +1,7 @@
+[Unit]
+Description=Restart running NextDNS after network activation
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl try-restart nextdns.service
+TimeoutStartSec=45s
