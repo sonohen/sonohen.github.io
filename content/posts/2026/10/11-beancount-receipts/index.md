@@ -2,7 +2,7 @@
 title: "CodexでレシートPDFからBeancountへの仕訳登録を自動化した"
 author: "sonohen"
 date: 2026-10-11
-categories: ""
+categories: "AI作業日誌"
 tags: []
 draft: false
 toc: true
