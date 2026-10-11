@@ -54,9 +54,9 @@ sudo docker run hello-world
 
 `Hello from Docker!`と表示されたので、続いてCodex用のDockerfileと起動スクリプトを用意した。
 
-イメージのベースには`node:22-bookworm-slim`を使い、Git、ripgrep、PythonなどとCodex CLIをインストールする。コンテナ内では一般ユーザーの`node`で実行し、作業ディレクトリを`/workspace`にした。
+当日の作業メモに残した初期構成では、イメージのベースに`node:22-bookworm-slim`を使い、Git、ripgrep、PythonなどとCodex CLIをインストールする。コンテナ内では一般ユーザーの`node`で実行し、作業ディレクトリを`/workspace`にした。
 
-起動スクリプトでは、ホスト側の共有ディレクトリを`/workspace`にマウントし、Codexのホームには名前付きボリュームを使った。今日作ったスクリプトを以下に示す。
+起動スクリプトでは、ホスト側の共有ディレクトリを`/workspace`にマウントし、Codexのホームには名前付きボリュームを使った。当日のメモに残した初期のスクリプトを以下に示す。Dockerfileと起動スクリプトはその後も変更しているため、以下は初期構成の記録として読む。
 
 ```sh
 #!/bin/sh
@@ -83,7 +83,13 @@ docker build -t codex-cli -f Dockerfile .
 
 ## bubblewrapとAppArmorの設定で悩む
 
-環境を整える途中で、bubblewrapが新しいnamespaceを作成できないというメッセージにも遭遇した。
+環境を整える途中で、bubblewrapが新しいnamespaceを作成できないというメッセージにも遭遇した。作業メモに残した原文は次のとおりだ。単語間の空白も記録どおりに示す。
+
+```text
+bwrap:No permissions tocreate a new namespace,likely because the kerneldoes not allow non-privileged user namespaces.
+```
+
+メッセージには、非特権ユーザーによるnamespaceの作成がカーネルで許可されていない可能性が示されていた。そこで、UbuntuのAppArmor設定を調べた。
 
 まず、次の設定値を確認した。
 
@@ -91,7 +97,30 @@ docker build -t codex-cli -f Dockerfile .
 sysctl kernel.apparmor_restrict_unprivileged_userns
 ```
 
-結果は`1`だった。そこで、`/usr/bin/bwrap`に`userns`を許可するAppArmorプロファイルを作り、`apparmor_parser`で読み込んだ。この設定後、私が使っている範囲ではbubblewrap関連のエラーは出なくなった。
+結果は次のとおりだった。
+
+```text
+kernel.apparmor_restrict_unprivileged_userns = 1
+```
+
+この値を確認したうえで、`/usr/bin/bwrap`に`userns`を許可するAppArmorプロファイルを作った。管理者権限で次のコマンドを実行し、`apparmor_parser`で読み込んだ。
+
+```sh
+sudo install -m 644 /dev/stdin /etc/apparmor.d/bwrap <<'EOF'
+abi <abi/4.0>,
+include <tunables/global>
+
+profile bwrap /usr/bin/bwrap flags=(unconfined) {
+  userns,
+
+  include if exists <local/bwrap>
+}
+EOF
+
+sudo apparmor_parser -r /etc/apparmor.d/bwrap
+```
+
+この設定後、私が使っている範囲ではbubblewrap関連のエラーは出なくなった。すべての実行条件を検証したわけではないため、今回確認できた範囲での結果として記録しておく。
 
 また、Codexの`config.toml`には次の設定を追加した。これは今回の環境で追加した内容の記録なので、末尾のパスはインストール先に合わせる必要がある。
 
@@ -110,6 +139,16 @@ default_permissions = "project-edit"
 ### aptの段階的な更新を知った
 
 `sudo apt upgrade`を実行したところ、`Not upgrading yet due to phasing`と表示され、20個のパッケージが更新されなかった。
+
+作業メモから、表示の冒頭と更新件数を抜粋する。途中のパッケージ一覧は省略した。
+
+```text
+Not upgrading yet due to phasing:
+（パッケージ一覧を省略）
+
+Summary:
+Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 20
+```
 
 調べると、Ubuntuには更新を一度に全員へ配布せず、対象を段階的に広げる仕組みがある。[Phased updatesの公式説明](https://ubuntu.com/project/docs/how-ubuntu-is-made/concepts/phased-updates/)によると、不具合が見つかった際の影響を小さくするためのものだ。今回の表示は、その段階的な配布に関係していた。
 
