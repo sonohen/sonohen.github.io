@@ -4,7 +4,7 @@ author: ["sonohen"]
 date: 2026-10-26
 tags: ["NixOS"]
 categories: ["Linux"]
-draft: true
+draft: false
 toc: true
 description: "UbuntuからNixOSに移行するにあたり、ZFSなパーティションからデータを救出する必要があった。Nix Shellをうまく使うことでデータの救出に成功した。"
 ---
