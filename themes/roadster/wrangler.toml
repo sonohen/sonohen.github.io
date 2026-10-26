@@ -1,9 +1,0 @@
-name = "roadster"
-compatibility_date = "2025-06-12"
-
-[assets]
-directory = "./public"
-
-routes = [
-  { pattern = "roadster.mansoorbarri.com", custom_domain = true }
-]
