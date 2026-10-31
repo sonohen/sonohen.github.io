@@ -1,0 +1,6 @@
+{{- $language := .Type | default "text" -}}
+{{- $names := dict "lisp" "Lisp" "common-lisp" "Common Lisp" "emacs-lisp" "Emacs Lisp" "elisp" "Emacs Lisp" "python" "Python" "py" "Python" "javascript" "JavaScript" "js" "JavaScript" "typescript" "TypeScript" "ts" "TypeScript" "shell" "Shell" "sh" "Shell" "bash" "Bash" "zsh" "Zsh" "powershell" "PowerShell" "json" "JSON" "yaml" "YAML" "yml" "YAML" "toml" "TOML" "html" "HTML" "css" "CSS" "sql" "SQL" "go" "Go" "rust" "Rust" "text" "プレーンテキスト" "plaintext" "プレーンテキスト" "plain" "プレーンテキスト" -}}
+<div class="code-block">
+    <div class="code-language">{{ index $names (lower $language) | default $language }}</div>
+    {{ transform.Highlight .Inner $language .Options }}
+</div>

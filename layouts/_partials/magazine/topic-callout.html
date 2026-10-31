@@ -1,0 +1,2 @@
+{{ $topic := .Navigation.Topic }}{{ $ref := "/guides" }}{{ with $topic.key }}{{ $ref = printf "/guides/%s" . }}{{ end }}
+<aside class="topic-callout{{ with .Class }} {{ . }}{{ end }}" aria-label="テーマ別ガイドの案内"><h2>このテーマをまとめて読む</h2>{{ with $topic }}<p><strong>{{ .title }}</strong></p><p>{{ .intro }}</p>{{ else }}<p>テーマ別ガイドから、AI・自動化、AWS・Linux、道具と知的生産の記事を探せます。</p>{{ end }}{{ with .Page.Site.GetPage $ref }}<a href="{{ .RelPermalink }}" data-analytics="topic" data-link-position="{{ $.Position }}">{{ .Title }}を読む →</a>{{ end }}</aside>

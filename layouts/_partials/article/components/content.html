@@ -1,0 +1,9 @@
+{{ $content := .Content }}
+{{ if eq .Section "posts" }}
+{{ $nav := partial "magazine/resolve-navigation.html" . }}
+{{ $long := and (ge (strings.RuneCount .Plain) 1500) (ge (len (findRE `<h2(?:\s|>)` $content)) 4) }}
+{{ $class := "mobile-guide compact-guide" }}{{ $position := "article_start" }}{{ if $long }}{{ $class = "mobile-guide" }}{{ $position = "article_middle" }}{{ end }}
+{{ $callout := partial "magazine/topic-callout.html" (dict "Page" . "Navigation" $nav "Position" $position "Class" $class) }}
+{{ if $long }}{{ $parts := split $content "<h2" }}{{ $content = printf "%s<h2%s<h2%s%s<h2%s" (index $parts 0) (index $parts 1) (index $parts 2) $callout (delimit (after 3 $parts) "<h2") }}{{ else }}{{ $content = printf "%s%s" $callout $content }}{{ end }}
+{{ end }}
+<section class="article-content">{{ $content | replaceRE "(<table>(?:.|\n)+?</table>)" `<div class="table-wrapper">${1}</div>` | safeHTML }}</section>

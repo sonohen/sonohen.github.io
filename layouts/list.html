@@ -1,0 +1,2 @@
+{{ define "main" }}<header class="listing-header"><h1 class="section-heading">{{ .Title }}</h1>{{ with .Description }}<p>{{ . }}</p>{{ end }}{{ with .Content }}<div class="listing-intro">{{ . }}</div>{{ end }}</header>
+{{ $pages := partial "helper/pages.html" . }}{{ $paginator := .Paginate $pages }}<div class="card-grid">{{ range $paginator.Pages }}{{ partial "magazine/card.html" (dict "Page" . "Tracking" "related") }}{{ end }}</div>{{ partial "pagination.html" . }}{{ end }}

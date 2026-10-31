@@ -1,0 +1,6 @@
+{{ define "body-class" }}article-page guide-page{{ end }}{{ define "main" }}<div class="breadcrumb"><a href="{{ .Site.Home.RelPermalink }}">ホーム</a> / {{ with .Site.GetPage "/guides" }}<a href="{{ .RelPermalink }}" data-analytics="topic">テーマ別ガイド</a>{{ end }}</div>
+{{ .Scratch.Set "TOCEnabled" false }}{{ partial "article/article.html" . }}
+{{ $topic := dict }}{{ range .Site.Data.editorial.topics }}{{ if eq .key $.Params.topic }}{{ $topic = . }}{{ end }}{{ end }}
+{{ with $topic.subroutes }}<section class="home-section route-section"><h2 class="section-heading">目的に合わせて読む</h2>{{ range $label, $refs := . }}<h3>{{ $label }}</h3><ul>{{ range $refs }}{{ with $.Site.GetPage . }}<li><a href="{{ .RelPermalink }}" data-analytics="related">{{ .Title }}</a></li>{{ end }}{{ end }}</ul>{{ end }}</section>{{ end }}
+{{ with $topic.readingOrder }}<section class="home-section next-reading"><h2 class="section-heading">この順番で読む</h2><div class="card-grid">{{ range $i, $ref := . }}{{ with $.Site.GetPage $ref }}{{ partial "magazine/card.html" (dict "Page" . "Tracking" "related" "Ordinal" (add $i 1)) }}{{ end }}{{ end }}</div></section>{{ end }}
+{{ partialCached "article/components/photoswipe" . }}{{ partial "article/components/mermaid" . }}{{ end }}

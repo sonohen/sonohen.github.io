@@ -1,0 +1,32 @@
+{{- /* Self-host PhotoSwipe so article images do not depend on a third-party CDN. */ -}}
+{{- $opts := dict "minify" hugo.IsProduction "format" "esm" -}}
+{{- $galleryScript := resources.Get "ts/gallery.ts" | js.Build $opts | fingerprint -}}
+{{- $style := resources.Get "vendor/photoswipe/photoswipe.css" | minify | fingerprint -}}
+{{- $core := resources.Get "vendor/photoswipe/photoswipe.esm.min.js" | fingerprint -}}
+{{- $lightbox := resources.Get "vendor/photoswipe/photoswipe-lightbox.esm.min.js" | fingerprint -}}
+{{- $license := resources.Get "vendor/photoswipe/LICENSE" -}}
+<!-- PhotoSwipe 5.4.4, MIT license: {{ $license.RelPermalink }} -->
+<script type="module">
+    import gallery from '{{ $galleryScript.RelPermalink }}';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("{{ $lightbox.RelPermalink | safeJS }}")).default;
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = "{{ $style.RelPermalink | safeJS }}";
+        styleTag.integrity = "{{ $style.Data.Integrity }}";
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: articleContent,
+            children: 'figure a.image-link',
+            pswpModule: () => import("{{ $core.RelPermalink | safeJS }}")
+        });
+        lightbox.init();
+    }
+</script>

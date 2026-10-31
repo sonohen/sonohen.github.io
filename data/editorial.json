@@ -1,0 +1,401 @@
+{
+  "topics": [
+    {
+      "key": "ai-automation",
+      "title": "AI・自動化の実践",
+      "intro": "何をAIに任せ、どこを人が確認するか。ローカルLLMの検証から業務の自動化まで、動かして分かった条件と制約をまとめます。",
+      "readingOrder": [
+        "/posts/2025/03/24",
+        "/posts/2026/02/14",
+        "/posts/2026/02/1501",
+        "/posts/2026/02/23",
+        "/posts/2026/02/08",
+        "/posts/2026/10/11-beancount-receipts"
+      ],
+      "subroutes": {
+        "まず考え方を知る": [
+          "/posts/2025/03/24",
+          "/posts/2026/02/23"
+        ],
+        "ローカルで試す": [
+          "/posts/2026/02/14",
+          "/posts/2026/02/1501"
+        ],
+        "設計・運用へ進む": [
+          "/posts/2026/02/08",
+          "/posts/2026/02/22",
+          "/posts/2026/10/11-beancount-receipts"
+        ]
+      }
+    },
+    {
+      "key": "cloud-linux",
+      "title": "AWS・Linuxの構築と運用",
+      "intro": "環境を作る、動かす、問題を切り分ける。AWSとLinuxの構築例、エラーへの対処、設計判断を実際の記録から探せます。",
+      "readingOrder": [
+        "/posts/2026/02/07",
+        "/posts/2025/10/08",
+        "/posts/2026/02/1502",
+        "/posts/2026/02/08",
+        "/posts/2026/09/23",
+        "/posts/2026/10/30"
+      ],
+      "subroutes": {
+        "ブログ・開発環境": [
+          "/posts/2026/02/07",
+          "/posts/2025/10/08",
+          "/posts/2026/09/23",
+          "/posts/2026/10/10"
+        ],
+        "AWSを動かす": [
+          "/posts/2023/01/03",
+          "/posts/2023/01/22",
+          "/posts/2023/01/23",
+          "/posts/2026/02/1502",
+          "/posts/2026/02/08"
+        ],
+        "Linuxの問題を調べる": [
+          "/posts/2026/10/04",
+          "/posts/2026/10/11",
+          "/posts/2026/10/12",
+          "/posts/2026/10/17",
+          "/posts/2026/10/26",
+          "/posts/2026/10/30"
+        ]
+      }
+    },
+    {
+      "key": "tools-thinking",
+      "title": "道具と知的生産",
+      "intro": "道具を買う前に、使い方を考える。時計の乗り換え、読書とメモ、ノートの管理を、使い続けて変わった判断も含めて紹介します。",
+      "readingOrder": [
+        "/posts/2026/01/11",
+        "/posts/2026/01/31",
+        "/posts/2026/01/25",
+        "/posts/2025/05/25",
+        "/posts/2025/08/24",
+        "/posts/2025/09/05"
+      ],
+      "subroutes": {
+        "読書とメモ": [
+          "/posts/2026/01/11",
+          "/posts/2026/01/21",
+          "/posts/2026/01/31",
+          "/posts/2026/01/25"
+        ],
+        "時計を選ぶ": [
+          "/posts/2025/02/23",
+          "/posts/2025/05/25",
+          "/posts/2025/08/24",
+          "/posts/2025/09/05"
+        ],
+        "自分で作る": [
+          "/posts/2026/09/13",
+          "/posts/2026/09/22",
+          "/posts/2026/10/03"
+        ]
+      }
+    }
+  ],
+  "featured": [
+    "/posts/2026/02/14",
+    "/posts/2026/02/08",
+    "/posts/2025/08/24"
+  ],
+  "articleLinks": {
+    "/posts/2020/05/06": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2020/05/20": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2020/06/02": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2021/04/12": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2021/05/05": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2021/05/081": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2021/05/082": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2021/12/16": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2022/12/06": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2023/01/03": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2023/01/04": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2023/01/06": {
+      "topic": "tools-thinking",
+      "nextReads": []
+    },
+    "/posts/2023/01/22": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2023/01/23": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2023/02/13": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2025/01/26": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2025/02/16": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2025/02/23": {
+      "topic": "tools-thinking",
+      "nextReads": []
+    },
+    "/posts/2025/03/24": {
+      "topic": "ai-automation",
+      "nextReads": []
+    },
+    "/posts/2025/05/25": {
+      "topic": "tools-thinking",
+      "nextReads": [
+        "/posts/2025/08/24",
+        "/posts/2025/09/05"
+      ]
+    },
+    "/posts/2025/08/24": {
+      "topic": "tools-thinking",
+      "nextReads": [
+        "/posts/2025/05/25",
+        "/posts/2025/09/05"
+      ]
+    },
+    "/posts/2025/09/05": {
+      "topic": "tools-thinking",
+      "nextReads": [
+        "/posts/2025/05/25",
+        "/posts/2025/08/24"
+      ]
+    },
+    "/posts/2025/10/08": {
+      "topic": "cloud-linux",
+      "nextReads": [
+        "/posts/2026/02/07",
+        "/posts/2026/10/30"
+      ]
+    },
+    "/posts/2025/10/12": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2025/10/13": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2025/10/20": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2025/11/02": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2025/11/23": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2025/12/02": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2026/01/11": {
+      "topic": "tools-thinking",
+      "nextReads": [
+        "/posts/2026/01/31",
+        "/posts/2026/04/12"
+      ]
+    },
+    "/posts/2026/01/21": {
+      "topic": "tools-thinking",
+      "nextReads": []
+    },
+    "/posts/2026/01/25": {
+      "topic": "tools-thinking",
+      "nextReads": [
+        "/posts/2026/01/31",
+        "/posts/2026/02/22"
+      ]
+    },
+    "/posts/2026/01/31": {
+      "topic": "tools-thinking",
+      "nextReads": [
+        "/posts/2026/01/25",
+        "/posts/2026/02/22"
+      ]
+    },
+    "/posts/2026/02/07": {
+      "topic": "cloud-linux",
+      "nextReads": [
+        "/posts/2023/01/04",
+        "/posts/2025/10/08"
+      ]
+    },
+    "/posts/2026/02/08": {
+      "topic": "ai-automation",
+      "nextReads": [
+        "/posts/2026/02/22",
+        "/posts/2026/10/11-beancount-receipts"
+      ]
+    },
+    "/posts/2026/02/14": {
+      "topic": "ai-automation",
+      "nextReads": [
+        "/posts/2026/02/1501",
+        "/posts/2026/02/08"
+      ]
+    },
+    "/posts/2026/02/1501": {
+      "topic": "ai-automation",
+      "nextReads": [
+        "/posts/2026/02/14",
+        "/posts/2026/02/23"
+      ]
+    },
+    "/posts/2026/02/1502": {
+      "topic": "cloud-linux",
+      "nextReads": [
+        "/posts/2026/02/08",
+        "/posts/2023/01/03"
+      ]
+    },
+    "/posts/2026/02/1503": {
+      "topic": "ai-automation",
+      "nextReads": []
+    },
+    "/posts/2026/02/22": {
+      "topic": "ai-automation",
+      "nextReads": [
+        "/posts/2026/01/31",
+        "/posts/2026/02/08"
+      ]
+    },
+    "/posts/2026/02/23": {
+      "topic": "ai-automation",
+      "nextReads": [
+        "/posts/2026/02/22",
+        "/posts/2026/10/11-beancount-receipts"
+      ]
+    },
+    "/posts/2026/04/12": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2026/06/27": {
+      "topic": "tools-thinking",
+      "nextReads": []
+    },
+    "/posts/2026/09/13": {
+      "topic": "tools-thinking",
+      "nextReads": []
+    },
+    "/posts/2026/09/22": {
+      "topic": "tools-thinking",
+      "nextReads": []
+    },
+    "/posts/2026/09/23": {
+      "topic": "cloud-linux",
+      "nextReads": [
+        "/posts/2026/10/10",
+        "/posts/2025/12/02"
+      ]
+    },
+    "/posts/2026/09/28": {
+      "topic": "tools-thinking",
+      "nextReads": []
+    },
+    "/posts/2026/10/03": {
+      "topic": "tools-thinking",
+      "nextReads": [
+        "/posts/2026/09/13",
+        "/posts/2026/09/22"
+      ]
+    },
+    "/posts/2026/10/04": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2026/10/10": {
+      "topic": "ai-automation",
+      "nextReads": [
+        "/posts/2026/10/12",
+        "/posts/2026/10/11-beancount-receipts"
+      ]
+    },
+    "/posts/2026/10/11": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2026/10/11-beancount-receipts": {
+      "topic": "ai-automation",
+      "nextReads": [
+        "/posts/2026/02/08",
+        "/posts/2026/10/17"
+      ]
+    },
+    "/posts/2026/10/12": {
+      "topic": "cloud-linux",
+      "nextReads": [
+        "/posts/2026/10/10",
+        "/posts/2026/10/11"
+      ]
+    },
+    "/posts/2026/10/16": {
+      "topic": "cloud-linux",
+      "nextReads": []
+    },
+    "/posts/2026/10/17": {
+      "topic": "cloud-linux",
+      "nextReads": [
+        "/posts/2026/10/11-beancount-receipts",
+        "/posts/2026/10/12"
+      ]
+    },
+    "/posts/2026/10/26": {
+      "topic": "cloud-linux",
+      "nextReads": [
+        "/posts/2026/10/30",
+        "/posts/2021/05/081"
+      ]
+    },
+    "/posts/2026/10/30": {
+      "topic": "cloud-linux",
+      "nextReads": [
+        "/posts/2026/10/26",
+        "/posts/2026/09/23"
+      ]
+    }
+  }
+}
