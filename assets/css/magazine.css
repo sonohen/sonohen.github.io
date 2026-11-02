@@ -12,7 +12,7 @@ body.magazine .header-inner{max-width:var(--layout-width);margin:0 auto;padding:
 body.magazine .brand{font-size:29px;font-weight:750;letter-spacing:.025em}
 body.magazine .header-inner p{margin:6px 0 0;color:var(--muted);font-size:var(--text-meta)}
 body.magazine .site-nav{display:flex;justify-content:center;gap:38px;padding:15px 20px;border-top:1px solid #f0f2ef;font-size:var(--text-meta);font-weight:600}
-body.magazine .page-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:38px;max-width:var(--layout-width);margin:38px auto;padding:0 24px;align-items:start}
+body.magazine .page-layout{display:grid;grid-template-columns:minmax(0,1fr) 308px;gap:38px;max-width:var(--layout-width);margin:38px auto;padding:0 24px;align-items:start}
 body.magazine-main{min-width:0}
 body.magazine .site-intro{padding:30px 34px;background:#eaf0e9;border-radius:8px;margin-bottom:36px}
 body.magazine .eyebrow{font-size:var(--text-meta);letter-spacing:.1em;color:#547264}
@@ -49,6 +49,15 @@ body.magazine .guide b{font-size:var(--text-meta);font-weight:600}
 body.magazine .section-note{font-size:var(--text-meta);color:var(--muted);margin:10px 0 0}
 body.magazine .author-box{padding:23px;background:white;border:1px solid #e3e8e3;border-radius:7px;text-align:center}
 body.magazine .sidebar-label{font-size:var(--text-meta);color:var(--muted);display:block}
+body.magazine .sidebar-book{margin-top:24px;padding:23px;background:var(--pale);border:1px solid var(--panel-border);border-radius:var(--panel-radius);overflow-wrap:anywhere}
+body.magazine .sidebar-book h2{font-size:var(--text-meta);color:var(--muted);margin:0 0 12px}
+body.magazine .sidebar-book .book-cover{display:block;width:180px;max-width:100%;margin:0 auto 20px}
+body.magazine .sidebar-book .book-cover img{display:block;width:100%;height:auto;box-shadow:0 4px 12px #24382d26}
+body.magazine .sidebar-book .book-title{font-size:20px;font-weight:700;line-height:1.6;text-align:center;margin:0 0 10px}
+body.magazine .sidebar-book .book-subtitle{font-size:var(--text-description);color:var(--muted);text-align:center;margin:0 0 18px}
+body.magazine .sidebar-book .book-availability{font-size:var(--text-description);color:var(--green);font-weight:600;text-align:center;margin:0 0 18px}
+body.magazine .sidebar-book .book-link{display:block;padding:10px 14px;background:var(--green);color:white;border-radius:4px;text-align:center;font-size:var(--text-description);font-weight:600}
+body.magazine .sidebar-book .book-link:hover{background:#194632}
 body.magazine .author-avatar{display:block;width:76px;height:76px;border-radius:50%;margin:20px auto 12px}
 body.magazine .author-box h2{font-size:18px;margin:0 0 12px;line-height:1.5}
 body.magazine .author-box p{font-size:var(--text-meta);line-height:1.95;text-align:left;color:var(--muted);margin:0 0 16px}

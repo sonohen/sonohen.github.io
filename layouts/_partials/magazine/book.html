@@ -1,0 +1,10 @@
+<section class="sidebar-book" aria-labelledby="sidebar-book-heading">
+  <h2 id="sidebar-book-heading">著書</h2>
+  {{ with resources.Get "img/books/generative-ai-before-thinking.jpg" }}
+  <a class="book-cover" href="https://www.amazon.co.jp/dp/B0HNN4RGCJ/" data-analytics="product" data-link-position="sidebar"><img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="『生成AIに考えを預ける前に』の表紙" loading="lazy" decoding="async"></a>
+  {{ end }}
+  <p class="book-title">生成AIに考えを預ける前に</p>
+  <p class="book-subtitle">思考の主体性を保つための短い論考</p>
+  <p class="book-availability">Kindle Unlimited対象</p>
+  <a class="book-link" href="https://www.amazon.co.jp/dp/B0HNN4RGCJ/" data-analytics="product" data-link-position="sidebar">Amazonで見る →</a>
+</section>
