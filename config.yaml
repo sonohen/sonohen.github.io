@@ -4,12 +4,49 @@ title: sonohen's tech blog
 theme: stack
 defaultContentLanguage: ja
 hasCJKLanguage: true
-pagination.pagerSize: 3
+pagination:
+  pagerSize: 10
+
+menus:
+  main:
+    - identifier: home
+      name: ホーム
+      pageRef: /
+      weight: 10
+    - identifier: guides
+      name: テーマ別ガイド
+      pageRef: /guides
+      weight: 20
+    - identifier: works
+      name: 実績・相談
+      pageRef: /page/works
+      weight: 30
+    - identifier: about
+      name: About
+      pageRef: /page/about
+      weight: 40
+    - identifier: search
+      name: 検索
+      pageRef: /page/search
+      weight: 50
+  footer:
+    - name: アーカイブ
+      pageRef: /page/archives
+      weight: 10
+    - name: プライバシーポリシー
+      pageRef: /page/privacy
+      weight: 20
 
 params:
+  colorScheme:
+    default: light
+    toggle: false
+  analytics:
+    enabled: true
+    measurementID: G-L48N0BM9MP
   mainSections:
     - posts
-  description: いろいろな試行錯誤のあれこれ
+  description: AI・クラウド・日々の道具を、実際に使って考えるブログ
   footer:
     since: 2020
   article:
@@ -19,7 +56,7 @@ params:
       default: Licensed under CC BY-NC-SA 4.0
   sidebar:
     sticky: true
-    subtitle: いろいろな試行錯誤のあれこれ
+    subtitle: AI・クラウド・日々の道具を、実際に使って考えるブログ
     avatar: img/avatar.png
   search:
     enabled: true
@@ -45,16 +82,17 @@ params:
       url: https://twitter.com/sonohenv0/
       params:
         icon: brand-twitter
-  related:
-    threshold: 80
-    indices:
-      - name: tags
-        weight: 100
-      - name: categories
-        weight: 50
-      - name: date
-        weight: 10
   opengraph:
     enabled: true
     src: /img/avatar.png
     local: true
+
+related:
+  threshold: 80
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 50
+    - name: date
+      weight: 10

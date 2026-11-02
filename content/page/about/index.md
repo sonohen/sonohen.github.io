@@ -3,11 +3,6 @@ title: About
 description: このサイトは、sonohenの興味がある分野について、日々の試行錯誤の結果を記録する個人ブログです。
 date: 2026-01-26
 lastmod: 2026-01-26
-menu:
-  main:
-    weight: -90
-    params:
-      icon: user
 ---
 
 ## `whoami`

@@ -6,20 +6,6 @@
   <head>
     {{- partial "head/head.html" . -}} {{- block "head" . -}}{{ end }}
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-L48N0BM9MP"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-L48N0BM9MP");
-  </script>
   <body class="{{ block `body-class` . }}{{ end }}">
     {{- partial "head/colorScheme" . -}} {{/* The container is wider when
     there's any activated widget */}} {{- $hasWidget := false -}} {{- range

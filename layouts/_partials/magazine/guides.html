@@ -1,0 +1,1 @@
+<div class="guide-grid">{{ range .Site.Data.editorial.topics }}{{ $topic := . }}{{ with $.Site.GetPage (printf "/guides/%s" .key) }}<a class="guide" href="{{ .RelPermalink }}" data-analytics="topic"><h3>{{ $topic.title }}</h3><p>{{ $topic.intro }}</p><b>ガイドを読む →</b></a>{{ end }}{{ end }}</div>

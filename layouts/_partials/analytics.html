@@ -1,0 +1,32 @@
+{{- /* The sole GA entry point. Keep preview and development builds untracked. */ -}}
+{{- $settings := .Site.Params.analytics | default dict -}}
+{{- $measurementID := $settings.measurementID | default "" -}}
+{{- $siteURL := urls.Parse .Site.BaseURL -}}
+{{- $localHost := in (slice "localhost" "127.0.0.1" "::1" "0.0.0.0") $siteURL.Hostname -}}
+{{- if and hugo.IsProduction (not hugo.IsServer) (not $localHost) (eq $settings.enabled true) $measurementID -}}
+    {{- if not (findRE `^G-[A-Z0-9]+$` $measurementID) -}}
+        {{- errorf "params.analytics.measurementID must be a GA4 measurement ID" -}}
+    {{- end -}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ $measurementID }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag("js", new Date());
+    (() => {
+        function cleanURL(value) {
+            try {
+                const url = new URL(value);
+                return url.origin + url.pathname;
+            } catch (_) {
+                return "";
+            }
+        }
+        gtag("config", {{ $measurementID }}, {
+            page_location: cleanURL(window.location.href),
+            page_referrer: cleanURL(document.referrer)
+        });
+    })();
+</script>
+    {{- $clickTracking := resources.Get "js/analytics.js" | minify | fingerprint -}}
+<script defer src="{{ $clickTracking.RelPermalink }}" integrity="{{ $clickTracking.Data.Integrity }}"></script>
+{{- end -}}

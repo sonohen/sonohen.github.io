@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}" dir="{{ default `ltr` .Language.LanguageDirection }}">
+<head>{{ partial "head/head.html" . }}{{ if not hugo.IsProduction }}<meta name="robots" content="noindex,nofollow">{{ end }}{{ block "head" . }}{{ end }}
+{{ $style := resources.Get "css/magazine.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}"></head>
+<body class="magazine {{ block `body-class` . }}{{ end }}"><a class="skip-link" href="#main">本文へ</a>
+{{ partial "head/colorScheme.html" . }}{{ partial "magazine/header.html" . }}
+<div class="page-layout"><main id="main" class="magazine-main">{{ block "main" . }}{{ end }}</main>{{ partial "magazine/author.html" . }}</div>
+{{ partial "magazine/footer.html" . }}{{ partial "footer/include.html" . }}
+{{ $navigation := resources.Get "js/navigation.js" | minify | fingerprint }}<script defer src="{{ $navigation.RelPermalink }}" integrity="{{ $navigation.Data.Integrity }}"></script>
+</body></html>

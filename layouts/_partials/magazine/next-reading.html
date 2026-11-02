@@ -1,0 +1,4 @@
+{{ $nav := partial "magazine/resolve-navigation.html" . }}
+{{ partial "magazine/topic-callout.html" (dict "Page" . "Navigation" $nav "Position" "article_end") }}
+{{ with $nav.Articles }}<section class="home-section next-reading"><h2 class="section-heading">次に読む記事</h2><div class="card-grid">{{ range . }}{{ partial "magazine/card.html" (dict "Page" . "Tracking" "related" "Position" "article_end") }}{{ end }}</div></section>{{ end }}
+{{ if in (slice "ai-automation" "cloud-linux") $nav.TopicKey }}{{ with .Site.GetPage "/page/works" }}<aside class="consultation-callout"><h2>実績・技術相談</h2><p>設計や自動化について、実際に取り組んだことを紹介しています。</p><a href="{{ .RelPermalink }}" data-analytics="consultation" data-link-position="article_end">実績と相談の案内を見る →</a></aside>{{ end }}{{ end }}

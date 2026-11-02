@@ -1,0 +1,49 @@
+{{- $current := . -}}
+{{- $navigation := partial "magazine/article-navigation-data.html" . -}}
+{{- $selected := slice -}}
+{{- $seen := slice .RelPermalink -}}
+
+{{- /* Explicit recommendations may intentionally cross topic/category boundaries. */ -}}
+{{- range $navigation.NextReads -}}
+    {{- with $current.Site.GetPage . -}}
+        {{- if and (lt (len $selected) 2) (eq .Section "posts") (not .Draft) (not (.PublishDate.After now)) (not (in $seen .RelPermalink)) -}}
+            {{- $selected = $selected | append . -}}
+            {{- $seen = $seen | append .RelPermalink -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if lt (len $selected) 2 -}}
+    {{- $categories := slice -}}
+    {{- range .GetTerms "categories" }}{{ $categories = $categories | append .RelPermalink }}{{ end -}}
+    {{- $sameTopicAndCategory := slice -}}
+    {{- $sameCategory := slice -}}
+    {{- $sameTopic := slice -}}
+    {{- /* Include published sequels; date only orders candidates within each tier. */ -}}
+    {{- range (where .Site.RegularPages "Section" "posts").ByDate.Reverse -}}
+        {{- if and (not .Draft) (not (.PublishDate.After now)) (not (in $seen .RelPermalink)) -}}
+            {{- $candidate := . -}}
+            {{- $candidateNavigation := partial "magazine/article-navigation-data.html" . -}}
+            {{- $sharesTopic := and $navigation.TopicKey (eq $navigation.TopicKey $candidateNavigation.TopicKey) -}}
+            {{- $candidateCategories := slice -}}
+            {{- range .GetTerms "categories" }}{{ $candidateCategories = $candidateCategories | append .RelPermalink }}{{ end -}}
+            {{- $sharesCategory := gt (len (intersect $categories $candidateCategories)) 0 -}}
+            {{- if and $sharesTopic $sharesCategory -}}
+                {{- $sameTopicAndCategory = $sameTopicAndCategory | append $candidate -}}
+            {{- else if $sharesCategory -}}
+                {{- $sameCategory = $sameCategory | append $candidate -}}
+            {{- else if $sharesTopic -}}
+                {{- $sameTopic = $sameTopic | append $candidate -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- range (slice $sameTopicAndCategory $sameCategory $sameTopic) -}}
+        {{- range . -}}
+            {{- if and (lt (len $selected) 2) (not (in $seen .RelPermalink)) -}}
+                {{- $selected = $selected | append . -}}
+                {{- $seen = $seen | append .RelPermalink -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- return (dict "Articles" $selected "Topic" $navigation.Topic "TopicKey" $navigation.TopicKey) -}}

@@ -1,0 +1,11 @@
+{{- /* Keep front matter overrides and the public editorial data format in one place. */ -}}
+{{- $ref := strings.TrimRight "/" .Path -}}
+{{- $entry := index .Site.Data.editorial.articleLinks $ref | default dict -}}
+{{- $topicKey := .Params.topic | default $entry.topic -}}
+{{- $refs := $entry.nextReads | default slice -}}
+{{- if isset .Params "nextreads" }}{{ $refs = .Params.nextreads }}{{ end -}}
+{{- $topic := dict -}}
+{{- range .Site.Data.editorial.topics -}}
+    {{- if eq .key $topicKey }}{{ $topic = . }}{{ end -}}
+{{- end -}}
+{{- return (dict "TopicKey" $topicKey "Topic" $topic "NextReads" $refs) -}}
