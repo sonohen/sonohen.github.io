@@ -2,7 +2,7 @@
 title: "Blenderの2回目の起動でウィンドウが透明になる：XWayland経由で回避する"
 author: "sonohen"
 date: 2026-10-16
-categories: "AI作業日誌"
+categories: ["Linux"]
 tags: ["Linux", "Ubuntu", "Blender"]
 draft: false
 toc: true

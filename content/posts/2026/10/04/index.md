@@ -2,7 +2,7 @@
 title: "Ubuntuの通信がNextDNSを経由せずにハマった話"
 author: ["sonohen"]
 date: 2026-10-04
-tags: ["NextDNS"]
+tags: ["NextDNS", "Ubuntu"]
 categories: ["Linux"]
 draft: false
 toc: true

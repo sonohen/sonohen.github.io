@@ -1,8 +1,7 @@
 ---
 title: "ITエンジニアに求められる姿勢、または能力に関する私見"
 date: 2023-01-01T09:51:59Z
-categories:
-  - Diary
+categories: ["Work"]
 tags:
   - IT
 authors:

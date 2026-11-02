@@ -2,7 +2,7 @@
 title: "Ubuntu 26.04 LTSでScanSnap S1100を使う"
 author: "sonohen"
 date: 2026-10-17
-categories: "AI自動日誌"
+categories: ["Linux"]
 tags: ["Linux", "Ubuntu"]
 draft: false
 toc: true

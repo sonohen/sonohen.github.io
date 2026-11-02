@@ -3,7 +3,7 @@ title: "Emacs 31にしてからの設定見直し"
 author: ["sonohen"]
 date: 2026-09-23
 tags: ["Emacs", "macOS"]
-categories: ["Linux"]
+categories: ["Programming"]
 draft: false
 toc: true
 description: "Emacs 31にしてから、色々と警告が出るようになりました。その対応をしたときのメモです。"

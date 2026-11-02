@@ -3,7 +3,7 @@ title: "Google Pixelのデスクトップモードでブログを書いてみる
 date: 2026-04-12T00:00:00+0900
 author: "sonohen"
 categories: ["Blog"]
-tags: ["GitHub", "Hugo"]
+tags: ["GitHub", "Hugo", "GooglePixel"]
 description: Google Pixel 10 Pro Foldのデスクトップモードを使い、ブログ記事を書いてみます。
 ---
 

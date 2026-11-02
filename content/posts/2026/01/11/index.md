@@ -3,7 +3,7 @@ title: "画面を分けるだけで「学び」が変わる。Pixel 10 Pro Fold�
 date: 2026-01-11T00:00:00+0900
 author: "sonohen"
 categories: ["知的生産"]
-tags: ["モノ", "GooglePixel", "PartiallyOrFullyWrittenByAI"]
+tags: ["モノ", "GooglePixel", "PartiallyOrFullyWrittenByAI", "Kindle"]
 description: 最新の折りたたみスマホ「Pixel 10 Pro Fold」を使い、Kindle読書とGoogle Keepでのメモ作成を同時に行う新習慣を手に入れました。画面分割と高速な音声入力を組み合わせれば、場所を選ばずインプットとアウトプットが完結します。高価な端末ですが、端末を買い替えずとも、Androidの基本機能でも恩恵は十分。学びの質を変える一歩になればと思います。
 ---
 

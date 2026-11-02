@@ -3,7 +3,7 @@ title: "Slackと連携するチャットボットをOpenSearch + Bedrockで構�
 date: 2026-02-08T00:00:00+0900
 author: "sonohen"
 categories: ["Cloud"]
-tags: ["AWS", "やってみた"]
+tags: ["AWS", "やってみた", "Generative AI"]
 description: Slackと連携するチャットボットをAWS上に構築する過程で、設計を3回やり直した。その試行錯誤を通じて、RAGの本質的な役割、OpenSearchを中核に据えることのメリット、そして生成AI時代に人間に求められる「構造設計能力」について考えたことをまとめる。
 ---
 

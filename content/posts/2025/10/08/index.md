@@ -4,7 +4,7 @@ date: 2025-10-08T13:39:47+09:00
 draft: false
 author: "sonohen"
 categories: ["Linux"]
-tags: ["Debian", "git"]
+tags: ["Debian", "Git"]
 keywords: []
 description: "Git Submoduleを使っている環境で、Submodule側のpush漏れにより、親が参照するコミットを取得できなくなった際の対処方法を調べました。"
 ---

@@ -2,7 +2,7 @@
 title: "Cachixを使用する"
 author: ["sonohen"]
 date: 2026-10-30
-tags: ["NixOS"]
+tags: ["NixOS", "GitHub"]
 categories: ["Linux"]
 draft: false
 toc: true

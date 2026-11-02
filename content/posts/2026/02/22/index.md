@@ -3,7 +3,7 @@ title: "ZettelkastenをRAGの情報源として有効活用するには、ノー
 date: 2026-02-22T00:00:00+0900
 author: "sonohen"
 categories: ["Architecture"]
-tags: ["Generative AI", "Personal-Knowledge-Management"]
+tags: ["Generative AI", "Personal-Knowledge-Management", "Zettelkasten", "Obsidian"]
 description: ZettelkastenをClaudeのRAG情報源として接続しようとしたとき、ノート間のリンクに意味がないとAIがネットワークを無制限にトラバースしてしまう。この問題の本質を検討し、それに対する取り組みとしての「型付きエッジ (relation-typed edges)」という設計アプローチについて整理する。この方法論により、使用トークン数は70%削減、エージェント数は67%削減、回答品質はほぼ同じか上がったという結論を得た。
 ---
 

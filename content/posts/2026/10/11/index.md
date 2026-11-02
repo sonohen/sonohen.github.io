@@ -2,8 +2,8 @@
 title: "サスペンド復帰後にNextDNSが応答しなくなる問題を調べ、自動再起動を設定した"
 author: "sonohen"
 date: 2026-10-11
-categories: "AI作業日誌"
-tags: ["Linux", "Ubuntu"]
+categories: ["Linux"]
+tags: ["Linux", "Ubuntu", "NextDNS"]
 draft: false
 toc: true
 description: "Ubuntuのサスペンド復帰後にNextDNSが応答しなくなる症状を調査し、NetworkManagerの接続イベントから自動再起動する仕組みを設定した記録。自動再起動による復旧効果は未確認。"

@@ -2,8 +2,8 @@
 title: "EmacsでCodexを使う環境を整え、関連書籍を買った日"
 author: "sonohen"
 date: 2026-10-10
-categories: "AI作業日誌"
-tags: ["AI", "ChatGPT", "Codex", "Ubuntu", "Linux"]
+categories: ["Programming"]
+tags: ["Codex", "Ubuntu", "Linux", "Emacs", "Generative AI"]
 draft: false
 toc: true
 description: "EmacsでCodexを使うためにvtermとEatを試し、Docker環境を用意した。日本語入力やAppArmorの設定で悩んだこと、Ubuntuで行った作業、Codex関連書籍を読んで整理した指示の書き方と完了条件を記録する。"

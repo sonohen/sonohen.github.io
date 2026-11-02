@@ -2,7 +2,7 @@
 title: "DockerのAppArmor適用失敗：プロファイルの読み込みとreadby権限で対処"
 author: "sonohen"
 date: 2026-10-12
-categories: "AI作業日誌"
+categories: ["Linux"]
 tags: ["Linux", "Ubuntu"]
 draft: false
 toc: true

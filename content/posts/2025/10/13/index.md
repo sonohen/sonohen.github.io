@@ -6,6 +6,7 @@ categories = ["Linux"]
 draft = false
 toc = true
 description = "Debian GNU/Linux 13 (trixie)とThinkPad E14 (Gen 3)で、外部モニター(JapanNext)への4K出力が安定しなかったので対処しました。"
+tags = ["Debian", "ThinkPad"]
 +++
 
 私は普段、Debian GNU/Linux 13 (trixie)をThinkPad E14 (Gen 3)で運用しており、外付けモニターとしてJapanNextの4Kモニターを使用しています。4K出力に対応しておりながら安価である点が気に入っています。

@@ -2,8 +2,8 @@
 title: "CodexでレシートPDFからBeancountへの仕訳登録を自動化した"
 author: "sonohen"
 date: 2026-10-11
-categories: "AI作業日誌"
-tags: []
+categories: ["Programming"]
+tags: ["Codex", "Generative AI"]
 draft: false
 toc: true
 description: "CodexでレシートPDFを読み取り、既存科目とファイル名の支払方法からBeancountの仕訳を作る運用を実装した。1取引ずつbean-checkを実行し、残高照合で未記帳のチャージも見つけた。"

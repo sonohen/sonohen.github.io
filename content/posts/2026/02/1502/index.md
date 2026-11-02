@@ -3,7 +3,7 @@ title: "Red Hat OpenShiftのDeveloper SandboxをAWSと比較しながら触っ�
 date: 2026-02-15T00:00:00+0900
 author: "sonohen"
 categories: ["Cloud"]
-tags: ["やってみた", "Generative AI"]
+tags: ["やってみた", "Generative AI", "AWS"]
 description: Red Hat OpenShiftのDeveloper Sandboxを実際に触ってみた。サービスの集合体であるAWSと、Platform as a Productとしての統合されたプロダクトであるOpenShiftを比較しながら、その設計思想の違いと開発者体験について整理する。
 ---
 

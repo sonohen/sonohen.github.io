@@ -3,7 +3,7 @@ title: "Apple Watch Ultra 2の先入観に惑わされながら、バンドの�
 date: 2025-09-05T00:00:00+0900
 author: "sonohen"
 categories: ["Gadget"]
-tags: ["Apple Watch", "Fitbit"]
+tags: ["Apple Watch"]
 description: Apple Watch Ultra 2には、オーシャンバンド、チタニウムミナレーゼループ、アルパインループしか付けてはならないーーそんな先入観を取っ払って、スポーツバンドをつけてみたら快適だったという話です。
 ---
 

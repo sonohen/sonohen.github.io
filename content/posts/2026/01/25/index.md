@@ -3,7 +3,7 @@ title: "Zettelkastenを機能させ、また形骸化させないために、何
 date: 2026-01-21T00:00:00+0900
 author: "sonohen"
 categories: ["知的生産"]
-tags: ["Zettelkasten", "Obsidian", "Personal-Knowledge-Management"]
+tags: ["Zettelkasten", "Obsidian", "Personal-Knowledge-Management", "Generative AI", "Claude Code"]
 description: Zettelkastenは「知の再生産」を支える仕組みだと考えている。原子的なノートを自分の言葉で蓄積・再構成することが重要で、AIにノート作成や構造操作を任せるとノイズが増え、思考の質が損なわれると実感した。
 ---
 

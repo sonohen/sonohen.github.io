@@ -5,6 +5,7 @@ categories:
   - Gadget
 tags:
   - モノ
+  - GooglePixel
 authors:
   - sonohen
 description: 昨年、予約を開始してからずっと悩んでいたが、ついに購入した件。
