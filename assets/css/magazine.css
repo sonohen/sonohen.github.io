@@ -17,7 +17,7 @@ body.magazine-main{min-width:0}
 body.magazine .site-intro{padding:30px 34px;background:#eaf0e9;border-radius:8px;margin-bottom:36px}
 body.magazine .eyebrow{font-size:var(--text-meta);letter-spacing:.1em;color:#547264}
 body.magazine .site-intro h1{font-size:29px;line-height:1.6;margin:8px 0 12px;font-weight:700;letter-spacing:.015em}
-body.magazine .site-intro p{font-size:var(--text-meta);line-height:1.9;margin:0;max-width:610px}
+body.magazine .site-intro p{font-size:var(--text-meta);line-height:1.9;margin:0;text-wrap:pretty}
 body.magazine .home-section{margin:0 0 38px;scroll-margin-top:20px}
 body.magazine .section-heading{font-size:19px;font-weight:700;letter-spacing:.035em;margin:0 0 18px;padding:0 0 10px;border-bottom:2px solid #afc8bb;line-height:1.6;color:#303a36}
 body.magazine .featured-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -57,6 +57,7 @@ body.magazine .sidebar-topics{margin-top:27px;padding:0 8px}
 body.magazine .sidebar-topics h2{font-size:var(--text-meta);margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid #d4dfd5}
 body.magazine .sidebar-topics a{display:block;font-size:var(--text-meta);padding:11px 0;border-bottom:1px solid #e3e8e3}
 body.magazine .site-footer{background:#fff;border-top:1px solid #e1e7e2;padding:28px 20px;text-align:center;font-size:var(--text-meta)}
+body.magazine .site-footer::before{content:none}
 body.magazine .site-footer p{margin:0 0 9px}
 body.magazine .site-footer a{font-size:var(--text-meta);color:var(--muted)}
 body.magazine .site-footer .small{font-size:var(--text-meta);color:var(--muted);margin-top:15px}
@@ -68,6 +69,9 @@ body.magazine .post__meta{font-size:var(--text-meta);color:var(--muted)}
 body.magazine .article-kicker{font-size:var(--text-meta);color:#43775f;margin-bottom:10px}
 body.magazine .article-content,body.magazine .post__content{overflow-wrap:anywhere;line-height:2}
 body.magazine .article-content img,body.magazine .post__content img{max-width:100%;height:auto}
+/* Frame article images so white screenshots remain distinct from the page. */
+body.magazine .article-content img,body.magazine .post__content img{border:1px solid #aebdb2;border-radius:4px;padding:6px;background:#f7f9f5;box-shadow:0 2px 6px #24382d12}
+body.magazine .article-content a>img.gallery-image{cursor:zoom-in}
 body.magazine .article-content pre,body.magazine .post__content pre{overflow-x:auto;max-width:100%}
 body.magazine .article-content table,body.magazine .post__content table{display:block;overflow-x:auto;max-width:100%}
 body.magazine .post__content h2{font-size:22px;line-height:1.6;border-left:4px solid #59886a;padding-left:14px;margin-top:38px}
