@@ -1,4 +1,4 @@
-{{ define "body-class" }}article-page guide-page{{ end }}{{ define "main" }}<div class="breadcrumb"><a href="{{ .Site.Home.RelPermalink }}">ホーム</a> / {{ with .Site.GetPage "/guides" }}<a href="{{ .RelPermalink }}" data-analytics="topic">テーマ別ガイド</a>{{ end }}</div>
+{{ define "body-class" }}article-page guide-page{{ end }}{{ define "main" }}
 {{ .Scratch.Set "TOCEnabled" false }}{{ partial "article/article.html" . }}
 {{ $topic := dict }}{{ range .Site.Data.editorial.topics }}{{ if eq .key $.Params.topic }}{{ $topic = . }}{{ end }}{{ end }}
 {{ with $topic.subroutes }}<section class="home-section route-section"><h2 class="section-heading">目的に合わせて読む</h2>{{ range $label, $refs := . }}<h3>{{ $label }}</h3><ul>{{ range $refs }}{{ with $.Site.GetPage . }}<li><a href="{{ .RelPermalink }}" data-analytics="related">{{ .Title }}</a></li>{{ end }}{{ end }}</ul>{{ end }}</section>{{ end }}

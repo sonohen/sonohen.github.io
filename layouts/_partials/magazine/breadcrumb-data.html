@@ -1,0 +1,11 @@
+{{- $items := slice -}}
+{{- if and .IsPage (ne .Layout "search") -}}
+    {{- $items = $items | append (dict "Name" "ホーム" "URL" .Site.Home.Permalink) -}}
+    {{- if eq .Section "posts" -}}
+        {{- with .Site.GetPage "/posts" -}}{{- $items = $items | append (dict "Name" "記事一覧" "URL" .Permalink) -}}{{- end -}}
+    {{- else if eq .Section "guides" -}}
+        {{- with .Site.GetPage "/guides" -}}{{- $items = $items | append (dict "Name" "テーマ別ガイド" "URL" .Permalink) -}}{{- end -}}
+    {{- end -}}
+    {{- $items = $items | append (dict "Name" .Title "URL" .Permalink) -}}
+{{- end -}}
+{{- return $items -}}

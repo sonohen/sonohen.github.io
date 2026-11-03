@@ -223,3 +223,7 @@ body.magazine .code-language{padding:8px 18px;background:var(--pale);color:var(-
 body.magazine .article-content .code-block .highlight{margin:0;width:100%;padding:20px;max-width:100%;background:#272822;color:#f8f8f2}
 body.magazine .article-content .code-block pre{margin:0;width:100%;max-width:100%;padding:0;overflow-x:auto}
 body.magazine .article-content .code-block .copyCodeButton{top:8px;right:8px}
+
+body.magazine .breadcrumb ol{display:flex;flex-wrap:wrap;gap:.4em;list-style:none;margin:0;padding:0}
+body.magazine .breadcrumb li+li::before{content:"/";margin-right:.4em}
+body.magazine .article-time{flex-wrap:wrap;row-gap:.5em}

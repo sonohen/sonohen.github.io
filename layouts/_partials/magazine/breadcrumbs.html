@@ -1,0 +1,3 @@
+{{ with partial "magazine/breadcrumb-data.html" . }}
+<nav class="breadcrumb" aria-label="パンくずリスト"><ol>{{ range $item := . }}<li>{{ if eq $item.URL $.Permalink }}<span aria-current="page">{{ $item.Name }}</span>{{ else }}<a href="{{ $item.URL }}"{{ if eq $item.Name "テーマ別ガイド" }} data-analytics="topic"{{ end }}>{{ $item.Name }}</a>{{ end }}</li>{{ end }}</ol></nav>
+{{ end }}

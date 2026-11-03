@@ -1,0 +1,8 @@
+{{- $dates := slice -}}
+{{- if not .Date.IsZero -}}
+    {{- $dates = $dates | append (dict "Kind" "published" "Label" "公開日" "Value" (.Date.Format "2006-01-02T15:04:05Z07:00") "Display" (.Date.Format "2006.01.02")) -}}
+{{- end -}}
+{{- if not .Lastmod.IsZero -}}
+    {{- $dates = $dates | append (dict "Kind" "updated" "Label" "更新日" "Value" (.Lastmod.Format "2006-01-02T15:04:05Z07:00") "Display" (.Lastmod.Format "2006.01.02")) -}}
+{{- end -}}
+{{- return $dates -}}

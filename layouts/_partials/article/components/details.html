@@ -26,27 +26,15 @@
         {{ end }}
     </div>
 
+    {{ $dates := partial "magazine/dates.html" . }}
     {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
-    {{ $showDate := not .Date.IsZero }}
-    {{ $showFooter := or $showDate $showReadingTime }}
-    {{ if $showFooter }}
+    {{ if or $dates $showReadingTime }}
     <footer class="article-time">
-        {{ if $showDate }}
-            <div>
-                {{ partial "helper/icon" "date" }}
-                <time class="article-time--published" datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
-                    {{- .Date | time.Format .Site.Params.dateFormat.published -}}
-                </time>
-            </div>
+        {{ range $dates }}
+        <div><span>{{ .Label }}</span><time class="article-time--{{ .Kind }}" datetime="{{ .Value }}">{{ .Display }}</time></div>
         {{ end }}
-
         {{ if $showReadingTime }}
-            <div>
-                {{ partial "helper/icon" "clock" }}
-                <time class="article-time--reading">
-                    {{ T "article.readingTime" .ReadingTime }}
-                </time>
-            </div>
+        <div>{{ partial "helper/icon" "clock" }}<time class="article-time--reading">{{ T "article.readingTime" .ReadingTime }}</time></div>
         {{ end }}
     </footer>
     {{ end }}

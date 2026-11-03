@@ -4,7 +4,7 @@
 {{ $style := resources.Get "css/magazine.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}"></head>
 <body class="magazine {{ block `body-class` . }}{{ end }}"><a class="skip-link" href="#main">本文へ</a>
 {{ partial "head/colorScheme.html" . }}{{ partial "magazine/header.html" . }}
-<div class="page-layout"><main id="main" class="magazine-main">{{ block "main" . }}{{ end }}</main>{{ partial "magazine/author.html" . }}</div>
+<div class="page-layout"><main id="main" class="magazine-main">{{ partial "magazine/breadcrumbs.html" . }}{{ block "main" . }}{{ end }}</main>{{ partial "magazine/author.html" . }}</div>
 {{ partial "magazine/footer.html" . }}{{ partial "footer/include.html" . }}
 {{ $navigation := resources.Get "js/navigation.js" | minify | fingerprint }}<script defer src="{{ $navigation.RelPermalink }}" integrity="{{ $navigation.Data.Integrity }}"></script>
 </body></html>

@@ -1,5 +1,5 @@
 {{ define "body-class" }}article-page{{ end }}
-{{ define "main" }}<div class="breadcrumb"><a href="{{ .Site.Home.RelPermalink }}">ホーム</a> / {{ if eq .Section "posts" }}記事{{ else }}{{ .Title }}{{ end }}</div>
+{{ define "main" }}
 {{ $showTOC := and (ne .Params.toc false) (ge (len .TableOfContents) 100) }}{{ .Scratch.Set "TOCEnabled" $showTOC }}{{ partial "article/article.html" . }}
 {{ if .Params.links }}{{ partial "article/components/links" . }}{{ end }}
 {{ if eq .Section "posts" }}{{ partial "magazine/next-reading.html" . }}{{ end }}

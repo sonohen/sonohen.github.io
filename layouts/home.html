@@ -2,7 +2,7 @@
 {{ if eq $paginator.PageNumber 1 }}<section class="site-intro"><span class="eyebrow">試して、考えて、使ってみる。</span><h1>技術を、仕事と暮らしの力に。</h1><p>AI・クラウド・日々の道具。実際に使って分かったことや、うまくいかなかったことを記録しています。</p></section>
 {{ with .Site.Data.editorial.featured }}<section class="home-section"><h2 class="section-heading">はじめに読んでほしい記事</h2><div class="featured-grid">{{ range first 3 . }}{{ with $.Site.GetPage . }}{{ partial "magazine/card.html" (dict "Page" . "Featured" true "Tracking" "related") }}{{ end }}{{ end }}</div></section>{{ end }}
 <section id="guides" class="home-section"><h2 class="section-heading">テーマから探す</h2>{{ partial "magazine/guides.html" . }}</section>
-<section id="latest" class="home-section"><h2 class="section-heading">新着記事</h2><div class="card-grid">{{ range first 6 $posts }}{{ partial "magazine/card.html" (dict "Page" . "Tracking" "related") }}{{ end }}</div></section>
+<section id="latest" class="home-section"><h2 class="section-heading">新着記事</h2><div class="card-grid">{{ range $paginator.Pages }}{{ partial "magazine/card.html" (dict "Page" . "Tracking" "related") }}{{ end }}</div></section>
 <div class="browse-all">{{ with .Site.GetPage "/posts" }}<a href="{{ .RelPermalink }}">すべての記事を読む →</a>{{ end }}{{ with .Site.GetPage "/page/archives" }}<a href="{{ .RelPermalink }}">年別アーカイブ →</a>{{ end }}</div>
 {{ else }}<header class="listing-header"><h1 class="section-heading">記事一覧 — {{ $paginator.PageNumber }}ページ目</h1></header><div class="card-grid">{{ range $paginator.Pages }}{{ partial "magazine/card.html" (dict "Page" . "Tracking" "related") }}{{ end }}</div>{{ end }}
 {{ partial "pagination.html" . }}{{ end }}

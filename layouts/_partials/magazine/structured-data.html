@@ -1,0 +1,23 @@
+{{- $breadcrumbs := partial "magazine/breadcrumb-data.html" . -}}
+{{- with $breadcrumbs -}}
+    {{- $items := slice -}}
+    {{- range $i, $item := . -}}
+        {{- $items = $items | append (dict "@type" "ListItem" "position" (add $i 1) "name" $item.Name "item" $item.URL) -}}
+    {{- end -}}
+    <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $items | jsonify | safeJS }}</script>
+{{- end -}}
+{{- if and .IsPage (eq .Section "posts") -}}
+    {{- $author := dict "@type" "Person" "name" "sonohen" -}}
+    {{- with .Site.GetPage "/page/about" -}}{{- $author = merge $author (dict "url" .Permalink) -}}{{- end -}}
+    {{- $article := dict "@context" "https://schema.org" "@type" "BlogPosting" "headline" .Title "description" ((.Description | default .Summary) | plainify) "url" .Permalink "mainEntityOfPage" .Permalink "author" $author -}}
+    {{- range partial "magazine/dates.html" . -}}
+        {{- $key := cond (eq .Kind "published") "datePublished" "dateModified" -}}
+        {{- $article = merge $article (dict $key .Value) -}}
+    {{- end -}}
+    {{- with .Params.image -}}
+        {{- $url := . | absURL -}}
+        {{- with $.Resources.Get . -}}{{- $url = .Permalink -}}{{- end -}}
+        {{- $article = merge $article (dict "image" $url) -}}
+    {{- end -}}
+    <script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>
+{{- end -}}
