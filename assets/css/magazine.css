@@ -151,12 +151,13 @@ body.magazine .article-content h2{line-height:1.65;font-size:23px}
 body.magazine .article-content h3{line-height:1.7;font-size:20px}
 body.magazine .article-content code{overflow-wrap:anywhere}
 body.magazine .article-content pre code{overflow-wrap:normal}
-body.magazine .article-toc{margin:0 30px 20px;border:1px solid #dce5de;background:#f7f9f5;padding:13px 18px;font-size:var(--text-meta);border-radius:5px}
+body.magazine .article-toc{display:flex;margin:0 30px 20px;border:0;background:transparent;padding:34.5px 18px 13px;font-size:var(--text-meta);border-radius:5px}
 body.magazine .article-toc-title{font-size:var(--text-meta);display:flex;align-items:center;gap:8px}
 body.magazine .article-toc-title svg{width:18px;height:18px}
 body.magazine .article-toc summary{cursor:pointer;list-style:none}
 body.magazine .article-toc .toc-nav{padding-top:12px;line-height:1.9}
 body.magazine .article-toc .toc-nav ul{padding-left:18px}
+body.magazine .article-toc .toc-nav li{margin-top:7.5px;margin-bottom:7.5px;padding-top:2.5px;padding-bottom:2.5px}
 body.magazine .article-toc .toc-nav a{color:#416852}
 body.magazine .search-form{position:relative;display:flex;align-items:center;background:white;border:1px solid #d8e2d9;border-radius:7px;margin-bottom:28px;box-shadow:none}
 body.magazine .search-form p{margin:0;padding:18px 20px;flex:1}
@@ -175,7 +176,7 @@ body.magazine .archives-group{margin-top:30px}
 body.magazine .archives-date{font-size:20px;color:#456b53}
 body.magazine .subsection-list{margin-bottom:25px}
 body.magazine .section-title{font-size:16px}
-@media(max-width:760px){body.magazine .article-toc{margin:0 21px 20px}body.magazine .browse-all{flex-direction:column;gap:10px}body.magazine .site-nav{flex-wrap:wrap;gap:8px 20px;justify-content:center}body.magazine .article-list--compact article>a{padding:16px}body.magazine .article-list--compact article .article-title{font-size:var(--text-meta)}body.magazine .pagination .page-link{padding:10px;min-width:29px}body.magazine .article-content h2{font-size:21px}body.magazine .article-content h3{font-size:18px}}
+@media(max-width:760px){body.magazine .article-toc{margin:0 21px 20px;padding-top:30px}body.magazine .browse-all{flex-direction:column;gap:10px}body.magazine .site-nav{flex-wrap:wrap;gap:8px 20px;justify-content:center}body.magazine .article-list--compact article>a{padding:16px}body.magazine .article-list--compact article .article-title{font-size:var(--text-meta)}body.magazine .pagination .page-link{padding:10px;min-width:29px}body.magazine .article-content h2{font-size:21px}body.magazine .article-content h3{font-size:18px}}
 
 /* Shared readable type scale, independent of Stack's root font size. */
 body.magazine{font-size:var(--text-description);color:var(--ink)}
