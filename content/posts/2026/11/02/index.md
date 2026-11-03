@@ -6,7 +6,7 @@ tags: ["Codex", "Docker", "NixOS", "Generative-AI"]
 categories: ["Programming"]
 draft: false
 toc: true
-description: "Codexを隔離せずに動作させるのに不安を感じ、これまでは自分で構築したDockerコンテナで動作させていた。しかし、2026年6月にDocker SandboxというAIエージェントを隔離させるためのツールが公表され、気軽に隔離できるようになった。今回は、NixOSでDocker Sandboxを動作させ、外部との通信を許可するところまで検証した。"
+description: "Codexを隔離せずに動作させるのに不安を感じ、これまでは自分で構築したDockerコンテナで動作させていた。しかし、2026年2月にDocker SandboxというAIエージェントを隔離させるためのツールが公表され、気軽に隔離できるようになった。今回は、NixOSでDocker Sandboxを動作させ、外部との通信を許可するところまで検証した。"
 ---
 
 ## 課題感 {#課題感}
@@ -305,19 +305,22 @@ Sandbox内のCodexから認証情報にアクセスできる？
 
 回答は次の通り。
 
-\#+begin_example
-調査できました。Sandbox 内で読めたのはダミーの認証情報で、実際の GitHub トークンはホスト側のプロキシが付与する仕組みです。値を表示せず、GET /user で比較した結果です。
+```text
+調査できました。Sandbox 内で読めたのはダミーの認証情報で、実際の GitHub トークンはホスト側のプロキシが付与する仕組みです。
+値を表示せず、GET /user で比較した結果です。
 
-| 通信方法                  | 結果            |
-|-----------------------|---------------|
-| GH_TOKEN を使い、プロキシ経由 | sonohen として認証成功 |
-| 無効なトークンで、プロキシ経由 | 同じく認証成功  |
-| トークンなしで、プロキシ経由 | 同じく認証成功  |
-| GH_TOKEN を使い、明示プロキシを使わず通信 | 401（認証失敗） |
+| 通信方法                                  | 結果                   |
+|-------------------------------------------+------------------------|
+| GH_TOKEN を使い、プロキシ経由             | sonohen として認証成功 |
+| 無効なトークンで、プロキシ経由            | 同じく認証成功         |
+| トークンなしで、プロキシ経由              | 同じく認証成功         |
+| GH_TOKEN を使い、明示プロキシを使わず通信 | 401（認証失敗）        |
 
 Sandbox には起動時から GH_TOKEN が渡されており、gh auth token はその値を返していました。しかし、その値自体では GitHub に認証できません。HTTPS プロキシは gateway.docker.internal:3128 に設定されています。
-Docker の公式説明 (<https://docs.docker.com/ai/sandboxes/architecture/#follow-an-authenticated-request>)にも、Sandbox 内には代替値（sentinel）を渡し、ホスト側のプロキシが実際の認証情報に置き換えると記載されています。つまり、今回の構成は実トークンの窃取を防ぐ効果があります。一方、Codex はプロキシ経由で GitHub の権限を利用できるため、プロンプトインジェクションによる操作の悪用には、トークンの権限制限も必要です。なお、ホスト側の保存先が GNOME Keyring かどうかは、今回の Sandbox 内の調査では確認していません。
-\#+end_quote
+Docker の公式説明 (https://docs.docker.com/ai/sandboxes/architecture/#follow-an-authenticated-request)にも、Sandbox 内には代替値（sentinel）を渡し、ホスト側のプロキシが実際の認証情報に置き換えると記載されています。
+つまり、今回の構成は実トークンの窃取を防ぐ効果があります。一方、Codex はプロキシ経由で GitHub の権限を利用できるため、プロンプトインジェクションによる操作の悪用には、トークンの権限制限も必要です。
+なお、ホスト側の保存先が GNOME Keyring かどうかは、今回の Sandbox 内の調査では確認していません。
+```
 
 
 ### Docker Sandboxが予め許可しているドメインに加え、自身が承認したドメインへの通信を許可する方法を確認する [Network Policy] {#docker-sandboxが予め許可しているドメインに加え-自身が承認したドメインへの通信を許可する方法を確認する-network-policy}
