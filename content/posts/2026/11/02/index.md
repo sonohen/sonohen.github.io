@@ -56,7 +56,7 @@ AIエージェントは、人間やコンピュータから必要な情報を集
 
 #### Docker Sandboxをインストールする {#docker-sandboxをインストールする}
 
-2026年11月2日現在、最新の[Docker Sandbox](https://github.com/docker/sbx-releases)は `0.50.1` である。一方で、nixpkg(26.05)で配信されているDocker Sandboxは `0.34.0` であり、半年以上前のものである。
+2026年11月2日現在、最新の[Docker Sandbox](https://github.com/docker/sbx-releases)は `0.50.1` である。一方で、nixpkg(26.05)で配信されているDocker Sandboxは `0.34.0` であり、約4ヶ月前のものである。
 
 ```sh
 nix search nixpkgs sbx
