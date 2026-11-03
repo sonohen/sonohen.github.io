@@ -24,7 +24,7 @@ AIエージェントは、人間やコンピュータから必要な情報を集
 
 1.は、もはや論外と言ってもよいかもしれない。普段遣いの環境で、広い権限を与えて動かすことには、不安がある。
 2.は、流行りの方法かもしれない。古いMacBook等を初期化して、その中でAIエージェントを動作させる。
-3.は、ホストとAIエージェントを完全に分離できる一方で、OSの維持が非常に面倒である。
+3.は、ホストとAIエージェントを(ほぼ)完全に分離できる一方で、OSの維持が非常に面倒である。
 4.は、3.よりは簡易であるものの、AIエージェントが本当に暴走した際にはホスト側のカーネルに触ることができる可能性があるし、3.と同じようにコンテナのメンテナンスの手間がかかる。
 
 今回紹介するDocker Sandboxは、3.と4.の合わせ技のような技術である。つまり、仮想マシンによる隔離と、コンテナのような扱いやすさを組合せ、AIエージェント専用の仮想マシンを手に入れることができる。
@@ -156,7 +156,7 @@ sbx secret set openai --oauth
 とりあえず `~/sbx-codex-work` を作成し、その中でCodexを起動 (`sbx run codex`) してみる。ここで重要なのは、以下の2点であるように思う。
 
 -   Sandbox内からどのサイトにアクセスできるかは、ユーザが制御できること。ここでは「Balanced(一般的な開発用サイト(github.com等)は許可されており、それ以外はユーザによる明示的な許可が必要)」を選択した。
--   ホスト側にある `~/.codex/skills/` は、Sandbox内では使用できないこと。ホスト側の設定やファイルをSandboxに持っていくことはなく、隔離されたCodexからはプロジェクトのフォルダ(起動フォルダ)しか参照できない([Codex | Docker Docs](https://docs.docker.com/ai/sandboxes/agents/codex/#configuration))。そのため、 `~/.codex/skills/` はSandbox内で使用することはできず、プロジェクトに保存したものを使うか、ホストの `~/.local/state/sandboxes/sandboxes/agent-skills` に格納されたものを使う。
+-   ホスト側にある `~/.codex/skills/` は、Sandbox内では使用できないこと。ホスト側の設定やファイルをSandboxに持っていくことはなく、隔離されたCodexからはプロジェクトのフォルダ(起動フォルダと共有設定したリソース)しか参照できない([Codex | Docker Docs](https://docs.docker.com/ai/sandboxes/agents/codex/#configuration))。そのため、 `~/.codex/skills/` はSandbox内で使用することはできず、プロジェクトに保存したものを使うか、ホストの `~/.local/state/sandboxes/sandboxes/agent-skills` に格納されたものを使う。
 
 <!--listend-->
 
