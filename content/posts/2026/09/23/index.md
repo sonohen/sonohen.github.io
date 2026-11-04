@@ -2,12 +2,12 @@
 title: "Emacs 31の設定中に対処したエラーと警告"
 author: ["sonohen"]
 date: 2026-09-23
-lastmod: 2026-11-04T20:21:32+09:00
+lastmod: 2026-11-04T20:24:15+09:00
 tags: ["Emacs", "macOS"]
 categories: ["Linux"]
 draft: false
 toc: true
-description: "Emacsの利用時に発生するネイティブコンパイルやレキシカルバインディングに関する警告について、その原因を整理し、macOS環境でのライブラリ設定やEmacs Lispによる警告の抑制など、実際に行った対処方法を具体的な設定例とともに解説します。"
+description: "macOSでEmacs 31を導入した際に発生した、libgccjitのコンパイルエラーとlexical-bindingの警告について、原因と対処方法を実際の設定例とともに解説します。"
 ---
 
 ## 環境 {#環境}
