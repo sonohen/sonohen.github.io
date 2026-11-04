@@ -2,8 +2,8 @@
 title: "Emacs 31の設定中に対処したエラーと警告"
 author: ["sonohen"]
 date: 2026-09-23
-lastmod: 2026-11-04T20:24:15+09:00
-tags: ["Emacs", "macOS"]
+lastmod: 2026-11-04T20:27:30+09:00
+tags: ["macOS", "Emacs"]
 categories: ["Linux"]
 draft: false
 toc: true
@@ -13,7 +13,7 @@ description: "macOSでEmacs 31を導入した際に発生した、libgccjitの�
 ## 環境 {#環境}
 
 -   ****マシン****: MacBook M3 Air
--   ****OS****: MacOS Tahoe
+-   ****OS****: MacOS Golden Gate
 
 Emacsは、 `brew install emacs-app --casks` でインストールしたものを使用している。
 
