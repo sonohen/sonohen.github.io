@@ -1,8 +1,8 @@
 ---
-title: "Emacs 31の設定中に対処したエラーと警告"
+title: "Emacs 31の設定中に対処したエラー (ibgccjit関連) と警告 (lexical-binding関連)"
 author: ["sonohen"]
 date: 2026-09-23
-lastmod: 2026-11-04T20:27:30+09:00
+lastmod: 2026-11-04T20:35:52+09:00
 tags: ["macOS", "Emacs"]
 categories: ["Linux"]
 draft: false
