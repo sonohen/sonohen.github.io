@@ -1,5 +1,5 @@
 ---
-title: "Cachixを使用する"
+title: "CachixとGitHub Actionsを使用し、NixOSのビルド待ちを減らす"
 author: ["sonohen"]
 date: 2026-10-30
 tags: ["NixOS"]

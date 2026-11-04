@@ -1,5 +1,5 @@
 ---
-title: "NixOSでZFSからデータを救出する"
+title: "UbuntuのZFSからNixOSにデータを移行する"
 author: ["sonohen"]
 date: 2026-10-26
 tags: ["NixOS"]
