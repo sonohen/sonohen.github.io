@@ -2,7 +2,7 @@
 title: "Emacs 31の設定中に対処したエラーと警告"
 author: ["sonohen"]
 date: 2026-09-23
-lastmod: 2026-11-04T20:18:51+09:00
+lastmod: 2026-11-04T20:21:32+09:00
 tags: ["Emacs", "macOS"]
 categories: ["Linux"]
 draft: false
@@ -90,7 +90,7 @@ for more information.
 
 ### 原因 {#原因}
 
-Emacsは、将来的に `lexical-binding` (→ `dynamic-binding` 、変数束縛の方式)がデフォルトで有効になることに備え、Emacs 31では `lexical-binding` に対する警告が強化された。
+Emacsは、将来的に `lexical-binding` (従来のダイナミックバインディング( `dynamic-binding` )とは異なる変数束縛の方式)がデフォルトで有効になることに備え、Emacs 31では `lexical-binding` に対する警告が強化された。
 (ただし、Emacs 31では、警告がでるものの、引き続き `dynamic-binding` がデフォルトになっている)。
 
 今回の警告は、 `ddskk` に含まれる `skk-cursor.el` に当該宣言が無いことによって発生している。
